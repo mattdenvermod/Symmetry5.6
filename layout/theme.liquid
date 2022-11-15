@@ -8,7 +8,17 @@
   endif
 -%}
 <html lang="{{ request.locale.iso_code }}" dir="{{ lang_dir }}">
-<head>
+<head> 
+    <script src='{{ 'product_restore_email.js' | asset_url }}' defer='defer' ></script> 
+    <script id='em_product_variants' type='application/json'>
+        {{ product.variants | json }}
+    </script>
+    <script id='em_product_selected_or_first_available_variant' type='application/json'>
+        {{ product.selected_or_first_available_variant | json }}
+    </script>
+    <script id='em_product_metafields' type='application/json'>
+        {{ shop.metafields.email-sealapps-app.effective-time | json }}
+    </script>
   <!-- Symmetry 5.6.0 -->
 
   <title>
@@ -102,6 +112,9 @@
   </script>
 
   {{ content_for_header }}
+{% include 'nerdy-form-builder' %}
+	{% render 'vitals-loader' %}
+
 </head>
 
 <body class="template-{{ template | split: '.' | first | handle }}

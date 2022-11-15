@@ -4,6 +4,8 @@
   var cc = {
     sections: [] };
 
+  console.log("START 💡👀")
+
 
   theme.cartNoteMonitor = {
     load: function load($notes) {
@@ -2565,7 +2567,9 @@
 
       // Handle when a variant is selected
       $(window).on("cc-variant-updated".concat(this.namespace).concat(this.productId), (e, args) => {
+        console.log("TRUDY --> where variant updated 👷‍♀️")
         if (args.product.id === this.productId) {
+          console.log('PRODUCT 🎁', args.variant.title)
           this.functions.updateContent.bind(this)(
           args.variant ? args.variant.id : null,
           args.product.title,
@@ -2573,6 +2577,7 @@
           args.variant && typeof args.variant.available !== "undefined");
 
         }
+      
       });
 
       // Handle single variant products
@@ -2699,6 +2704,7 @@
 
       // Requests the available stores and updates the page with info below Add to Basket, and append the modal to the page
       updateContent: function updateContent(variantId, productTitle, isSingleDefaultVariant, isVariantAvailable) {
+        console.log('UPDATE CONTENT 🍎')
         this.$container.off('click', '[data-store-availability-modal-open]');
         this.$container.off('click' + this.namespace, '.cc-popup-close, .cc-popup-background');
         $('.store-availabilities-modal').remove();
@@ -5111,6 +5117,7 @@
 
       // init variant ids
       $productForm.find(_.selectors.primaryVariantIdInput).each(function () {
+        console.log('init variant ids 🌸')
         // change state for original dropdown
         $(this).on('change.themeProductOptions firstrun.themeProductOptions', function (e) {
           if ($(this).is('input[type=radio]:not(:checked)')) {
@@ -6743,8 +6750,9 @@
       $productDetail = $(this).closest('.product-detail');
 
       // events on variant change
-
+      console.log('THIS 🍍', $(this))
       $(this).on('variantChanged', function (evt, variant, product) {
+        console.log('variant changed 🍍', variant )
         // change variant status classes
         var $labelCont = $productDetail.find('.product-label-list');
         $labelCont.find('.product-label-container').remove();
