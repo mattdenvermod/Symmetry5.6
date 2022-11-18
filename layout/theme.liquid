@@ -64,6 +64,11 @@
     <noscript><link rel="stylesheet" href="{{ 'swatches.css' | asset_url }}"></noscript>
   {%- endif -%}
 
+  {% if template contains 'product' %}
+  <link rel="stylesheet" type="text/css" href="https://viewer.cylindo.com/v4/viewer.min.css">
+  <script src="https://viewer.cylindo.com/v4/viewer.min.js"></script>
+  {% endif %}
+
   <script>
     window.theme = window.theme || {};
     theme.money_format_with_product_code_preference = {% if settings.product_currency_code_enabled %}{{ shop.money_with_currency_format | json }}{% else %}{{ shop.money_format | json }}{% endif %};
