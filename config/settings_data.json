@@ -1276,6 +1276,15 @@
               "title": "Aspen Indoor Rugs",
               "link_url": "shopify:\/\/products\/aspen-rug"
             }
+          },
+          "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Accessories",
+              "image": "shopify:\/\/shop_images\/mira-linen-throw-2_1260x_17ffb6de-f9df-44af-abf4-5822e8ac798d.jpg",
+              "title": "Mira Linen Striped Throw",
+              "link_url": "shopify:\/\/products\/mira-linen-throw"
+            }
           }
         },
         "block_order": [
@@ -1297,7 +1306,8 @@
           "0309073c-d72f-4916-9e31-97dd437c1b7b",
           "59564973-d663-4d37-a590-1684783d55ab",
           "2a460346-6e43-4250-ba76-d40800936eae",
-          "13013608-9041-49aa-bde9-0795757c660b"
+          "13013608-9041-49aa-bde9-0795757c660b",
+          "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
