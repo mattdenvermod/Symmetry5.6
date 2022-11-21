@@ -133,41 +133,29 @@
     "d7563810-b52b-4e13-9fb1-849d2c9e6759": {
       "type": "image-with-text-overlay",
       "settings": {
+        "image": "shopify:\/\/shop_images\/DenverModern_Mosley3854.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/DenverModern_Mosley3854.jpg",
         "image_position": "center center",
         "mobile_image_position": "center center",
         "height": "fixed",
         "height_desktop": 600,
         "height_mobile": 460,
-        "image_link": "",
-        "subheading": "Tell your story",
-        "title": "Two line\ntext heading",
-        "title_size": 84,
+        "image_link": "shopify:\/\/collections\/best-sellers",
+        "subheading": "Customer Favorites",
+        "title": "BEST SELLERS",
+        "title_size": 60,
         "title_size_mobile": 46,
         "use_h1": false,
-        "text": "<p>And optional subtext<\/p>",
+        "text": "",
         "enlarge_text": true,
-        "button_label_1": "Shop this",
+        "button_label_1": "SHOP BEST SELLERS",
         "button_url_1": "",
-        "button_label_2": "Shop all",
+        "button_label_2": "",
         "button_url_2": "",
         "text_alignment": "center center",
         "full_width": true,
         "mobile_overlay_under": false,
         "overlay_style": "shadow"
-      }
-    },
-    "16359278676808bea5": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "",
-        "collection": "best-sellers",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 4,
-        "rows": 1,
-        "use_alt_bg": false,
-        "show_view_all": false,
-        "full_width": true
       }
     },
     "1635927863703110df": {
@@ -344,7 +332,6 @@
     "16359276425da8ce46",
     "e146ce1b-e8b3-43e9-839d-a6b8f52d3154",
     "d7563810-b52b-4e13-9fb1-849d2c9e6759",
-    "16359278676808bea5",
     "1635927863703110df",
     "16359279164ff7d3f3",
     "16359278867b92de38",
