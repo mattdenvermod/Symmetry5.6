@@ -1166,6 +1166,15 @@
               "title": "Raven Chest of Drawers",
               "link_url": "shopify:\/\/products\/raven-chest-of-drawers"
             }
+          },
+          "ac9060b5-e58a-4d1b-a3cf-e102b7fd02ee": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Bedroom",
+              "image": "shopify:\/\/shop_images\/51224_Oak_NordicII_bedside_table_hanging_3_WEB.jpg",
+              "title": "Noel Hanging Bedside Table",
+              "link_url": "shopify:\/\/products\/noel-bedside-table"
+            }
           }
         },
         "block_order": [
@@ -1176,7 +1185,8 @@
           "6af13b25-4cfb-44e2-bbe5-c515148aa43d",
           "4dfff27b-bb82-4db5-916a-c83912763cf3",
           "14c598e7-ab09-493e-8988-05d7eb2463e1",
-          "bfd74d23-1ae9-4028-a78f-f39dd5f124ed"
+          "bfd74d23-1ae9-4028-a78f-f39dd5f124ed",
+          "ac9060b5-e58a-4d1b-a3cf-e102b7fd02ee"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
