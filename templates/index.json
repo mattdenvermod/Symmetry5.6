@@ -416,6 +416,98 @@
         "overlay_style": "box"
       }
     },
+    "fe10c5d1-7664-4272-8d84-62fc3b82ffdb": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Featured Collections",
+            "use_h1": false
+          }
+        },
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Shop Denver Modern's curated collections to help design your home inside and out.<\/p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-0",
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-1"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "use_alt_bg": false
+      }
+    },
+    "f66ee119-adfa-47a2-9039-56c539cb4754": {
+      "type": "gallery",
+      "blocks": {
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0032.jpg",
+            "alignment": "center center",
+            "enlarge_image": true,
+            "subheading": "",
+            "title": "Kitchen & Dining Room",
+            "button_label": "",
+            "link": "",
+            "text_alignment": "center center"
+          }
+        },
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0065.jpg",
+            "alignment": "center center",
+            "enlarge_image": false,
+            "subheading": "",
+            "title": "Living Room",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/living-room-collection",
+            "text_alignment": "center center"
+          }
+        },
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-2": {
+          "type": "image",
+          "settings": {
+            "alignment": "center center",
+            "enlarge_image": false,
+            "subheading": "Gallery",
+            "title": "Tell your story",
+            "button_label": "",
+            "link": "",
+            "text_alignment": "bottom left"
+          }
+        }
+      },
+      "block_order": [
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-0",
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-1",
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-2"
+      ],
+      "settings": {
+        "grid": 3,
+        "height": "fixed",
+        "desktop_image_height": 550,
+        "mobile_image_height": 400,
+        "title_size": 30,
+        "title_size_mobile": 22,
+        "enable_margin": true,
+        "enable_row_spacing": true,
+        "full_width": true,
+        "use_alt_bg": false,
+        "enable_carousel": true,
+        "overlay_style": "full image-overlay--bg-shadow",
+        "button_style": "link"
+      }
+    },
     "1635928697c562053a": {
       "type": "map",
       "settings": {
@@ -444,6 +536,8 @@
     "89c7cc87-c72e-48bf-86f9-eb45ff26df87",
     "65bfc44a-5734-4201-9a85-7548625f5814",
     "31453940-80a1-4286-9dbb-718639fb54ef",
+    "fe10c5d1-7664-4272-8d84-62fc3b82ffdb",
+    "f66ee119-adfa-47a2-9039-56c539cb4754",
     "1635928697c562053a"
   ]
 }
