@@ -173,22 +173,6 @@
         "use_alt_bg": false
       }
     },
-    "16359278867b92de38": {
-      "type": "image-with-text",
-      "settings": {
-        "image_width": 700,
-        "subheading": "Subheading",
-        "title": "Image with text",
-        "use_h1": false,
-        "text": "<p>Pair text with an image to give customers insight into your brand. Tell a story, explain a product detail, or describe a new promotion.<\/p>",
-        "button_label": "Optional button",
-        "button_link": "",
-        "button_style": "primary",
-        "image_position": "left",
-        "text_alignment": "left",
-        "use_alt_bg": false
-      }
-    },
     "16359279164ff7d3f3": {
       "type": "gallery",
       "blocks": {
@@ -251,6 +235,22 @@
         "enable_carousel": true,
         "overlay_style": "full image-overlay--bg-shadow",
         "button_style": "link"
+      }
+    },
+    "16359278867b92de38": {
+      "type": "image-with-text",
+      "settings": {
+        "image_width": 700,
+        "subheading": "Subheading",
+        "title": "Image with text",
+        "use_h1": false,
+        "text": "<p>Pair text with an image to give customers insight into your brand. Tell a story, explain a product detail, or describe a new promotion.<\/p>",
+        "button_label": "Optional button",
+        "button_link": "",
+        "button_style": "primary",
+        "image_position": "left",
+        "text_alignment": "left",
+        "use_alt_bg": false
       }
     },
     "16359281184fd0d618": {
@@ -445,26 +445,14 @@
       "settings": {
         "color_bg": "#f4f4f4",
         "full_width": true,
-        "heading": "Our store",
-        "address": "<p>123 Fake St.<br\/>Toronto, Canada<\/p><p>Mon - Fri, 10am - 9pm<br\/>Saturday, 11am - 9pm<br\/>Sunday, 11am - 5pm<\/p>",
+        "heading": "Denver Modern",
+        "address": "<p>3857 Steele St.<br\/>Denver, Colorado<\/p><p>By Appointment Only. <br\/>Book a Showroom Appointment<\/p>",
         "button": "Directions",
         "show_pin": true,
         "show_feature_image": true,
-        "map_address": "80 Spadina Ave, Toronto",
+        "map_address": "3857 Steele St, Unit 1287 Denver, Colorado 80239",
         "api_key": "",
         "map_style": "silver"
-      }
-    },
-    "163592870141219e2f": {
-      "type": "featured-blog",
-      "settings": {
-        "title": "Blog posts",
-        "blog": "",
-        "post_limit": 3,
-        "show_author": true,
-        "show_date": true,
-        "show_excerpts": true,
-        "crop_ratio": "1.78"
       }
     },
     "4ea855d2-44da-4154-98ca-779ca1ad5041": {
@@ -488,6 +476,35 @@
         "image_opacity": 75,
         "use_alt_bg": true
       }
+    },
+    "cca443c0-2386-4d41-b176-dc1578e28fab": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14453046149238__cca443c0-2386-4d41-b176-dc1578e28fab-166905246797a26d35-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Rich text",
+            "use_h1": false
+          }
+        },
+        "template--14453046149238__cca443c0-2386-4d41-b176-dc1578e28fab-166905246797a26d35-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your store with your customers. Describe products, share announcements, or welcome customers to your store.<\/p>",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "template--14453046149238__cca443c0-2386-4d41-b176-dc1578e28fab-166905246797a26d35-0",
+        "template--14453046149238__cca443c0-2386-4d41-b176-dc1578e28fab-166905246797a26d35-1"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "use_alt_bg": true
+      }
     }
   },
   "order": [
@@ -495,14 +512,14 @@
     "e146ce1b-e8b3-43e9-839d-a6b8f52d3154",
     "16359278676808bea5",
     "1635927863703110df",
-    "16359278867b92de38",
     "16359279164ff7d3f3",
+    "16359278867b92de38",
     "16359281184fd0d618",
     "16359285201c71bbb1",
     "163592857728b8bdc2",
     "1635928580d75f81bf",
     "1635928697c562053a",
-    "163592870141219e2f",
-    "4ea855d2-44da-4154-98ca-779ca1ad5041"
+    "4ea855d2-44da-4154-98ca-779ca1ad5041",
+    "cca443c0-2386-4d41-b176-dc1578e28fab"
   ]
 }
