@@ -366,87 +366,13 @@
         "use_alt_bg": false
       }
     },
-    "1635928580d75f81bf": {
-      "type": "featured-product",
-      "blocks": {
-        "1635928580d75f81bf-0": {
-          "type": "title",
-          "settings": {
-          }
-        },
-        "1635928580d75f81bf-1": {
-          "type": "price",
-          "settings": {
-            "show_tax_and_shipping": false,
-            "enable_product_reviews_by_price": true
-          }
-        },
-        "1635928580d75f81bf-2": {
-          "type": "vendor",
-          "settings": {
-          }
-        },
-        "1635928580d75f81bf-3": {
-          "type": "divider",
-          "settings": {
-          }
-        },
-        "1635928580d75f81bf-4": {
-          "type": "variant_picker",
-          "settings": {
-            "show_single": false,
-            "select_first_variant": true,
-            "variant_style": "listed",
-            "disable_unavailable_variants": true,
-            "show_size_chart": false,
-            "size_chart_variant": "Size",
-            "size_chart_page": ""
-          }
-        },
-        "1635928580d75f81bf-5": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "enable_payment_button": true,
-            "show_backorder_text": true
-          }
-        },
-        "1635928580d75f81bf-6": {
-          "type": "description",
-          "settings": {
-            "show_in_tab": false,
-            "open_tab": false,
-            "icon": ""
-          }
-        }
-      },
-      "block_order": [
-        "1635928580d75f81bf-0",
-        "1635928580d75f81bf-1",
-        "1635928580d75f81bf-2",
-        "1635928580d75f81bf-3",
-        "1635928580d75f81bf-4",
-        "1635928580d75f81bf-5",
-        "1635928580d75f81bf-6"
-      ],
-      "settings": {
-        "product": "",
-        "inventory_transfers_enable": true,
-        "gallery_size": "medium",
-        "gallery_layout": "carousel-under",
-        "enable_zoom": true,
-        "enable_video_looping": false,
-        "enable_var_img_grouping": false,
-        "var_img_grouping_option": "Color,Colour,Couleur,Farbe"
-      }
-    },
     "1635928697c562053a": {
       "type": "map",
       "settings": {
         "color_bg": "#f4f4f4",
         "full_width": true,
-        "heading": "Denver Modern",
-        "address": "<p>3857 Steele St.<br\/>Denver, Colorado<\/p><p>By Appointment Only. <br\/><a href=\"\/pages\/book-an-appointment\" target=\"_blank\" title=\"Book an Appointment\">Book a Showroom Appointment here<\/a><\/p>",
+        "heading": "Denver Modern Showroom",
+        "address": "<p>3857 Steele St #1287<br\/>Denver, Colorado 80205<\/p><p>By Appointment Only. <br\/><a href=\"\/pages\/book-an-appointment\" target=\"_blank\" title=\"Book an Appointment\">Book a Showroom Appointment here<\/a><\/p>",
         "button": "Directions",
         "show_pin": true,
         "show_feature_image": true,
@@ -517,7 +443,6 @@
     "16359281184fd0d618",
     "16359285201c71bbb1",
     "163592857728b8bdc2",
-    "1635928580d75f81bf",
     "1635928697c562053a",
     "4ea855d2-44da-4154-98ca-779ca1ad5041",
     "cca443c0-2386-4d41-b176-dc1578e28fab"
