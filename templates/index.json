@@ -252,6 +252,78 @@
         "button_style": "link"
       }
     },
+    "0238f065-4d06-464a-b2e3-b4caf1b2012a": {
+      "type": "newsletter",
+      "settings": {
+        "title": "ENJOY 10% OFF TODAY.",
+        "subheading": "<p>Plus, be the first to find out about new styles and exclusive offers. <\/p>",
+        "color_bg": "#908e81"
+      }
+    },
+    "cbfbd3b9-cf91-4388-adda-1ba894043d48": {
+      "type": "gallery",
+      "blocks": {
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/custom_resized_cb026c4f-11d4-440b-ab8c-d5377d4bfc7c.jpg",
+            "alignment": "bottom center",
+            "enlarge_image": false,
+            "subheading": "HANDWOVEN ARTISTRY",
+            "title": "Rugs",
+            "button_label": "SHOP NOW",
+            "link": "",
+            "text_alignment": "bottom right"
+          }
+        },
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/233172-001_ESS_1.jpg",
+            "alignment": "top center",
+            "enlarge_image": false,
+            "subheading": "CURATED ART COLLECTION",
+            "title": "Art Studio",
+            "button_label": "Shop Now",
+            "link": "",
+            "text_alignment": "bottom right"
+          }
+        },
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0025.jpg",
+            "alignment": "bottom center",
+            "enlarge_image": false,
+            "subheading": "ENHANCE YOUR LIVING SPACE",
+            "title": "Home & Room Decor",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/accessories",
+            "text_alignment": "bottom right"
+          }
+        }
+      },
+      "block_order": [
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-0",
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-1",
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-2"
+      ],
+      "settings": {
+        "grid": 3,
+        "height": "fixed",
+        "desktop_image_height": 460,
+        "mobile_image_height": 400,
+        "title_size": 30,
+        "title_size_mobile": 22,
+        "enable_margin": true,
+        "enable_row_spacing": true,
+        "full_width": true,
+        "use_alt_bg": false,
+        "enable_carousel": true,
+        "overlay_style": "full",
+        "button_style": "link"
+      }
+    },
     "16359278867b92de38": {
       "type": "image-with-text",
       "settings": {
@@ -268,48 +340,6 @@
         "image_position": "left",
         "text_alignment": "left",
         "use_alt_bg": true
-      }
-    },
-    "16359281184fd0d618": {
-      "type": "testimonials",
-      "blocks": {
-        "16359281184fd0d618-0": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": 5,
-            "testimonial": "Add customer reviews and testimonials to showcase your store’s happy customers.",
-            "author": "Author's name",
-            "image_alignment": "center center",
-            "image_caption": "",
-            "link": ""
-          }
-        },
-        "16359281184fd0d618-1": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": 5,
-            "testimonial": "Add customer reviews and testimonials to showcase your store’s happy customers.",
-            "author": "Author's name",
-            "image_alignment": "center center",
-            "image_caption": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "16359281184fd0d618-0",
-        "16359281184fd0d618-1"
-      ],
-      "settings": {
-        "title": "From the people",
-        "layout": "image-right",
-        "text_caps": false,
-        "quote_text_size": 30,
-        "quote_text_size_mobile": 20,
-        "image_shape": "square",
-        "use_alt_bg": false,
-        "autoplay": true,
-        "autoplay_speed": 5
       }
     },
     "1635928697c562053a": {
@@ -334,8 +364,9 @@
     "d7563810-b52b-4e13-9fb1-849d2c9e6759",
     "1635927863703110df",
     "16359279164ff7d3f3",
+    "0238f065-4d06-464a-b2e3-b4caf1b2012a",
+    "cbfbd3b9-cf91-4388-adda-1ba894043d48",
     "16359278867b92de38",
-    "16359281184fd0d618",
     "1635928697c562053a"
   ]
 }
