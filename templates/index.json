@@ -130,13 +130,27 @@
         "head_not_mob_url": ""
       }
     },
+    "16359278676808bea5": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "collection": "best-sellers",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "rows": 1,
+        "use_alt_bg": false,
+        "show_view_all": false,
+        "full_width": true
+      }
+    },
     "1635927863703110df": {
       "type": "rich-text",
       "blocks": {
         "1635927863703110df-1": {
           "type": "heading",
           "settings": {
-            "title": "Rich text",
+            "title": "Why Denver Modern?",
             "use_h1": false
           }
         },
@@ -157,20 +171,6 @@
         "text_alignment": "center",
         "full_width": false,
         "use_alt_bg": false
-      }
-    },
-    "16359278676808bea5": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured collection",
-        "collection": "",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 4,
-        "rows": 1,
-        "use_alt_bg": false,
-        "show_view_all": true,
-        "full_width": true
       }
     },
     "16359278867b92de38": {
@@ -195,12 +195,13 @@
         "16359279164ff7d3f3-0": {
           "type": "image",
           "settings": {
-            "alignment": "center center",
-            "enlarge_image": true,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "button_label": "",
-            "link": "",
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0045.jpg",
+            "alignment": "bottom center",
+            "enlarge_image": false,
+            "subheading": "Excellence Above all",
+            "title": "Vail Stools",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/products\/vail-bar-counter-stool",
             "text_alignment": "bottom left"
           }
         },
@@ -227,25 +228,12 @@
             "link": "",
             "text_alignment": "bottom left"
           }
-        },
-        "474c4491-283d-4680-a37b-7b5a444e7e62": {
-          "type": "image",
-          "settings": {
-            "alignment": "center center",
-            "enlarge_image": true,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "button_label": "",
-            "link": "",
-            "text_alignment": "bottom left"
-          }
         }
       },
       "block_order": [
         "16359279164ff7d3f3-0",
         "16359279164ff7d3f3-1",
-        "16359279164ff7d3f3-2",
-        "474c4491-283d-4680-a37b-7b5a444e7e62"
+        "16359279164ff7d3f3-2"
       ],
       "settings": {
         "grid": 2,
@@ -260,7 +248,7 @@
         "use_alt_bg": false,
         "enable_carousel": true,
         "overlay_style": "full",
-        "button_style": "primary"
+        "button_style": "link"
       }
     },
     "16359281184fd0d618": {
@@ -503,8 +491,8 @@
   "order": [
     "16359276425da8ce46",
     "e146ce1b-e8b3-43e9-839d-a6b8f52d3154",
-    "1635927863703110df",
     "16359278676808bea5",
+    "1635927863703110df",
     "16359278867b92de38",
     "16359279164ff7d3f3",
     "16359281184fd0d618",
