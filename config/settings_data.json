@@ -1258,6 +1258,15 @@
               "title": "Enver Hand Knotted Rug",
               "link_url": "shopify:\/\/products\/enver-hand-knotted-rug"
             }
+          },
+          "2a460346-6e43-4250-ba76-d40800936eae": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Rugs",
+              "image": "shopify:\/\/shop_images\/ARM-CLASSIC-INSITU-Malawi-Amber3.jpg",
+              "title": "Malawi Indoor Rug",
+              "link_url": "shopify:\/\/products\/malawi-rug"
+            }
           }
         },
         "block_order": [
@@ -1277,7 +1286,8 @@
           "9e633594-7f23-476e-a270-7f9607389595",
           "6421713e-4afd-471e-b4e1-580f3524c610",
           "0309073c-d72f-4916-9e31-97dd437c1b7b",
-          "59564973-d663-4d37-a590-1684783d55ab"
+          "59564973-d663-4d37-a590-1684783d55ab",
+          "2a460346-6e43-4250-ba76-d40800936eae"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
