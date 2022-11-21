@@ -1094,6 +1094,30 @@
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "1f3c2a11-beeb-40ef-bad9-4c9952bd396c": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Living Room",
+              "image": "shopify:\/\/shop_images\/DenverModern_Boulder3073_HDR-_2.jpg",
+              "title": "Vail Lounge Chair",
+              "link_url": "shopify:\/\/products\/vail-lounge-chair"
+            }
+          },
+          "5a5e1d14-8d62-47dd-8c8d-4ce50c96f794": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Living Room",
+              "image": "shopify:\/\/shop_images\/20229-20230-20231-N701-beige.jpg",
+              "title": "Polaris Sofa",
+              "link_url": "shopify:\/\/products\/polaris-sofa"
+            }
+          }
+        },
+        "block_order": [
+          "1f3c2a11-beeb-40ef-bad9-4c9952bd396c",
+          "5a5e1d14-8d62-47dd-8c8d-4ce50c96f794"
+        ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
           "logo_img_width_int": 240,
