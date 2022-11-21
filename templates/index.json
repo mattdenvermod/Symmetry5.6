@@ -373,7 +373,9 @@
     "65bfc44a-5734-4201-9a85-7548625f5814": {
       "type": "image-with-text",
       "settings": {
-        "image_width": 700,
+        "image": "shopify:\/\/shop_images\/DenverModern_Boulder3037.jpg",
+        "image_2": "shopify:\/\/shop_images\/51544_51491_Oak_black_Bok_extendable_dining_table_chair_53040_Osso_stool_WEB.jpg",
+        "image_width": 520,
         "subheading": "TRY AT HOME",
         "title": "30-Day No Hassle Returns",
         "use_h1": false,
