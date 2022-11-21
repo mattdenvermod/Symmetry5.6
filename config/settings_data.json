@@ -1175,6 +1175,26 @@
               "title": "Noel Hanging Bedside Table",
               "link_url": "shopify:\/\/products\/noel-bedside-table"
             }
+          },
+          "eb2f896d-d39c-4b4a-81d7-0e88ac728111": {
+            "type": "menu-promotion-large",
+            "settings": {
+              "dropdown_link_title": "Custom-Made Tables",
+              "desktop_image": "shopify:\/\/shop_images\/DenverModern_Boulder3004-_2.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/DenverModern_Boulder3004-_2.jpg",
+              "enable_fade": true,
+              "subheading": "Exclusively DENVER MODERN",
+              "title": "Custom-Made Tables",
+              "text": "<p>Design your dream dining or office table in minutes. Leave the rest to us. <\/p>",
+              "button_1_label": "SHOP NOW",
+              "button_1_link": "shopify:\/\/pages\/custom-made-tables",
+              "button_1_style": "link",
+              "button_2_label": "",
+              "button_2_link": "",
+              "button_2_style": "primary",
+              "image_position": "right",
+              "text_alignment": "center"
+            }
           }
         },
         "block_order": [
@@ -1186,7 +1206,8 @@
           "4dfff27b-bb82-4db5-916a-c83912763cf3",
           "14c598e7-ab09-493e-8988-05d7eb2463e1",
           "bfd74d23-1ae9-4028-a78f-f39dd5f124ed",
-          "ac9060b5-e58a-4d1b-a3cf-e102b7fd02ee"
+          "ac9060b5-e58a-4d1b-a3cf-e102b7fd02ee",
+          "eb2f896d-d39c-4b4a-81d7-0e88ac728111"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
