@@ -446,11 +446,11 @@
         "color_bg": "#f4f4f4",
         "full_width": true,
         "heading": "Denver Modern",
-        "address": "<p>3857 Steele St.<br\/>Denver, Colorado<\/p><p>By Appointment Only. <br\/>Book a Showroom Appointment<\/p>",
+        "address": "<p>3857 Steele St.<br\/>Denver, Colorado<\/p><p>By Appointment Only. <br\/><a href=\"\/pages\/book-an-appointment\" target=\"_blank\" title=\"Book an Appointment\">Book a Showroom Appointment here<\/a><\/p>",
         "button": "Directions",
         "show_pin": true,
         "show_feature_image": true,
-        "map_address": "3857 Steele St, Unit 1287 Denver, Colorado 80239",
+        "map_address": "3857 Steele St #1287, Denver, CO 80205",
         "api_key": "",
         "map_style": "silver"
       }
