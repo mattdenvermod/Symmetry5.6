@@ -1157,6 +1157,15 @@
               "title": "Air Bed",
               "link_url": "shopify:\/\/products\/air-bed"
             }
+          },
+          "bfd74d23-1ae9-4028-a78f-f39dd5f124ed": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Bedroom",
+              "image": "shopify:\/\/shop_images\/10063-Teak-Graphic-COD.jpg",
+              "title": "Raven Chest of Drawers",
+              "link_url": "shopify:\/\/products\/raven-chest-of-drawers"
+            }
           }
         },
         "block_order": [
@@ -1166,7 +1175,8 @@
           "1f13be4d-ff07-4221-aa94-378f9cfc8cbb",
           "6af13b25-4cfb-44e2-bbe5-c515148aa43d",
           "4dfff27b-bb82-4db5-916a-c83912763cf3",
-          "14c598e7-ab09-493e-8988-05d7eb2463e1"
+          "14c598e7-ab09-493e-8988-05d7eb2463e1",
+          "bfd74d23-1ae9-4028-a78f-f39dd5f124ed"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
