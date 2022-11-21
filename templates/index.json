@@ -80,7 +80,7 @@
         "height_desktop": 600,
         "height_mobile": 460,
         "full_width": true,
-        "mobile_overlay_under": false,
+        "mobile_overlay_under": true,
         "overlay_style": "full image-overlay--bg-shadow",
         "slide_transition": "zoom",
         "slide_navigation": "arrows",
@@ -125,8 +125,8 @@
         "head_not_col_bg": "#f4f6f8",
         "head_not_col_txt1": "#171717",
         "head_not_col_txt2": "#4c4c4b",
-        "head_not_mob_show": true,
-        "head_not_mob_text": "Add important information here",
+        "head_not_mob_show": false,
+        "head_not_mob_text": "Try at Home",
         "head_not_mob_url": ""
       }
     },
