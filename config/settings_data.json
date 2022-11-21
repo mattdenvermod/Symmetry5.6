@@ -1285,6 +1285,15 @@
               "title": "Mira Linen Striped Throw",
               "link_url": "shopify:\/\/products\/mira-linen-throw"
             }
+          },
+          "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Accessories",
+              "image": "shopify:\/\/shop_images\/canton-table-lamp-18_800x_d9c30122-a7b5-46e2-a2ea-1897eb5244b3.jpg",
+              "title": "Canton Table Lamp",
+              "link_url": "shopify:\/\/products\/canton-table-lamp"
+            }
           }
         },
         "block_order": [
@@ -1307,7 +1316,8 @@
           "59564973-d663-4d37-a590-1684783d55ab",
           "2a460346-6e43-4250-ba76-d40800936eae",
           "13013608-9041-49aa-bde9-0795757c660b",
-          "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12"
+          "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12",
+          "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
