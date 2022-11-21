@@ -1213,6 +1213,15 @@
               "title": "Oliver Bookshelf",
               "link_url": "shopify:\/\/products\/oliver-bookshelf"
             }
+          },
+          "f73db6ee-f54b-4687-bf54-e019b0574fc6": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Storage",
+              "image": "shopify:\/\/shop_images\/51376_Oak_Shadow_TV_cupboard_det1_WEB.jpg",
+              "title": "Alondra TV Cupboard",
+              "link_url": "shopify:\/\/products\/alondra-tv-cupboard"
+            }
           }
         },
         "block_order": [
@@ -1227,7 +1236,8 @@
           "bfd74d23-1ae9-4028-a78f-f39dd5f124ed",
           "ac9060b5-e58a-4d1b-a3cf-e102b7fd02ee",
           "6cd23231-a624-49e4-a59b-b8a3afca28b8",
-          "43bfab4a-af92-425d-8548-a05fa0b82401"
+          "43bfab4a-af92-425d-8548-a05fa0b82401",
+          "f73db6ee-f54b-4687-bf54-e019b0574fc6"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
