@@ -1099,7 +1099,7 @@
             "type": "menu-promotion-small",
             "settings": {
               "dropdown_link_title": "Living Room",
-              "image": "shopify:\/\/shop_images\/DenverModern_Boulder3073_HDR-_2.jpg",
+              "image": "shopify:\/\/shop_images\/DenverModern_Boulder3073_HDR-_2_-1.jpg",
               "title": "Vail Lounge Chair",
               "link_url": "shopify:\/\/products\/vail-lounge-chair"
             }
@@ -1112,11 +1112,21 @@
               "title": "Polaris Sofa",
               "link_url": "shopify:\/\/products\/polaris-sofa"
             }
+          },
+          "51b3bd57-d987-4ce8-8584-b04d0565dc53": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Living Room",
+              "image": "shopify:\/\/shop_images\/DenverModern_HomeShoot2545-_2.jpg",
+              "title": "Highline Bench",
+              "link_url": "shopify:\/\/products\/highline-bench"
+            }
           }
         },
         "block_order": [
           "1f3c2a11-beeb-40ef-bad9-4c9952bd396c",
-          "5a5e1d14-8d62-47dd-8c8d-4ce50c96f794"
+          "5a5e1d14-8d62-47dd-8c8d-4ce50c96f794",
+          "51b3bd57-d987-4ce8-8584-b04d0565dc53"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
