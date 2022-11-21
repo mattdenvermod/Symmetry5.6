@@ -342,6 +342,34 @@
         "use_alt_bg": true
       }
     },
+    "89c7cc87-c72e-48bf-86f9-eb45ff26df87": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DenverModern_Boulder3033_HDR.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/DenverModern_Boulder3033_HDR.jpg",
+        "image_position": "center center",
+        "mobile_image_position": "center center",
+        "height": "fixed",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "shopify:\/\/collections\/custom-made-tables",
+        "subheading": "DESIGN YOUR DREAM DINING OR OFFICE TABLE ONLINE IN MINUTES",
+        "title": "Custom-Made Tables",
+        "title_size": 60,
+        "title_size_mobile": 46,
+        "use_h1": false,
+        "text": "",
+        "enlarge_text": false,
+        "button_label_1": "SHOP CUSTOM-MADE TABLES",
+        "button_url_1": "shopify:\/\/collections\/custom-made-tables",
+        "button_label_2": "",
+        "button_url_2": "",
+        "text_alignment": "center center",
+        "full_width": true,
+        "mobile_overlay_under": false,
+        "overlay_style": "full image-overlay--bg-shadow"
+      }
+    },
     "1635928697c562053a": {
       "type": "map",
       "settings": {
@@ -367,6 +395,7 @@
     "0238f065-4d06-464a-b2e3-b4caf1b2012a",
     "cbfbd3b9-cf91-4388-adda-1ba894043d48",
     "16359278867b92de38",
+    "89c7cc87-c72e-48bf-86f9-eb45ff26df87",
     "1635928697c562053a"
   ]
 }
