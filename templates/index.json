@@ -280,7 +280,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/233172-001_ESS_1.jpg",
-            "alignment": "top center",
+            "alignment": "bottom center",
             "enlarge_image": false,
             "subheading": "CURATED ART COLLECTION",
             "title": "Art Studio",
