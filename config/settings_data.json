@@ -1294,6 +1294,15 @@
               "title": "Canton Table Lamp",
               "link_url": "shopify:\/\/products\/canton-table-lamp"
             }
+          },
+          "e19dabb9-0bcb-4d09-8c99-9f6e0310fa39": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Accessories",
+              "image": "shopify:\/\/shop_images\/237688-001_ESS_1.jpg",
+              "title": "Escalate Diptych I",
+              "link_url": "shopify:\/\/products\/escalate-diptych-1"
+            }
           }
         },
         "block_order": [
@@ -1317,7 +1326,8 @@
           "2a460346-6e43-4250-ba76-d40800936eae",
           "13013608-9041-49aa-bde9-0795757c660b",
           "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12",
-          "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79"
+          "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79",
+          "e19dabb9-0bcb-4d09-8c99-9f6e0310fa39"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
