@@ -425,7 +425,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0032.jpg",
             "alignment": "top center",
-            "enlarge_image": true,
+            "enlarge_image": false,
             "subheading": "",
             "title": "Kitchen & Dining Room",
             "button_label": "SHOP NOW",
