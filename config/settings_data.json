@@ -1121,12 +1121,42 @@
               "title": "Highline Bench",
               "link_url": "shopify:\/\/products\/highline-bench"
             }
+          },
+          "1f13be4d-ff07-4221-aa94-378f9cfc8cbb": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Kitchen & Dining Room",
+              "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0020-_1.jpg",
+              "title": "Vail Bar & Counter Stools",
+              "link_url": "shopify:\/\/products\/vail-bar-counter-stool"
+            }
+          },
+          "6af13b25-4cfb-44e2-bbe5-c515148aa43d": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Kitchen & Dining Room",
+              "image": "shopify:\/\/shop_images\/51538_Oak_Bok_black_bench_51507_Oak_Bok_black_dining_table_51491_Oak_Bok_black_chair_21720_Black_Dots_kilim_rug_2_WEB.jpg",
+              "title": "Platte Dining Collection",
+              "link_url": "shopify:\/\/collections\/platte-dining-series"
+            }
+          },
+          "4dfff27b-bb82-4db5-916a-c83912763cf3": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Kitchen & Dining Room",
+              "image": "shopify:\/\/shop_images\/DenverModern_HomeShoot2494-_3.jpg",
+              "title": "Yuma Counter Stools",
+              "link_url": "shopify:\/\/products\/yuma-barstool"
+            }
           }
         },
         "block_order": [
           "1f3c2a11-beeb-40ef-bad9-4c9952bd396c",
           "5a5e1d14-8d62-47dd-8c8d-4ce50c96f794",
-          "51b3bd57-d987-4ce8-8584-b04d0565dc53"
+          "51b3bd57-d987-4ce8-8584-b04d0565dc53",
+          "1f13be4d-ff07-4221-aa94-378f9cfc8cbb",
+          "6af13b25-4cfb-44e2-bbe5-c515148aa43d",
+          "4dfff27b-bb82-4db5-916a-c83912763cf3"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
