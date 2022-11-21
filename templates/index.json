@@ -452,12 +452,12 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0032.jpg",
-            "alignment": "center center",
+            "alignment": "top center",
             "enlarge_image": true,
             "subheading": "",
             "title": "Kitchen & Dining Room",
-            "button_label": "",
-            "link": "",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/dining-kitchen",
             "text_alignment": "center center"
           }
         },
@@ -477,13 +477,14 @@
         "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-2": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/10064_Teak_Graphic_TV_cupboard_WEB_2.jpg",
             "alignment": "center center",
             "enlarge_image": false,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "button_label": "",
-            "link": "",
-            "text_alignment": "bottom left"
+            "subheading": "",
+            "title": "Storage",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/storage",
+            "text_alignment": "center center"
           }
         }
       },
