@@ -202,31 +202,33 @@
             "title": "Vail Stools",
             "button_label": "SHOP NOW",
             "link": "shopify:\/\/products\/vail-bar-counter-stool",
-            "text_alignment": "bottom left"
+            "text_alignment": "bottom right"
           }
         },
         "16359279164ff7d3f3-1": {
           "type": "image",
           "settings": {
-            "alignment": "center center",
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0013.jpg",
+            "alignment": "bottom center",
             "enlarge_image": false,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "button_label": "",
-            "link": "",
-            "text_alignment": "bottom left"
+            "subheading": "TIMELESS DESIGN",
+            "title": "Vail Lounge Chair",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/products\/vail-lounge-chair",
+            "text_alignment": "bottom right"
           }
         },
         "16359279164ff7d3f3-2": {
           "type": "image",
           "settings": {
-            "alignment": "center center",
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0024.jpg",
+            "alignment": "bottom center",
             "enlarge_image": false,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "button_label": "",
+            "subheading": "Meticulously sourced materials",
+            "title": "Float Console Table",
+            "button_label": "SHOP NOW",
             "link": "",
-            "text_alignment": "bottom left"
+            "text_alignment": "bottom right"
           }
         }
       },
@@ -236,7 +238,7 @@
         "16359279164ff7d3f3-2"
       ],
       "settings": {
-        "grid": 2,
+        "grid": 3,
         "height": "fixed",
         "desktop_image_height": 460,
         "mobile_image_height": 400,
@@ -247,7 +249,7 @@
         "full_width": false,
         "use_alt_bg": false,
         "enable_carousel": true,
-        "overlay_style": "full",
+        "overlay_style": "full image-overlay--bg-shadow",
         "button_style": "link"
       }
     },
