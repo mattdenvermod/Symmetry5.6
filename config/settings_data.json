@@ -1231,6 +1231,15 @@
               "title": "Outdoor Vail Lounge Chair",
               "link_url": "shopify:\/\/products\/outdoor-vail-lounge-chair"
             }
+          },
+          "6421713e-4afd-471e-b4e1-580f3524c610": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Outdoor & Patio",
+              "image": "shopify:\/\/shop_images\/10271_Teak_Bok_outdoor_dining_table_10155_21096_Teak_Bok_outdoor_dining_chair_cushion_offwhite_WEB.jpg",
+              "title": "Platte Outdoor Tables",
+              "link_url": "shopify:\/\/products\/platte-outdoor-dining-table"
+            }
           }
         },
         "block_order": [
@@ -1247,7 +1256,8 @@
           "6cd23231-a624-49e4-a59b-b8a3afca28b8",
           "43bfab4a-af92-425d-8548-a05fa0b82401",
           "f73db6ee-f54b-4687-bf54-e019b0574fc6",
-          "9e633594-7f23-476e-a270-7f9607389595"
+          "9e633594-7f23-476e-a270-7f9607389595",
+          "6421713e-4afd-471e-b4e1-580f3524c610"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
