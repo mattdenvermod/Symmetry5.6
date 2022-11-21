@@ -272,7 +272,7 @@
             "subheading": "HANDWOVEN ARTISTRY",
             "title": "Rugs",
             "button_label": "SHOP NOW",
-            "link": "",
+            "link": "shopify:\/\/collections\/indoor-rugs-by-armadillo-co",
             "text_alignment": "bottom right"
           }
         },
@@ -285,7 +285,7 @@
             "subheading": "CURATED ART COLLECTION",
             "title": "Art Studio",
             "button_label": "Shop Now",
-            "link": "",
+            "link": "shopify:\/\/collections\/art-accessories",
             "text_alignment": "bottom right"
           }
         },
