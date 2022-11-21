@@ -1240,6 +1240,15 @@
               "title": "Platte Outdoor Tables",
               "link_url": "shopify:\/\/products\/platte-outdoor-dining-table"
             }
+          },
+          "0309073c-d72f-4916-9e31-97dd437c1b7b": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Outdoor & Patio",
+              "image": "shopify:\/\/shop_images\/10256_Jack_outdoor_lounger_21098_Cushion_lounger_off_white_10257_Jack_outdoor_side_table_WEB.jpg",
+              "title": "Jack Outdoor Loungers",
+              "link_url": "shopify:\/\/products\/jack-outdoor-adjustable-lounger"
+            }
           }
         },
         "block_order": [
@@ -1257,7 +1266,8 @@
           "43bfab4a-af92-425d-8548-a05fa0b82401",
           "f73db6ee-f54b-4687-bf54-e019b0574fc6",
           "9e633594-7f23-476e-a270-7f9607389595",
-          "6421713e-4afd-471e-b4e1-580f3524c610"
+          "6421713e-4afd-471e-b4e1-580f3524c610",
+          "0309073c-d72f-4916-9e31-97dd437c1b7b"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
