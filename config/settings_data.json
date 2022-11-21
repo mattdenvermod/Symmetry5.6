@@ -1222,6 +1222,15 @@
               "title": "Alondra TV Cupboard",
               "link_url": "shopify:\/\/products\/alondra-tv-cupboard"
             }
+          },
+          "9e633594-7f23-476e-a270-7f9607389595": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Outdoor & Patio",
+              "image": "shopify:\/\/shop_images\/DenverModern_Mosley3941-_1_out.jpg",
+              "title": "Outdoor Vail Lounge Chair",
+              "link_url": "shopify:\/\/products\/outdoor-vail-lounge-chair"
+            }
           }
         },
         "block_order": [
@@ -1237,7 +1246,8 @@
           "ac9060b5-e58a-4d1b-a3cf-e102b7fd02ee",
           "6cd23231-a624-49e4-a59b-b8a3afca28b8",
           "43bfab4a-af92-425d-8548-a05fa0b82401",
-          "f73db6ee-f54b-4687-bf54-e019b0574fc6"
+          "f73db6ee-f54b-4687-bf54-e019b0574fc6",
+          "9e633594-7f23-476e-a270-7f9607389595"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
