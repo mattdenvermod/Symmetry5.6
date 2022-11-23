@@ -337,12 +337,14 @@
   },
   "customer": {
     "login": {
-      "title": "Login",
+      "title": "Sign in",
       "email": "Email",
       "password": "Password",
       "forgot_password": "Forgot your password?",
       "sign_in": "Sign In",
       "register": "Create account",
+      "signup_note": "Want to checkout faster, get order updates, and keep track of your online and in-store orders? Create an account now and save time on your next purchase.",
+      "privacy_policy": "By signing in you are agreeing to our Terms of Use and Privacy Policy",
       "guest_title": "Continue as a guest",
       "guest_continue": "Continue"
     },
@@ -355,14 +357,15 @@
       "cancel": "Cancel"
     },
     "register": {
-      "title": "Create Account",
+      "title": "Create an Account",
       "first_name": "First Name",
       "last_name": "Last Name",
       "email": "Email",
       "password": "Password",
       "submit": "Create",
       "log_in": "Log in with an existing account",
-      "cancel": "Return to Store"
+      "cancel": "Return to Store",
+      "signup_note": "Want to checkout faster, get order updates, and keep track of your online and in-store orders? Create an account now and save time on your next purchase."
     },
     "general": {
       "or": "or",

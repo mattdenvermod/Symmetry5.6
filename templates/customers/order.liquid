@@ -46,6 +46,10 @@
     {% endif %}
   </div>
 </div>
+{% assign order_leadtime = order.metafields.my_fields.leadtime %}
+<div class="order-leadtime red-note">
+   {{ order_leadtime }}
+</div>
 
 <div class="order-table-container" data-cc-animate>
   <table id="order_details" class="order-table">
@@ -70,12 +74,15 @@
 
             {%- for p in line_item.properties -%}
               {% unless p.last == blank %}
-                <div class="line-item-property">{{ p.first }}:
-                  {% if p.last contains '/uploads/' %}
-                  <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
-                  {% else %}
-                  {{ p.last }}
-                  {% endif %}
+                <div class="line-item-property">
+                  {% unless order_leadtime %}
+                    {{ p.first }}:
+                    {% if p.last contains '/uploads/' %}
+                      <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                    {% else %}
+                      {{ p.last }}
+                    {% endif %}
+                  {% endunless %}
                 </div>
               {% endunless %}
             {%- endfor -%}
@@ -188,3 +195,11 @@
     </tfoot>
   </table>
 </div>
+
+<style>
+  .red-note {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+</style>

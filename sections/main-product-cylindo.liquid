@@ -120,7 +120,8 @@
 				<div id="cylindo-viewer"></div>
 			</div>
 			<button class="close-cylindo" id="closeCylindo">{% render 'svg-x' %}</button>
-			<button class="open-cylindo hide" id="openCylindo">view 360°</button>
+			<button class="open-cylindo hide" id="openCylindo">{{ 'view_360' | t }}</button>
+			{% comment %} <div class="cylindo-button cylindo-ar-button" style="display: block; opacity: 1.08347;"><a rel="ar" href="https://content.cylindo.com/api/v2/5028/products/VAIL%20LOUNGE%20CHAIR/AR/AR.usdz?feature=ARM%20CAP:WALNUT&amp;feature=FABRIC:CREAM%20LINEN&amp;feature=STRAP:BROWN%20LEATHER" role="link" aria-label="View in your space"><img src=""><div class="ar-glyph-background"><div class="ar-icon"></div><div class="ar-text">View in your space</div></div></a></div> {% endcomment %}
     </div>
 
     <div class="detail product-column-right" data-cc-animate data-cc-animate-delay="0.2s">
@@ -376,6 +377,16 @@
                   {% else %}
                     <div class="product-unavailable">{{ 'products.product.product_unavailable' | t }}</div>
                   {% endif %}
+
+                  {% for variant in product.variants %}
+                    {% if product.selected_or_first_available_variant.id == variant.id %} 
+                      {% assign initial_lead_time = variant.metafields.my_fields.leadtime %}
+                    {% endif %}
+                  {% endfor %}
+                  
+                  {% if initial_lead_time != blank %}
+                    <input id="leadTimeForm" type="hidden" name="properties[Lead Time]" value="{{ initial_lead_time }}" class="product-form__input required" >
+                  {% endif %}
                 {% endform %}
               </div>
 
@@ -488,6 +499,18 @@
                 </div>
               {% endif %}
 
+            {% when 'disclaimer' %}
+              <div class="disclaimer--new lightly-spaced-row">
+                {% for variant in product.variants %}
+                  <span class="disclaimer--custom {% if product.selected_or_first_available_variant.id == variant.id %} active {% endif %}"  data-variantId="{{variant.id }}">{{ variant.metafields.custom.material_disclaimer }}</span>
+                {% endfor %}
+              </div>
+            {% when 'leadtime' %}
+              <div class="backorder--custom lightly-spaced-row">
+                {% for variant in product.variants %}
+                  <span class="leadtime--custom {% if product.selected_or_first_available_variant.id == variant.id %}active {% endif %}" data-variantId="{{variant.id }}">{{ variant.metafields.my_fields.leadtime }}</span>
+                {% endfor %}
+              </div>
             {% when 'richtext' %}
               {% if block.settings.richtext != blank %}
                 <div class="lightly-spaced-row{% unless block.settings.show_in_quickbuy %} not-in-quickbuy{% endunless %}" {{ block.shopify_attributes }}>
@@ -740,6 +763,26 @@
 {% render 'structured-data-product', product: product, current_variant: product.selected_or_first_available_variant %}
 
 <style>
+
+  .backorder--custom {
+
+  }
+
+  .leadtime--custom {
+    display: none;
+  }
+
+  .leadtime--custom.active {
+    display: block;
+  }
+  
+  .disclaimer--custom {
+    display: none;
+  }
+
+  .disclaimer--custom.active {
+    display: block;
+  }
 	.product-detail .gallery {
 		{% comment %} border: 1px solid magenta; {% endcomment %}
 	}
@@ -773,7 +816,7 @@
 
 	.product-detail .gallery .open-cylindo {
 		position: absolute;
-    top: 20px;
+    top: 18px;
     left: 20px;
     z-index: 10;
     border: 1px solid #363336;
@@ -1732,6 +1775,16 @@
         ]
       },
       {
+        "type": "leadtime",
+        "name": "Lead Time",
+        "limit": 1
+      },
+      {
+        "type": "disclaimer",
+        "name": "Material Disclaimer",
+        "limit": 1
+      },
+      {
         "type": "richtext",
         "name": "Rich text",
         "settings": [
@@ -2242,7 +2295,12 @@
           }
         ]
       }
-    ]
+    ],
+		"locales": {
+    "en": {
+      "view_360": "view 360°"
+    }
+  }
   }
 {% endschema %}
 
@@ -2308,7 +2366,7 @@ var options;
 			'features': features,
 			'containerID': 'cylindo-viewer', 
 			'country': 'us',
-			'thumbs': true,
+			'thumbs': false,
 			'zoom': true,
 			'progressBar': false,
 			'styleshots': false,

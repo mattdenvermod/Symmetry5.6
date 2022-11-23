@@ -1,52 +1,8 @@
 <div class="fully-spaced-row container">
   <div id="template" class="{% if shop.checkout.guest_login %} flexible-layout{% endif %}" data-cc-animate>
-    <div class="{% if shop.checkout.guest_login %}column column--half{% else %}small-form{% endif %}">
-      <div id="customer">
-        <div class="template_header">
-          <h2 class="title">{{ 'customer.login.title' | t }}</h2>
-        </div>
-
-        {% form 'customer_login' %}
-        {{ form.errors | default_errors }}
-
-        <div id="login_email" class="input-row">
-          <label for="customer_email" class="login">{{ 'customer.login.email' | t }}</label>
-          <input type="email" value="" name="customer[email]" id="customer_email" class="large" size="30" />
-        </div>
-
-        {% if form.password_needed %}
-
-        {% comment %}
-        Customer Account Login
-        {% endcomment %}
-
-        <div id="login_password" class="input-row">
-          <label for="customer_password" class="login">{{ 'customer.login.password' | t }}</label>
-          <div class="text-over-input">
-            <input type="password" value="" name="customer[password]" id="customer_password" class="large password" size="16" />
-            <div id="forgot_password" class="text-over-input__text">
-              <a href="#" onclick="showRecoverPasswordForm();return false;">{{ 'customer.login.forgot_password' | t }}</a>
-            </div>
-          </div>
-        </div>
-
-        {% endif %}
-
-        <div class="action_bottom">
-          <div class="opposing-items">
-            <button class="btn" type="submit">{{ 'customer.login.sign_in' | t }}</button>
-
-            <a href="{{ routes.account_register_url }}">{{ 'customer.login.register' | t }}</a>
-          </div>
-        </div>
-        {% endform %}
-      </div>
-
-      {% comment %}
-      Recover Password Form
-      {% endcomment %}
-
-      <div id="recover-password" style='display:none'>
+    <div class="{% if shop.checkout.guest_login %}column column--half{% else %}medium-form{% endif %}">
+      <div class="create-form-flex">
+        <div id="recover-password" style='display:none'>
         {% form 'recover_customer_password' %}
         {% if form.posted_successfully? %}
         {% assign reset_success = true %}
@@ -85,6 +41,64 @@
 
         {% endform %}
       </div>
+        <div id="customer" class="customer-form">
+          <div class="template_header">
+            <h2 class="title">{{ 'customer.login.title' | t }}</h2>
+          </div>
+
+          {% form 'customer_login' %}
+          {{ form.errors | default_errors }}
+
+          <div id="login_email" class="input-row">
+            <label for="customer_email" class="login">{{ 'customer.login.email' | t }}</label>
+            <input type="email" value="" name="customer[email]" id="customer_email" class="large" size="30" />
+          </div>
+
+          {% if form.password_needed %}
+
+          {% comment %}
+          Customer Account Login
+          {% endcomment %}
+
+          <div id="login_password" class="input-row">
+            <label for="customer_password" class="login">{{ 'customer.login.password' | t }}</label>
+            <div class="text-over-input">
+              <input type="password" value="" name="customer[password]" id="customer_password" class="large password" size="16" />
+              <div id="forgot_password" class="text-over-input__text">
+                <a href="#" onclick="showRecoverPasswordForm();return false;">{{ 'customer.login.forgot_password' | t }}</a>
+              </div>
+            </div>
+          </div>
+
+          {% endif %}
+
+          <div class="action_bottom">
+            <div class="opposing-items">
+              <button class="btn" type="submit">{{ 'customer.login.sign_in' | t }}</button>
+            </div>
+          </div>
+          <small style="font-size: .9em;">{{ 'customer.login.privacy_policy' | t }}</small>
+          {% endform %}
+        </div>
+        <div id="signup-info">
+          <div class="template_header">
+            <h2 class="title">Create an account</h2>
+          </div>
+          {% for block in section.blocks %}
+            <p {% if forloop.first %} style="margin-top: 4em"{% endif %}>
+              {{ block.settings.text }}
+            </p>
+          {% endfor %}
+          <a class="btn" href="{{ routes.account_register_url }}">{{ 'customer.login.register' | t }}</a>
+        </div>
+      
+      
+      {% comment %}
+      Recover Password Form
+      {% endcomment %}
+
+      
+    </div>
     </div><!-- /layout-column-half-left" -->
 
     {% comment %}
@@ -105,6 +119,47 @@
   </div>
 </div>
 
+<style>
+
+  .medium-form {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+  }
+
+   .create-form-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .create-form-flex .customer-form {
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .create-form-flex .signup-info {
+    flex: 1;
+  }
+
+  .action_bottom .btn, #signup-info .btn {
+    width: 100%;
+  }
+
+  #forgot_password {
+    position: static;
+    text-decoration: underline;
+    margin-top: 1em;
+  }
+
+  @media (max-width: 600px){
+    .create-form-flex {
+        flex-direction: column;
+    }
+  }
+
+</style>
+
 <script type="text/javascript">
   function showRecoverPasswordForm() {
     document.getElementById('recover-password').style.display = 'block';
@@ -122,6 +177,19 @@
 
 {% schema %}
   {
-    "name": "Customer login"
+    "name": "Customer login",
+    "blocks": [
+      {
+        "type": "create_account_text",
+        "name": "Text above Create Account",
+        "settings": [
+          {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+          }
+        ]
+      }
+    ]
   }
 {% endschema %}

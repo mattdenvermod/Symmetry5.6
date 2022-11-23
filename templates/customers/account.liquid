@@ -1,9 +1,10 @@
 <div id="admin_header" data-cc-animate>
   <div class="action_link action_return note opposing-items" id='return_to_store'>
-    <a href="{{ routes.root_url }}">{{ 'customer.general.return' | t }}</a>
-    <a href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t }}</a>
+    {% comment %} <a href="{{ routes.root_url }}">{{ 'customer.general.return' | t }}</a>
+    <a href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t }}</a> {% endcomment %}
   </div>
-  <h2 class="title">{{ 'customer.account.title' | t }}</h2>
+  {% comment %} <h2 class="title">{{ 'customer.account.title' | t }}</h2> {% endcomment %}
+  <h2 class="title" style="text-transform: capitalize;">Welcome, {{ customer.name }}</h2>
 </div>
 
 <div id="customer_sidebar" data-cc-animate>
@@ -23,6 +24,10 @@
     </div>
 
     <a id="view_address" href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+  </div>
+  <div class="control-buttons" style="margin-top: 2em; max-width: 200px;">
+    <a class="btn" style="width: 100%;" href="{{ routes.account_addresses_url }}" >UPDATE INFO</a>
+    <a class="btn" style="width: 100%; margin-top: 1em;" href="{{ routes.account_logout_url }}">SIGN OUT</a>
   </div>
 </div>
 
