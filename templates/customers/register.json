@@ -1,1 +1,13 @@
-{"sections":{"main":{"type":"main-register","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-register",
+      "settings": {
+        "background_img": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0010.jpg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
