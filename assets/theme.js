@@ -2567,9 +2567,7 @@
 
       // Handle when a variant is selected
       $(window).on("cc-variant-updated".concat(this.namespace).concat(this.productId), (e, args) => {
-        console.log("TRUDY --> where variant updated 👷‍♀️")
         if (args.product.id === this.productId) {
-          console.log('PRODUCT 🎁', args.variant.title)
           this.functions.updateContent.bind(this)(
           args.variant ? args.variant.id : null,
           args.product.title,
@@ -6752,6 +6750,25 @@
       // events on variant change
       console.log('THIS 🍍', $(this))
       $(this).on('variantChanged', function (evt, variant, product) {
+        const leadTimes = document.getElementsByClassName('leadtime--custom')
+        const leadTimeForm = document.getElementById('leadTimeForm')
+        const disclaimers = document.getElementsByClassName('disclaimer--custom')
+        leadTimes.forEach((leadTime) => {
+          if (leadTime.dataset.variantid == variant.id) {
+            leadTime.classList.add('active')
+            leadTimeForm.value = leadTime.textContent
+          } else {
+            leadTime.classList.remove('active')
+          }
+        })
+
+        disclaimers.forEach((disclaimer) => {
+          if (disclaimer.dataset.variantid == variant.id) {
+            disclaimer.classList.add('active')
+          } else {
+            disclaimer.classList.remove('active')
+          }
+        })
         console.log('variant changed 🍍', variant )
         // change variant status classes
         var $labelCont = $productDetail.find('.product-label-list');
