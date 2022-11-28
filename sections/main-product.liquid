@@ -369,6 +369,18 @@
                   {% else %}
                     <div class="product-unavailable">{{ 'products.product.product_unavailable' | t }}</div>
                   {% endif %}
+
+                  {% for variant in product.variants %}
+                    {% if product.selected_or_first_available_variant.id == variant.id %} 
+                      {% assign initial_lead_time = variant.metafields.my_fields.leadtime %}
+                    {% endif %}
+                  {% endfor %}
+
+                  {% if initial_lead_time == blank %}
+                    {% assign initial_lead_time = "" %}
+                  {% endif %}
+                    <input id="leadTimeForm" type="hidden" name="properties[Lead Time]" value="{{ initial_lead_time }}" class="product-form__input required" >
+
                 {% endform %}
               </div>
 
@@ -480,6 +492,18 @@
                   </div>
                 </div>
               {% endif %}
+            {% when 'disclaimer' %}
+              <div class="disclaimer--new lightly-spaced-row">
+                {% for variant in product.variants %}
+                  <span class="disclaimer--custom {% if product.selected_or_first_available_variant.id == variant.id %} active {% endif %}"  data-variantId="{{variant.id }}">{{ variant.metafields.custom.material_disclaimer }}</span>
+                {% endfor %}
+              </div>
+            {% when 'leadtime' %}
+              <div class="backorder--custom lightly-spaced-row">
+                {% for variant in product.variants %}
+                  <span class="leadtime--custom {% if product.selected_or_first_available_variant.id == variant.id %}active {% endif %}" data-variantId="{{variant.id }}">{{ variant.metafields.my_fields.leadtime }}</span>
+                {% endfor %}
+              </div>
 
             {% when 'richtext' %}
               {% if block.settings.richtext != blank %}
@@ -731,6 +755,24 @@
 </div>
 
 {% render 'structured-data-product', product: product, current_variant: product.selected_or_first_available_variant %}
+
+<style>
+  .leadtime--custom {
+    display: none;
+  }
+
+  .leadtime--custom.active {
+    display: block;
+  }
+  
+  .disclaimer--custom {
+    display: none;
+  }
+
+  .disclaimer--custom.active {
+    display: block;
+  }
+</style>
 
 
 {% schema %}
@@ -1623,6 +1665,16 @@
             "default": false
           }
         ]
+      },
+      {
+        "type": "leadtime",
+        "name": "Lead Time",
+        "limit": 1
+      },
+      {
+        "type": "disclaimer",
+        "name": "Material Disclaimer",
+        "limit": 1
       },
       {
         "type": "richtext",

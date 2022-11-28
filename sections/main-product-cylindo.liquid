@@ -383,10 +383,12 @@
                       {% assign initial_lead_time = variant.metafields.my_fields.leadtime %}
                     {% endif %}
                   {% endfor %}
-                  
-                  {% if initial_lead_time != blank %}
-                    <input id="leadTimeForm" type="hidden" name="properties[Lead Time]" value="{{ initial_lead_time }}" class="product-form__input required" >
+
+                  {% if initial_lead_time == blank %}
+                    {% assign initial_lead_time = "" %}
                   {% endif %}
+                  
+                  <input id="leadTimeForm" type="hidden" name="properties[Lead Time]" value="{{ initial_lead_time }}" class="product-form__input required" >
                 {% endform %}
               </div>
 
