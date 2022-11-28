@@ -43,11 +43,6 @@
             "show_in_quickbuy": true
           }
         },
-        "f689027a-a52d-41d2-b5e7-c869129522cf": {
-          "type": "disclaimer",
-          "settings": {
-          }
-        },
         "divider": {
           "type": "divider",
           "settings": {
@@ -64,6 +59,11 @@
             "show_size_chart": false,
             "size_chart_variant": "Size",
             "size_chart_page": ""
+          }
+        },
+        "f689027a-a52d-41d2-b5e7-c869129522cf": {
+          "type": "disclaimer",
+          "settings": {
           }
         },
         "8a91c69f-d48f-4159-aa1d-c1f3e00a1c41": {
@@ -123,9 +123,9 @@
         "5152b92b-d103-4ae5-8106-2136491e10fc",
         "07910825-2957-44b5-958a-2922887e267c",
         "88380d1e-1f70-498b-9a76-248ef7d5bdf2",
-        "f689027a-a52d-41d2-b5e7-c869129522cf",
         "divider",
         "variant_picker",
+        "f689027a-a52d-41d2-b5e7-c869129522cf",
         "8a91c69f-d48f-4159-aa1d-c1f3e00a1c41",
         "af972090-2871-4f31-8bc0-1ba311b6b209",
         "buy_buttons",
