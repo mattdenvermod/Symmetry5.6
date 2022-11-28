@@ -31,11 +31,21 @@
             "show_in_quickbuy": true
           }
         },
+        "07910825-2957-44b5-958a-2922887e267c": {
+          "type": "leadtime",
+          "settings": {
+          }
+        },
         "88380d1e-1f70-498b-9a76-248ef7d5bdf2": {
           "type": "custom_liquid",
           "settings": {
             "custom_liquid": "<div class=\"backorder\">\n{% for variant in product.variants %}\n{% if product.selected_or_first_available_variant.id == variant.id %}\n<span class=\"backorder__leadtime\">{{ variant.metafields.my_fields.leadtime }}<\/span>\n{% endif %}\n{% endfor %}\n<\/div>",
             "show_in_quickbuy": true
+          }
+        },
+        "f689027a-a52d-41d2-b5e7-c869129522cf": {
+          "type": "disclaimer",
+          "settings": {
           }
         },
         "divider": {
@@ -111,7 +121,9 @@
         "6094f287-3e99-4e42-a452-f991f158abb7",
         "price",
         "5152b92b-d103-4ae5-8106-2136491e10fc",
+        "07910825-2957-44b5-958a-2922887e267c",
         "88380d1e-1f70-498b-9a76-248ef7d5bdf2",
+        "f689027a-a52d-41d2-b5e7-c869129522cf",
         "divider",
         "variant_picker",
         "8a91c69f-d48f-4159-aa1d-c1f3e00a1c41",
@@ -336,10 +348,10 @@
             "per_page": 5,
             "primary_btn_bg_color": "#363336",
             "primary_btn_border_color": "#363336",
-            "primary_btn_text_color": "#fff",
+            "primary_btn_text_color": "#ffffff",
             "secondary_btn_border_color": "#363336",
             "secondary_btn_text_color": "#363336",
-            "border_color": "rgba(0,0,0,0.15)",
+            "border_color": "#000000",
             "heading_text_color": "#363336",
             "heading_font": "avenir_next_n4",
             "body_text_color": "#363336",
