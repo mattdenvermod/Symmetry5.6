@@ -525,6 +525,43 @@
         "map_style": "silver",
         "background_image": "shopify:\/\/shop_images\/Screenshot_2022-11-29_at_2.19.17_PM.png"
       }
+    },
+    "166975790924807d47": {
+      "type": "apps",
+      "blocks": {
+        "1b7c0941-5805-45d9-89bc-33586bd38a0b": {
+          "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-card-carousel\/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {
+            "star": "#000",
+            "review_type": "company, product, third_party",
+            "reviews_shown": 20,
+            "header_bg_colour": "#000",
+            "header_colour": "#fff",
+            "header_star_colour": "#fff",
+            "heading_text_colour": "#0E1311",
+            "heading_font": "avenir_next_n4",
+            "body_text_colour": "#0E1311",
+            "badge_icon_colour": "#0E1311",
+            "badge_text_colour": "#0E1311",
+            "bg_start_colour": "#ffffff",
+            "bg_end_colour": "#ffffff",
+            "item_border_width": "0px",
+            "item_border_colour": "rgba(0,0,0,0.05)",
+            "item_border_radius": "0px",
+            "item_shadow_size": "10px",
+            "item_shadow_colour": "rgba(0,0,0,0.05)",
+            "enable_rich_snippets": true,
+            "disable_same_customer": false,
+            "logo_colour": "var(--logo-inverted)"
+          }
+        }
+      },
+      "block_order": [
+        "1b7c0941-5805-45d9-89bc-33586bd38a0b"
+      ],
+      "settings": {
+        "full_width": false
+      }
     }
   },
   "order": [
@@ -541,6 +578,7 @@
     "fe10c5d1-7664-4272-8d84-62fc3b82ffdb",
     "f66ee119-adfa-47a2-9039-56c539cb4754",
     "31453940-80a1-4286-9dbb-718639fb54ef",
-    "1635928697c562053a"
+    "1635928697c562053a",
+    "166975790924807d47"
   ]
 }
