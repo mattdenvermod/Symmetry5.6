@@ -1030,7 +1030,7 @@
     "swatch_enabled": true,
     "swatch_option_name": "Material Color, Material, Color, Dowel",
     "swatch_method": "standard",
-    "swatch_value_list": "Cream Linen:#e3e0db\nCharcoal Linen:#3a3a3a\nBoucle:#deddd8\nBlack Boucle:#171717\nBlack Leather:#2f2f31\nSaddle Leather:#bd7e50\nNavy Linen:#2e3f5b\nLight Grey Linen:#d8d4d3\nGrey Linen:#bababc\nSand Linen:#ccc1ac\nOlive Linen:#5f5f45\nRust Linen:#943d29\nSunflower Leather:#af8247\nVintage Oak Leather:#70422b\nWhite Oak:#b2865b\nWalnut:#826151\nKelp:#4a4b47\nSaffron:#795339\nMushroom:#bab3a7\nGraphite:#4e4e4e\nOatmeal:#d3c8b5\nAmber:#6f473b\nBlush:#b29685\nWren:#86837f\nElk:#a8a297\nFog:#c8c3b7\nNatural:#dedbce\nBlizzard:#b3b2a7\nRye:#c8bdb2\nPumice:#948e86\nParchment:#cac5bd",
+    "swatch_value_list": "Cream Linen:#e3e0db\nCharcoal Linen:#3a3a3a\nBoucle:#deddd8\nBlack Boucle:#171717\nBlack Leather:#2f2f31\nSaddle Leather:#bd7e50\nNavy Linen:#2e3f5b\nLight Grey Linen:#d8d4d3\nGrey Linen:#bababc\nSand Linen:#ccc1ac\nOlive Linen:#5f5f45\nRust Linen:#943d29\nSunflower Leather:#af8247\nVintage Oak Leather:#70422b\nWhite Oak:#b2865b\nWalnut:#826151\nKelp:#4a4b47\nSaffron:#795339\nMushroom:#bab3a7\nGraphite:#4e4e4e\nOatmeal:#d3c8b5\nAmber:#6f473b\nBlush:#b29685\nWren:#86837f\nElk:#a8a297\nFog:#c8c3b7\nNatural:#dedbce\nBlizzard:#b3b2a7\nRye:#c8bdb2\nPumice:#948e86\nParchment:#cac5bd\nPepper:#706b69\nTerrazzo:#c9c3b8\nAlbatross:#acaaa5",
     "swatch_style": "icon_circle",
     "swatch_picker_image_size": 50,
     "enable_filter_swatches": true,
