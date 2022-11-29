@@ -1,1 +1,44 @@
-{"sections":{"main":{"type":"main-login","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "blocks": {
+        "54065383-20fb-4aa7-86ad-6f0ad9a3a149": {
+          "type": "create_account_text",
+          "settings": {
+            "text": "Easily track orders and view order history."
+          }
+        },
+        "76f1f69f-08b8-48f8-9f59-20e343cbeb30": {
+          "type": "create_account_text",
+          "settings": {
+            "text": "Speedy checkout."
+          }
+        },
+        "ad6a0923-79d0-4996-85d3-c78663f13a88": {
+          "type": "create_account_text",
+          "settings": {
+            "text": "Update your customer information."
+          }
+        },
+        "f96a782f-16cc-4364-b47a-f867e8472c6a": {
+          "type": "create_account_text",
+          "settings": {
+            "text": "Get updates on your orders."
+          }
+        }
+      },
+      "block_order": [
+        "54065383-20fb-4aa7-86ad-6f0ad9a3a149",
+        "76f1f69f-08b8-48f8-9f59-20e343cbeb30",
+        "ad6a0923-79d0-4996-85d3-c78663f13a88",
+        "f96a782f-16cc-4364-b47a-f867e8472c6a"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
