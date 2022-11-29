@@ -59,7 +59,8 @@
 
                       {%- for p in item.properties -%}
                         {% unless p.last == blank %}
-                          <div class="line-item-property">{{ p.first | escape_once }}:
+                          <div class="line-item-property">
+                            {% comment %} {{ p.first | escape_once }}: {% endcomment %}
                             {% if p.last contains '/uploads/' %}
                             <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
                             {% else %}

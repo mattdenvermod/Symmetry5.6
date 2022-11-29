@@ -37,7 +37,7 @@
             {%- for p in item.properties -%}
               {% unless p.last == blank %}
                 <div class="cart-summary-overlay__variant">
-                  <span class="cart-summary-overlay__variant-option">{{ p.first | escape_once }}</span>
+                  {% comment %} <span class="cart-summary-overlay__variant-option">{{ p.first | escape_once }}</span> {% endcomment %}
                   <span class="cart-summary-overlay__variant-value">
                     {% if p.last contains '/uploads/' %}
                       <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
