@@ -212,15 +212,15 @@
     },
     "ef268693-acb3-491a-a808-78764b35de42": {
       "type": "product-template-product-list",
-      "disabled": true,
       "settings": {
         "title": "Perfect Pairings",
         "product_list": [
           "vail-ottoman",
-          "vail-lounge-cover",
           "strata-side-table",
-          "aspen-rug",
-          "chichi-floor-lamp"
+          "chichi-floor-lamp",
+          "vail-lounge-chair",
+          "vail-dining-chair",
+          "polaris-sofa"
         ],
         "hide_if_empty": false,
         "show_vendor": false,
