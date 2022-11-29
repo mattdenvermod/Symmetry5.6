@@ -1058,28 +1058,14 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
-          "1478526632860": {
-            "type": "announcement",
-            "settings": {
-              "text": "<p><a href=\"\/pages\/black-friday-early-access\" target=\"_blank\" title=\"Black Friday Early Access\">Sign up to get Early Access to Black Friday deals! <\/a><\/p>"
-            }
-          },
-          "1478526632861": {
-            "type": "announcement",
-            "settings": {
-              "text": "<p><a href=\"\/products\/vail-lounge-chair\" target=\"_blank\" title=\"Vail Lounge Chair\">Buy 1 Vail Lounge Chair, <strong>Get 50% off the second! <br\/><\/strong>Use code BOGO50VAIL at checkout. <\/a><\/p>"
-            }
-          },
           "f7165312-9e25-4ba6-8ad0-cd1418e44369": {
             "type": "announcement",
             "settings": {
-              "text": "<p><a href=\"\/products\/vail-bar-counter-stool\" target=\"_blank\" title=\"Vail Stool\">PRE-BLACK FRIDAY SALE: Buy 3 Vail Stools, <strong>Get the 4th FREE!<\/strong> <\/a><br\/><a href=\"\/products\/vail-bar-counter-stool\" target=\"_blank\" title=\"Vail Stool\">Use code GETVAILFREE at checkout. <\/a><\/p>"
+              "text": "<p><strong>BLACK FRIDAY SALE EXTENDED<br\/><\/strong>Get <strong>25% off sitewide<\/strong>, hurry this sale ends soon! Use code <strong>LETSGO25<\/strong> at checkout! <\/p>"
             }
           }
         },
         "block_order": [
-          "1478526632860",
-          "1478526632861",
           "f7165312-9e25-4ba6-8ad0-cd1418e44369"
         ],
         "settings": {
