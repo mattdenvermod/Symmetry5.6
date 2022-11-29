@@ -115,12 +115,12 @@
           </div>
         {% endif %}
       </div>
-			<div id="cylindoWrapper" class="cylindo">
+			<div id="cylindoWrapper" class="cylindo hide">
 				
 				<div id="cylindo-viewer"></div>
 			</div>
-			<button class="close-cylindo" id="closeCylindo">{% render 'svg-x' %}</button>
-			<button class="open-cylindo hide" id="openCylindo">{{ 'view_360' | t }}</button>
+			<button class="close-cylindo hide" id="closeCylindo">{% render 'svg-x' %}</button>
+			<button class="open-cylindo" id="openCylindo">{% render 'icon-360' %}{{ 'view_360' | t }}</button>
 			{% comment %} <div class="cylindo-button cylindo-ar-button" style="display: block; opacity: 1.08347;"><a rel="ar" href="https://content.cylindo.com/api/v2/5028/products/VAIL%20LOUNGE%20CHAIR/AR/AR.usdz?feature=ARM%20CAP:WALNUT&amp;feature=FABRIC:CREAM%20LINEN&amp;feature=STRAP:BROWN%20LEATHER" role="link" aria-label="View in your space"><img src=""><div class="ar-glyph-background"><div class="ar-icon"></div><div class="ar-text">View in your space</div></div></a></div> {% endcomment %}
     </div>
 
@@ -388,7 +388,7 @@
                     {% assign initial_lead_time = "" %}
                   {% endif %}
                   
-                  <input id="leadTimeForm" type="hidden" name="properties[Lead Time]" value="{{ initial_lead_time }}" class="product-form__input required" >
+                  <input id="leadTimeForm" type="hidden" name="properties[Estimated Shipping]" value="{{ initial_lead_time }}" class="product-form__input required" >
                 {% endform %}
               </div>
 
@@ -819,15 +819,25 @@
 	.product-detail .gallery .open-cylindo {
 		position: absolute;
     top: 18px;
-    left: 20px;
+    transform: translateX(-50%);
+    left: 50%;
     z-index: 10;
     border: 1px solid #363336;
     background: #fafafa;
     color: #363336;
+    color: #4d4d4d;
     border-radius: 50px;
-    padding: 0.6em 16px;
+    padding: 0.2em 16px 0px;
 		cursor: pointer;
 		text-transform: capitalize;
+	}
+	
+  .product-detail .gallery .open-cylindo:hover {
+		box-shadow: 0 0 0 1px rgb(77 77 77 / 30%);
+	}
+  
+  .product-detail .gallery .open-cylindo svg {
+		margin: 0px 10px 0px 0px;
 	}
 
 	.cylindo-button.cylindo-ar-button a {

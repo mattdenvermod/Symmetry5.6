@@ -4589,6 +4589,8 @@
               items: carouselVisibleItemCount,
               dots: false,
               margin: 7,
+              nav: true,
+              navText: ["<div class='nav-btn prev-slide'>‹</div>", "<div class='nav-btn next-slide'>›</div>"],
               rtl: document.querySelector('html[dir=rtl]') ? true : false });
 
 
