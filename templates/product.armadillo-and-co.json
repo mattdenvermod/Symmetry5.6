@@ -8,6 +8,11 @@
           "settings": {
           }
         },
+        "64c3e30a-bc3e-4777-a89f-5c418b28b832": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
         "6094f287-3e99-4e42-a452-f991f158abb7": {
           "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-rating-output\/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {
@@ -113,6 +118,7 @@
       },
       "block_order": [
         "title",
+        "64c3e30a-bc3e-4777-a89f-5c418b28b832",
         "6094f287-3e99-4e42-a452-f991f158abb7",
         "price",
         "5152b92b-d103-4ae5-8106-2136491e10fc",
@@ -155,11 +161,12 @@
         "code": "<h1 style=\"padding-bottom:5px;text-align:center\">At your service.<\/h1>\n<p style=\"padding-bottom:25px;text-align:center\">Have a question about the {{ product.title }}? Need assistance with a design dilemma? Help is a click away.<\/p>\n<!-- Calendly link widget begin -->\n<div style=\"text-align: center; padding-bottom:10px\">\n<link href=\"https:\/\/assets.calendly.com\/assets\/external\/widget.css\" rel=\"stylesheet\">\n<script src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" type=\"text\/javascript\" async><\/script>\n<a href=\"\" onclick=\"Calendly.initPopupWidget({url: 'https:\/\/calendly.com\/alex-showroom\/product-inquiry'});return false;\"><button>Book An Expert<\/button><\/a><\/div>\n<!-- Calendly link widget end -->"
       }
     },
-    "fe5b88be-ed2d-4f37-add8-633c0f40d749": {
-      "type": "custom-liquid",
+    "66d5155f-ebe0-46d5-a32e-bb9c138161b2": {
+      "type": "newsletter",
       "settings": {
-        "full_width": false,
-        "code": "<hr>"
+        "title": "{{ product.metafields.my_fields.offer_block_heading.value }}",
+        "subheading": "<p>{{ product.metafields.my_fields.offer_block_subheading | metafield_tag }}<\/p>",
+        "color_bg": "#d5cdc0"
       }
     },
     "1668035209cbe84a46": {
@@ -203,14 +210,6 @@
         "full_width": false
       }
     },
-    "66d5155f-ebe0-46d5-a32e-bb9c138161b2": {
-      "type": "newsletter",
-      "settings": {
-        "title": "{{ product.metafields.my_fields.offer_block_heading.value }}",
-        "subheading": "<p>{{ product.metafields.my_fields.offer_block_subheading | metafield_tag }}<\/p>",
-        "color_bg": "#d5cdc0"
-      }
-    },
     "ef268693-acb3-491a-a808-78764b35de42": {
       "type": "product-template-product-list",
       "disabled": true,
@@ -236,9 +235,8 @@
     "main",
     "recommendations",
     "39ef6da4-fafd-4a3b-b3fb-d5a96c70560c",
-    "fe5b88be-ed2d-4f37-add8-633c0f40d749",
-    "1668035209cbe84a46",
     "66d5155f-ebe0-46d5-a32e-bb9c138161b2",
+    "1668035209cbe84a46",
     "ef268693-acb3-491a-a808-78764b35de42"
   ]
 }
