@@ -1447,9 +1447,10 @@
           "1601374680247": {
             "type": "text",
             "settings": {
-              "title": "Talk about your store",
-              "text": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.<\/p>",
-              "image_width": 150,
+              "title": "",
+              "text": "<p>We’re designing and curating a wide-range of timeless pieces whose materials, thoughtful design elements, and simple shapes shine. Denver Modern is your modern, everyday furniture for life, work, and play. <\/p>",
+              "image": "shopify:\/\/shop_images\/LOGO_1_1.png",
+              "image_width": 90,
               "show_social_icons": true,
               "soc_icons_large": false
             }
