@@ -6,45 +6,45 @@
         "16359276425da8ce46-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0037_1.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0037-_1_-sq.jpg",
+            "image": "shopify:\/\/shop_images\/DM_1887Orchard4063_Panorama-wide.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/DM_1887Orchard4063_Panorama-sq.jpg",
             "image_position": "center center",
             "mobile_image_position": "center center",
             "slide_link": "",
-            "subheading": "Denver Modern Exclusive",
-            "title": "The Vail Bar \n& Counter Stools",
+            "subheading": "BLACK FRIDAY SALE EXTENDED",
+            "title": "Get 25% off sitewide",
             "title_size": 60,
             "title_size_mobile": 30,
             "use_h1": false,
-            "text": "<p>The perfect addition to your home, office or resort. <\/p>",
+            "text": "<p>Get 25% off everything this weekend only. Don't miss out on the chance to save big and get your favorite items at an incredible price!<\/p>",
+            "enlarge_text": false,
+            "button_label_1": "SHOP BEST SELLERS",
+            "button_url_1": "shopify:\/\/collections\/best-sellers",
+            "button_label_2": "",
+            "button_url_2": "",
+            "text_alignment": "bottom right"
+          }
+        },
+        "16359276425da8ce46-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DM_1887Orchard4136_HDR-wide.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/DM_1887Orchard4136_HDR-sq.jpg",
+            "image_position": "bottom center",
+            "mobile_image_position": "center center",
+            "slide_link": "",
+            "subheading": "Denver Modern Exclusive",
+            "title": "Vail Bar & Counter Stools",
+            "title_size": 60,
+            "title_size_mobile": 30,
+            "use_h1": false,
+            "text": "<p>Perfectly plush cushions in a naturally contoured base, expertly designed to maximize comfort.<\/p>",
             "enlarge_text": false,
             "button_label_1": "SHOP VAIL STOOLS",
             "button_url_1": "shopify:\/\/products\/vail-bar-counter-stool",
             "button_label_2": "",
             "button_url_2": "",
             "text_alignment": "top left"
-          }
-        },
-        "16359276425da8ce46-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/DenverModern_Mosley3833_1_1.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/DenverModern_Mosley3833-1-_1_-sq.jpg",
-            "image_position": "bottom center",
-            "mobile_image_position": "center center",
-            "slide_link": "",
-            "subheading": "Denver Modern Exclusive",
-            "title": "Vail Lounge Chair",
-            "title_size": 60,
-            "title_size_mobile": 30,
-            "use_h1": false,
-            "text": "<p>Perfectly plush cushions in a naturally contoured base, expertly designed to maximize comfort.<\/p>",
-            "enlarge_text": false,
-            "button_label_1": "SHOP VAIL LOUNGE",
-            "button_url_1": "shopify:\/\/products\/vail-lounge-chair",
-            "button_label_2": "",
-            "button_url_2": "",
-            "text_alignment": "bottom left"
           }
         },
         "aad243e6-f90a-4165-a481-368eeb92a9d1": {
@@ -517,11 +517,13 @@
         "heading": "Denver Modern Showroom",
         "address": "<p>3857 Steele St #1287<br\/>Denver, Colorado 80205<\/p><p>By Appointment Only. <br\/><a href=\"\/pages\/book-an-appointment\" target=\"_blank\" title=\"Book an Appointment\">Book a Showroom Appointment here<\/a><\/p>",
         "button": "Directions",
-        "show_pin": true,
-        "show_feature_image": true,
+        "show_pin": false,
+        "show_feature_image": false,
+        "feature_image": "shopify:\/\/shop_images\/Screenshot_2022-11-29_at_2.19.17_PM.png",
         "map_address": "3857 Steele St #1287, Denver, CO 80205",
         "api_key": "",
-        "map_style": "silver"
+        "map_style": "silver",
+        "background_image": "shopify:\/\/shop_images\/Screenshot_2022-11-29_at_2.19.17_PM.png"
       }
     }
   },
