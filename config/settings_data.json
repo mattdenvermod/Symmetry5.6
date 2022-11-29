@@ -1458,7 +1458,7 @@
             "type": "menu",
             "settings": {
               "title": "Quick links",
-              "menu": "footer"
+              "menu": "2021-denver-modern-footer"
             }
           },
           "1601374580731": {
@@ -1467,7 +1467,7 @@
               "title": "Newsletter",
               "text": "<p>Sign up for exclusive offers, original stories, events and more.<\/p>",
               "button_style": "primary",
-              "show_social_icons": true,
+              "show_social_icons": false,
               "soc_icons_large": false
             }
           }
