@@ -36,13 +36,6 @@
           "settings": {
           }
         },
-        "88380d1e-1f70-498b-9a76-248ef7d5bdf2": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"backorder\">\n{% for variant in product.variants %}\n{% if product.selected_or_first_available_variant.id == variant.id %}\n<span class=\"backorder__leadtime\">{{ variant.metafields.my_fields.leadtime }}<\/span>\n{% endif %}\n{% endfor %}\n<\/div>",
-            "show_in_quickbuy": true
-          }
-        },
         "divider": {
           "type": "divider",
           "settings": {
@@ -64,13 +57,6 @@
         "1c2ef144-a2d9-4dbc-9332-908fa706bd73": {
           "type": "disclaimer",
           "settings": {
-          }
-        },
-        "8a91c69f-d48f-4159-aa1d-c1f3e00a1c41": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"disclaimer\">\n{% for variant in product.variants %}\n{% if product.selected_or_first_available_variant.id == variant.id %}\n{{ variant.metafields.custom.material_disclaimer }}\n{% endif %}\n{% endfor %}\n<\/div>",
-            "show_in_quickbuy": true
           }
         },
         "af972090-2871-4f31-8bc0-1ba311b6b209": {
@@ -122,11 +108,9 @@
         "price",
         "5152b92b-d103-4ae5-8106-2136491e10fc",
         "e052d205-30a2-4491-9afe-71610aceea77",
-        "88380d1e-1f70-498b-9a76-248ef7d5bdf2",
         "divider",
         "variant_picker",
         "1c2ef144-a2d9-4dbc-9332-908fa706bd73",
-        "8a91c69f-d48f-4159-aa1d-c1f3e00a1c41",
         "af972090-2871-4f31-8bc0-1ba311b6b209",
         "buy_buttons",
         "7f1c4f79-1dac-47b9-ad47-9ffb9509d2a1",
@@ -244,6 +228,7 @@
     },
     "98aa627f-86a2-41a5-98c4-b3f28a2317c1": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "template--14445932970102__98aa627f-86a2-41a5-98c4-b3f28a2317c1-1668034349d1fe78fd-0": {
           "type": "heading",
@@ -273,6 +258,7 @@
     },
     "8a514d41-3199-4817-a8dc-6b79ba83f09b": {
       "type": "multi-column",
+      "disabled": true,
       "blocks": {
         "template--14445932970102__8a514d41-3199-4817-a8dc-6b79ba83f09b-1668034349a0117849-0": {
           "type": "text_block",
