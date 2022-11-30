@@ -8,6 +8,11 @@
           "settings": {
           }
         },
+        "5d6088c5-0231-478f-8750-5083e3d94c25": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
         "6094f287-3e99-4e42-a452-f991f158abb7": {
           "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-rating-output\/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {
@@ -36,13 +41,6 @@
           "settings": {
           }
         },
-        "88380d1e-1f70-498b-9a76-248ef7d5bdf2": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"backorder\">\n{% for variant in product.variants %}\n{% if product.selected_or_first_available_variant.id == variant.id %}\n<span class=\"backorder__leadtime\">{{ variant.metafields.my_fields.leadtime }}<\/span>\n{% endif %}\n{% endfor %}\n<\/div>",
-            "show_in_quickbuy": true
-          }
-        },
         "divider": {
           "type": "divider",
           "settings": {
@@ -64,13 +62,6 @@
         "f689027a-a52d-41d2-b5e7-c869129522cf": {
           "type": "disclaimer",
           "settings": {
-          }
-        },
-        "8a91c69f-d48f-4159-aa1d-c1f3e00a1c41": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"disclaimer\">\n{% for variant in product.variants %}\n{% if product.selected_or_first_available_variant.id == variant.id %}\n{{ variant.metafields.custom.material_disclaimer }}\n{% endif %}\n{% endfor %}\n<\/div>",
-            "show_in_quickbuy": true
           }
         },
         "af972090-2871-4f31-8bc0-1ba311b6b209": {
@@ -118,15 +109,14 @@
       },
       "block_order": [
         "title",
+        "5d6088c5-0231-478f-8750-5083e3d94c25",
         "6094f287-3e99-4e42-a452-f991f158abb7",
         "price",
         "5152b92b-d103-4ae5-8106-2136491e10fc",
         "07910825-2957-44b5-958a-2922887e267c",
-        "88380d1e-1f70-498b-9a76-248ef7d5bdf2",
         "divider",
         "variant_picker",
         "f689027a-a52d-41d2-b5e7-c869129522cf",
-        "8a91c69f-d48f-4159-aa1d-c1f3e00a1c41",
         "af972090-2871-4f31-8bc0-1ba311b6b209",
         "buy_buttons",
         "7f1c4f79-1dac-47b9-ad47-9ffb9509d2a1",
