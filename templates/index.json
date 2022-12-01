@@ -366,15 +366,6 @@
         "alignment": "middle"
       }
     },
-    "0238f065-4d06-464a-b2e3-b4caf1b2012a": {
-      "type": "newsletter",
-      "disabled": true,
-      "settings": {
-        "title": "ENJOY 10% OFF TODAY.",
-        "subheading": "<p>Plus, be the first to find out about new styles and exclusive offers. <\/p>",
-        "color_bg": "#908e81"
-      }
-    },
     "fe10c5d1-7664-4272-8d84-62fc3b82ffdb": {
       "type": "rich-text",
       "blocks": {
@@ -468,8 +459,17 @@
         "button_style": "link"
       }
     },
+    "0238f065-4d06-464a-b2e3-b4caf1b2012a": {
+      "type": "newsletter",
+      "settings": {
+        "title": "ENJOY 10% OFF TODAY.",
+        "subheading": "<p>Plus, be the first to find out about new styles and exclusive offers. <\/p>",
+        "color_bg": "#908e81"
+      }
+    },
     "16359278867b92de38": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/DenverModern_Mosley3941-_1.jpg",
         "image_2": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0020.jpg",
@@ -488,6 +488,7 @@
     },
     "89c7cc87-c72e-48bf-86f9-eb45ff26df87": {
       "type": "image-with-text-overlay",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/DenverModern_Boulder3033_HDR.jpg",
         "mobile_image": "shopify:\/\/shop_images\/DenverModern_Boulder3033_HDR.jpg",
@@ -516,6 +517,7 @@
     },
     "65bfc44a-5734-4201-9a85-7548625f5814": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/DenverModern_Boulder3037.jpg",
         "image_2": "shopify:\/\/shop_images\/51544_51491_Oak_black_Bok_extendable_dining_table_chair_53040_Osso_stool_WEB.jpg",
@@ -534,6 +536,7 @@
     },
     "f66ee119-adfa-47a2-9039-56c539cb4754": {
       "type": "gallery",
+      "disabled": true,
       "blocks": {
         "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-0": {
           "type": "image",
@@ -598,6 +601,7 @@
     },
     "31453940-80a1-4286-9dbb-718639fb54ef": {
       "type": "image-with-text-overlay",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/DM_home_studio3610-1-1.jpg",
         "mobile_image": "shopify:\/\/shop_images\/DM_home_studio3610-1-1.jpg",
@@ -626,6 +630,7 @@
     },
     "1635928697c562053a": {
       "type": "map",
+      "disabled": true,
       "settings": {
         "color_bg": "#f4f4f4",
         "full_width": true,
@@ -640,6 +645,79 @@
         "map_style": "silver",
         "background_image": "shopify:\/\/shop_images\/Screenshot_2022-11-29_at_2.19.17_PM.png"
       }
+    },
+    "c14aa1f6-4243-4634-b26f-4a034c61bc42": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0009.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0009.jpg",
+        "image_position": "center center",
+        "mobile_image_position": "center center",
+        "height": "fixed",
+        "height_desktop": 700,
+        "height_mobile": 500,
+        "image_link": "",
+        "subheading": "DENVER MODERN",
+        "title": "Casual Comfort, Wild at Heart.",
+        "title_size": 64,
+        "title_size_mobile": 36,
+        "use_h1": false,
+        "text": "<p>Designs inspired by the West, a city we love, and our quest for comfort. <\/p>",
+        "enlarge_text": true,
+        "button_label_1": "OUR STORY",
+        "button_url_1": "shopify:\/\/pages\/about-us",
+        "button_label_2": "",
+        "button_url_2": "",
+        "text_alignment": "top center",
+        "full_width": true,
+        "mobile_overlay_under": true,
+        "overlay_style": "shadow"
+      }
+    },
+    "04ffece1-fff9-4da8-b901-c96523286276": {
+      "type": "rich-text",
+      "blocks": {
+        "94432841-23b2-4367-b493-674321bc8327": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Trade Partnerships"
+          }
+        },
+        "template--14453046149238__04ffece1-fff9-4da8-b901-c96523286276-166985222537b41a5c-0": {
+          "type": "heading",
+          "settings": {
+            "title": "LET'S TALK SHOP",
+            "use_h1": false
+          }
+        },
+        "template--14453046149238__04ffece1-fff9-4da8-b901-c96523286276-166985222537b41a5c-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Through our Trade Partnership Program, we offer designers, architects and other industry professionals access to special pricing, swatches, and support from a Denver Modern specialist.<\/p>",
+            "enlarge_text": false
+          }
+        },
+        "371fe590-8008-495b-a0c9-9f94c625e986": {
+          "type": "button",
+          "settings": {
+            "button_label": "LEARN MORE",
+            "button_link": "shopify:\/\/pages\/residential-and-commercial-trade",
+            "button_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "94432841-23b2-4367-b493-674321bc8327",
+        "template--14453046149238__04ffece1-fff9-4da8-b901-c96523286276-166985222537b41a5c-0",
+        "template--14453046149238__04ffece1-fff9-4da8-b901-c96523286276-166985222537b41a5c-1",
+        "371fe590-8008-495b-a0c9-9f94c625e986"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "use_alt_bg": false
+      }
     }
   },
   "order": [
@@ -651,14 +729,16 @@
     "16359279164ff7d3f3",
     "123a5ff1-badc-497c-a94f-c63bf160b41a",
     "fe41303f-51e2-4216-9b89-ded2ec544b1c",
-    "0238f065-4d06-464a-b2e3-b4caf1b2012a",
     "fe10c5d1-7664-4272-8d84-62fc3b82ffdb",
     "cbfbd3b9-cf91-4388-adda-1ba894043d48",
+    "0238f065-4d06-464a-b2e3-b4caf1b2012a",
     "16359278867b92de38",
     "89c7cc87-c72e-48bf-86f9-eb45ff26df87",
     "65bfc44a-5734-4201-9a85-7548625f5814",
     "f66ee119-adfa-47a2-9039-56c539cb4754",
     "31453940-80a1-4286-9dbb-718639fb54ef",
-    "1635928697c562053a"
+    "1635928697c562053a",
+    "c14aa1f6-4243-4634-b26f-4a034c61bc42",
+    "04ffece1-fff9-4da8-b901-c96523286276"
   ]
 }
