@@ -1,7 +1,31 @@
 {
   "sections": {
+    "08ea0976-eeef-406f-b176-880399dd5901": {
+      "type": "background-video",
+      "settings": {
+        "video": "https:\/\/www.youtube.com\/watch?v=y9WqGmWCxgg",
+        "placeholder_image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0011_3a3cafc3-5a25-404a-819a-3a3ad7f4e50a.jpg",
+        "subheading": "",
+        "title": "Black Friday Sale Extended",
+        "title_size": 50,
+        "title_size_mobile": 42,
+        "use_h1": true,
+        "text": "<p>Get 25% off everything this weekend only. Don't miss out on the chance to save big and get your favorite items at an incredible price!<\/p>",
+        "enlarge_text": true,
+        "button_label_1": "SHOP NOW",
+        "button_url_1": "shopify:\/\/collections\/best-sellers",
+        "button_label_2": "",
+        "button_url_2": "",
+        "text_alignment": "bottom right",
+        "height_desktop": 760,
+        "height_mobile": 500,
+        "full_width": true,
+        "overlay_style": "full"
+      }
+    },
     "16359276425da8ce46": {
       "type": "slideshow",
+      "disabled": true,
       "blocks": {
         "16359276425da8ce46-0": {
           "type": "image",
@@ -90,6 +114,7 @@
     },
     "e146ce1b-e8b3-43e9-839d-a6b8f52d3154": {
       "type": "compact-messages",
+      "disabled": true,
       "blocks": {
         "template--14453046149238__e146ce1b-e8b3-43e9-839d-a6b8f52d3154-166905249035414498-0": {
           "type": "message",
@@ -132,6 +157,7 @@
     },
     "d7563810-b52b-4e13-9fb1-849d2c9e6759": {
       "type": "image-with-text-overlay",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/DenverModern_Mosley3854.jpg",
         "mobile_image": "shopify:\/\/shop_images\/DenverModern_Mosley3854.jpg",
@@ -163,14 +189,14 @@
       "blocks": {
         "1635927863703110df-1": {
           "type": "heading",
-          "disabled": true,
           "settings": {
-            "title": "Why Denver Modern?",
+            "title": "Quality furniture built for joy, living and comfort. Make yourself at home with Denver Modern.",
             "use_h1": false
           }
         },
         "1635927863703110df-2": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>Quality furniture built for joy, living and comfort. Make yourself at home with Denver Modern.<\/p>",
             "enlarge_text": true
@@ -239,25 +265,143 @@
       "settings": {
         "grid": 3,
         "height": "fixed",
-        "desktop_image_height": 460,
-        "mobile_image_height": 400,
-        "title_size": 30,
+        "desktop_image_height": 550,
+        "mobile_image_height": 500,
+        "title_size": 22,
         "title_size_mobile": 22,
         "enable_margin": true,
         "enable_row_spacing": true,
         "full_width": true,
         "use_alt_bg": false,
         "enable_carousel": true,
-        "overlay_style": "full image-overlay--bg-shadow",
+        "overlay_style": "full",
         "button_style": "link"
+      }
+    },
+    "123a5ff1-badc-497c-a94f-c63bf160b41a": {
+      "type": "testimonials",
+      "blocks": {
+        "template--14453046149238__123a5ff1-badc-497c-a94f-c63bf160b41a-1669852231ddb3207b-0": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "testimonial": "Not only does the Vail lounge chair look awesome. It’s one of the most comfortable chairs I’ve ever owned!",
+            "author": "Paul",
+            "image": "shopify:\/\/shop_images\/vail-lounge-chair-UGC44.jpg",
+            "image_alignment": "center center",
+            "image_caption": "",
+            "link": "shopify:\/\/products\/vail-lounge-chair"
+          }
+        },
+        "template--14453046149238__123a5ff1-badc-497c-a94f-c63bf160b41a-1669852231ddb3207b-1": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "testimonial": "They look fantastic and match our tables very well. Thank you for the work that went into these. We're looking forward to working with you again soon.",
+            "author": "Katie B.",
+            "image": "shopify:\/\/shop_images\/vail-stools-UGC3.jpg",
+            "image_alignment": "center center",
+            "image_caption": "",
+            "link": "shopify:\/\/products\/vail-bar-counter-stool"
+          }
+        },
+        "75a588f8-cc51-4874-84b6-d8b99d132b5d": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "testimonial": "We are loving lounging in the chairs. They are so plush!",
+            "author": "Sarah L.",
+            "image": "shopify:\/\/shop_images\/2D6B021E-1527-423F-8119-ADB27B7ED31C.png",
+            "image_alignment": "center center",
+            "image_caption": "",
+            "link": "shopify:\/\/products\/vail-bar-counter-stool"
+          }
+        }
+      },
+      "block_order": [
+        "template--14453046149238__123a5ff1-badc-497c-a94f-c63bf160b41a-1669852231ddb3207b-0",
+        "template--14453046149238__123a5ff1-badc-497c-a94f-c63bf160b41a-1669852231ddb3207b-1",
+        "75a588f8-cc51-4874-84b6-d8b99d132b5d"
+      ],
+      "settings": {
+        "title": "Customer reviews",
+        "layout": "image-left",
+        "text_caps": false,
+        "quote_text_size": 30,
+        "quote_text_size_mobile": 20,
+        "image_shape": "landscape",
+        "use_alt_bg": false,
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "fe41303f-51e2-4216-9b89-ded2ec544b1c": {
+      "type": "custom-row",
+      "blocks": {
+        "362c2744-2763-4125-aea3-6ad2dee7aa40": {
+          "type": "image",
+          "settings": {
+            "width": "full",
+            "image": "shopify:\/\/shop_images\/DenverModern_Boulder3033_HDR.jpg",
+            "image_position": "bottom right",
+            "height": "fixed",
+            "height_desktop": 600,
+            "height_mobile": 500,
+            "subheading": "DESIGN YOUR DREAM DINING OR OFFICE TABLE ONLINE IN MINUTES.",
+            "title": "Custom-Made Tables",
+            "text": "<p><a href=\"\/pages\/custom-made-tables\" title=\"Custom Made Tables\">LEARN MORE<\/a><\/p>",
+            "enlarge_text": false,
+            "button_label": "",
+            "image_link": "",
+            "text_alignment": "bottom right",
+            "mobile_overlay_under": true,
+            "overlay_style": "shadow"
+          }
+        }
+      },
+      "block_order": [
+        "362c2744-2763-4125-aea3-6ad2dee7aa40"
+      ],
+      "settings": {
+        "alignment": "middle"
       }
     },
     "0238f065-4d06-464a-b2e3-b4caf1b2012a": {
       "type": "newsletter",
+      "disabled": true,
       "settings": {
         "title": "ENJOY 10% OFF TODAY.",
         "subheading": "<p>Plus, be the first to find out about new styles and exclusive offers. <\/p>",
         "color_bg": "#908e81"
+      }
+    },
+    "fe10c5d1-7664-4272-8d84-62fc3b82ffdb": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Featured Collections",
+            "use_h1": false
+          }
+        },
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Shop Denver Modern's curated collections to help design your home inside and out.<\/p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-0",
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-1"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "use_alt_bg": false
       }
     },
     "cbfbd3b9-cf91-4388-adda-1ba894043d48": {
@@ -388,35 +532,6 @@
         "use_alt_bg": true
       }
     },
-    "fe10c5d1-7664-4272-8d84-62fc3b82ffdb": {
-      "type": "rich-text",
-      "blocks": {
-        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-0": {
-          "type": "heading",
-          "settings": {
-            "title": "Featured Collections",
-            "use_h1": false
-          }
-        },
-        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Shop Denver Modern's curated collections to help design your home inside and out.<\/p>",
-            "enlarge_text": false
-          }
-        }
-      },
-      "block_order": [
-        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-0",
-        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-1"
-      ],
-      "settings": {
-        "height": "medium",
-        "text_alignment": "center",
-        "full_width": false,
-        "use_alt_bg": false
-      }
-    },
     "f66ee119-adfa-47a2-9039-56c539cb4754": {
       "type": "gallery",
       "blocks": {
@@ -528,17 +643,20 @@
     }
   },
   "order": [
+    "08ea0976-eeef-406f-b176-880399dd5901",
     "16359276425da8ce46",
     "e146ce1b-e8b3-43e9-839d-a6b8f52d3154",
     "d7563810-b52b-4e13-9fb1-849d2c9e6759",
     "1635927863703110df",
     "16359279164ff7d3f3",
+    "123a5ff1-badc-497c-a94f-c63bf160b41a",
+    "fe41303f-51e2-4216-9b89-ded2ec544b1c",
     "0238f065-4d06-464a-b2e3-b4caf1b2012a",
+    "fe10c5d1-7664-4272-8d84-62fc3b82ffdb",
     "cbfbd3b9-cf91-4388-adda-1ba894043d48",
     "16359278867b92de38",
     "89c7cc87-c72e-48bf-86f9-eb45ff26df87",
     "65bfc44a-5734-4201-9a85-7548625f5814",
-    "fe10c5d1-7664-4272-8d84-62fc3b82ffdb",
     "f66ee119-adfa-47a2-9039-56c539cb4754",
     "31453940-80a1-4286-9dbb-718639fb54ef",
     "1635928697c562053a"
