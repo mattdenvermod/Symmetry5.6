@@ -1061,7 +1061,7 @@
           "f7165312-9e25-4ba6-8ad0-cd1418e44369": {
             "type": "announcement",
             "settings": {
-              "text": "<p><strong>BLACK FRIDAY SALE EXTENDED<br\/><\/strong>Get <strong>25% off sitewide<\/strong>, hurry this sale ends soon! Use code <strong>LETSGO25<\/strong> at checkout! <\/p>"
+              "text": "<p><strong>GUS MODERN SALE<br\/><\/strong>Get <strong>20% off select GUS Modern products<\/strong>, hurry this sale ends soon! <br\/>Use code <strong>GUSMODERN20<\/strong> at checkout! <\/p>"
             }
           }
         },
@@ -1290,24 +1290,13 @@
               "link_url": "shopify:\/\/products\/escalate-diptych-1"
             }
           },
-          "ff45fec1-01ff-472e-9cd4-694d905162d1": {
-            "type": "menu-promotion-large",
+          "cf7047df-8716-4b41-8eb4-b6fb71ce707e": {
+            "type": "menu-promotion-small",
             "settings": {
               "dropdown_link_title": "Best Sellers",
-              "desktop_image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0062.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0062.jpg",
-              "enable_fade": true,
-              "subheading": "CUSTOMER FAVORITES",
-              "title": "Best Selling Favorites",
-              "text": "<p>Find Denver Modern's best selling pieces all in one place. <\/p>",
-              "button_1_label": "SHOP NOW",
-              "button_1_link": "shopify:\/\/collections\/best-sellers",
-              "button_1_style": "link",
-              "button_2_label": "",
-              "button_2_link": "",
-              "button_2_style": "primary",
-              "image_position": "right",
-              "text_alignment": "center"
+              "image": "shopify:\/\/shop_images\/2910ArapahoeSt_DM4619.jpg",
+              "title": "Vail Lounge Chair",
+              "link_url": "shopify:\/\/products\/vail-lounge-chair"
             }
           }
         },
@@ -1334,7 +1323,7 @@
           "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12",
           "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79",
           "e19dabb9-0bcb-4d09-8c99-9f6e0310fa39",
-          "ff45fec1-01ff-472e-9cd4-694d905162d1"
+          "cf7047df-8716-4b41-8eb4-b6fb71ce707e"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
@@ -1362,14 +1351,6 @@
       "store-messages": {
         "type": "store-messages",
         "blocks": {
-          "a4040775-9e13-4fec-9c03-3340153dba80": {
-            "type": "message",
-            "settings": {
-              "heading": "BLACK FRIDAY SALE EXTENDED",
-              "subheading": "Get 25% off everything. Use code LETSGO25 at checkout!",
-              "link_url": ""
-            }
-          },
           "9360a06e-5c40-4408-a211-36744d638720": {
             "type": "message",
             "disabled": true,
@@ -1381,7 +1362,6 @@
           }
         },
         "block_order": [
-          "a4040775-9e13-4fec-9c03-3340153dba80",
           "9360a06e-5c40-4408-a211-36744d638720"
         ],
         "settings": {
