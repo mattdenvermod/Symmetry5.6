@@ -1305,6 +1305,15 @@
               "title": "Cove Custom Table",
               "link_url": "shopify:\/\/products\/cove-custom-tables"
             }
+          },
+          "7922b431-6b0f-4f7a-88bb-d07d9cd2addb": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Custom-Made Tables",
+              "image": "shopify:\/\/shop_images\/Denver-Modern1010-1.jpg",
+              "title": "9090 Custom Table",
+              "link_url": "shopify:\/\/products\/9090-custom-tables"
+            }
           }
         },
         "block_order": [
@@ -1332,7 +1341,8 @@
           "cf7047df-8716-4b41-8eb4-b6fb71ce707e",
           "3befb197-25c8-409a-af16-9a1ac368fda8",
           "f8b04f7d-b609-4d24-a389-ced904e962fb",
-          "f9fd38a6-0b6b-4ac8-86cb-f240debf4849"
+          "f9fd38a6-0b6b-4ac8-86cb-f240debf4849",
+          "7922b431-6b0f-4f7a-88bb-d07d9cd2addb"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
