@@ -1307,6 +1307,15 @@
               "title": "Vail Bar & Counter Stools",
               "link_url": "shopify:\/\/products\/vail-bar-counter-stool"
             }
+          },
+          "f8b04f7d-b609-4d24-a389-ced904e962fb": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Best Sellers",
+              "image": "shopify:\/\/shop_images\/DenverModern_Boulder3043-_3.jpg",
+              "title": "Vail Ottoman",
+              "link_url": "shopify:\/\/products\/vail-ottoman"
+            }
           }
         },
         "block_order": [
@@ -1333,7 +1342,8 @@
           "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79",
           "e19dabb9-0bcb-4d09-8c99-9f6e0310fa39",
           "cf7047df-8716-4b41-8eb4-b6fb71ce707e",
-          "3befb197-25c8-409a-af16-9a1ac368fda8"
+          "3befb197-25c8-409a-af16-9a1ac368fda8",
+          "f8b04f7d-b609-4d24-a389-ced904e962fb"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
