@@ -1314,6 +1314,15 @@
               "title": "9090 Custom Table",
               "link_url": "shopify:\/\/products\/9090-custom-tables"
             }
+          },
+          "62ef13e7-5715-4ed4-af4c-e40e0d2f4751": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Custom-Made Tables",
+              "image": "shopify:\/\/shop_images\/Denver-Modern1034.jpg",
+              "title": "V Leg Custom Table",
+              "link_url": "shopify:\/\/products\/v-leg-custom-tables"
+            }
           }
         },
         "block_order": [
@@ -1342,7 +1351,8 @@
           "3befb197-25c8-409a-af16-9a1ac368fda8",
           "f8b04f7d-b609-4d24-a389-ced904e962fb",
           "f9fd38a6-0b6b-4ac8-86cb-f240debf4849",
-          "7922b431-6b0f-4f7a-88bb-d07d9cd2addb"
+          "7922b431-6b0f-4f7a-88bb-d07d9cd2addb",
+          "62ef13e7-5715-4ed4-af4c-e40e0d2f4751"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
