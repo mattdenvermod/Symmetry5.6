@@ -1081,26 +1081,6 @@
       "header": {
         "type": "header",
         "blocks": {
-          "eb2f896d-d39c-4b4a-81d7-0e88ac728111": {
-            "type": "menu-promotion-large",
-            "settings": {
-              "dropdown_link_title": "Custom-Made Tables",
-              "desktop_image": "shopify:\/\/shop_images\/DenverModern_Boulder3004-_2.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/DenverModern_Boulder3004-_2.jpg",
-              "enable_fade": true,
-              "subheading": "Exclusively DENVER MODERN",
-              "title": "Custom-Made Tables",
-              "text": "<p>Design your dream dining or office table in minutes. Leave the rest to us. <\/p>",
-              "button_1_label": "SHOP NOW",
-              "button_1_link": "shopify:\/\/pages\/custom-made-tables",
-              "button_1_style": "link",
-              "button_2_label": "",
-              "button_2_link": "",
-              "button_2_style": "primary",
-              "image_position": "right",
-              "text_alignment": "center"
-            }
-          },
           "1f3c2a11-beeb-40ef-bad9-4c9952bd396c": {
             "type": "menu-promotion-small",
             "settings": {
@@ -1316,10 +1296,18 @@
               "title": "Vail Ottoman",
               "link_url": "shopify:\/\/products\/vail-ottoman"
             }
+          },
+          "f9fd38a6-0b6b-4ac8-86cb-f240debf4849": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Custom-Made Tables",
+              "image": "shopify:\/\/shop_images\/Denver-Modern1046-1.jpg",
+              "title": "Cove Custom Table",
+              "link_url": "shopify:\/\/products\/cove-custom-tables"
+            }
           }
         },
         "block_order": [
-          "eb2f896d-d39c-4b4a-81d7-0e88ac728111",
           "1f3c2a11-beeb-40ef-bad9-4c9952bd396c",
           "5a5e1d14-8d62-47dd-8c8d-4ce50c96f794",
           "51b3bd57-d987-4ce8-8584-b04d0565dc53",
@@ -1343,7 +1331,8 @@
           "e19dabb9-0bcb-4d09-8c99-9f6e0310fa39",
           "cf7047df-8716-4b41-8eb4-b6fb71ce707e",
           "3befb197-25c8-409a-af16-9a1ac368fda8",
-          "f8b04f7d-b609-4d24-a389-ced904e962fb"
+          "f8b04f7d-b609-4d24-a389-ced904e962fb",
+          "f9fd38a6-0b6b-4ac8-86cb-f240debf4849"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
