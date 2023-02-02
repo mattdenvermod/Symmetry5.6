@@ -1,50 +1,74 @@
 {
   "sections": {
+    "08ea0976-eeef-406f-b176-880399dd5901": {
+      "type": "background-video",
+      "settings": {
+        "video": "https:\/\/www.youtube.com\/watch?v=y9WqGmWCxgg",
+        "placeholder_image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0011_3a3cafc3-5a25-404a-819a-3a3ad7f4e50a.jpg",
+        "subheading": "",
+        "title": "Black Friday Sale Extended",
+        "title_size": 50,
+        "title_size_mobile": 42,
+        "use_h1": true,
+        "text": "<p>Get 25% off everything this weekend only. Don't miss out on the chance to save big and get your favorite items at an incredible price!<\/p>",
+        "enlarge_text": true,
+        "button_label_1": "SHOP NOW",
+        "button_url_1": "shopify:\/\/collections\/best-sellers",
+        "button_label_2": "",
+        "button_url_2": "",
+        "text_alignment": "bottom right",
+        "height_desktop": 760,
+        "height_mobile": 500,
+        "full_width": true,
+        "overlay_style": "full"
+      }
+    },
     "16359276425da8ce46": {
       "type": "slideshow",
+      "disabled": true,
       "blocks": {
         "16359276425da8ce46-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0037_1.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0037-_1_-sq.jpg",
+            "image": "shopify:\/\/shop_images\/DM_1887Orchard4063_Panorama-wide.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/DM_1887Orchard4063_Panorama-sq.jpg",
             "image_position": "center center",
             "mobile_image_position": "center center",
             "slide_link": "",
-            "subheading": "Denver Modern Exclusive",
-            "title": "The Vail Bar \n& Counter Stools",
+            "subheading": "BLACK FRIDAY SALE EXTENDED",
+            "title": "Get 25% off sitewide",
             "title_size": 60,
             "title_size_mobile": 30,
             "use_h1": false,
-            "text": "<p>The perfect addition to your home, office or resort. <\/p>",
+            "text": "<p>Get 25% off everything this weekend only. Don't miss out on the chance to save big and get your favorite items at an incredible price!<\/p>",
+            "enlarge_text": false,
+            "button_label_1": "SHOP BEST SELLERS",
+            "button_url_1": "shopify:\/\/collections\/best-sellers",
+            "button_label_2": "",
+            "button_url_2": "",
+            "text_alignment": "bottom right"
+          }
+        },
+        "16359276425da8ce46-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DM_1887Orchard4136_HDR-wide.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/DM_1887Orchard4136_HDR-sq.jpg",
+            "image_position": "bottom center",
+            "mobile_image_position": "center center",
+            "slide_link": "",
+            "subheading": "Denver Modern Exclusive",
+            "title": "Vail Bar & Counter Stools",
+            "title_size": 60,
+            "title_size_mobile": 30,
+            "use_h1": false,
+            "text": "<p>Perfectly plush cushions in a naturally contoured base, expertly designed to maximize comfort.<\/p>",
             "enlarge_text": false,
             "button_label_1": "SHOP VAIL STOOLS",
             "button_url_1": "shopify:\/\/products\/vail-bar-counter-stool",
             "button_label_2": "",
             "button_url_2": "",
             "text_alignment": "top left"
-          }
-        },
-        "16359276425da8ce46-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/DenverModern_Mosley3833_1_1.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/DenverModern_Mosley3833-1-_1_-sq.jpg",
-            "image_position": "bottom center",
-            "mobile_image_position": "center center",
-            "slide_link": "",
-            "subheading": "Denver Modern Exclusive",
-            "title": "Vail Lounge Chair",
-            "title_size": 60,
-            "title_size_mobile": 30,
-            "use_h1": false,
-            "text": "<p>Perfectly plush cushions in a naturally contoured base, expertly designed to maximize comfort.<\/p>",
-            "enlarge_text": false,
-            "button_label_1": "SHOP VAIL LOUNGE",
-            "button_url_1": "shopify:\/\/products\/vail-lounge-chair",
-            "button_label_2": "",
-            "button_url_2": "",
-            "text_alignment": "bottom left"
           }
         },
         "aad243e6-f90a-4165-a481-368eeb92a9d1": {
@@ -80,12 +104,84 @@
         "height_desktop": 600,
         "height_mobile": 460,
         "full_width": true,
-        "mobile_overlay_under": false,
+        "mobile_overlay_under": true,
         "overlay_style": "full image-overlay--bg-shadow",
         "slide_transition": "zoom",
         "slide_navigation": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
+      }
+    },
+    "e146ce1b-e8b3-43e9-839d-a6b8f52d3154": {
+      "type": "compact-messages",
+      "disabled": true,
+      "blocks": {
+        "template--14453046149238__e146ce1b-e8b3-43e9-839d-a6b8f52d3154-166905249035414498-0": {
+          "type": "message",
+          "settings": {
+            "heading": "Try at home",
+            "subheading": "Purchase with confidence. Take up to 30 days to fall in love or we'll pick it up.",
+            "link_url": "shopify:\/\/pages\/return-policy"
+          }
+        },
+        "template--14453046149238__e146ce1b-e8b3-43e9-839d-a6b8f52d3154-166905249035414498-1": {
+          "type": "message",
+          "settings": {
+            "heading": "Free Swatches",
+            "subheading": "Make your decisions easier with free swatches.",
+            "link_url": ""
+          }
+        },
+        "2b7b7f6d-748d-43ce-921b-021f948a7006": {
+          "type": "message",
+          "settings": {
+            "heading": "Financing Available",
+            "subheading": "Buy now, pay over time. Make monthly payments with no hidden fees.",
+            "link_url": "shopify:\/\/pages\/affirm-payments"
+          }
+        }
+      },
+      "block_order": [
+        "template--14453046149238__e146ce1b-e8b3-43e9-839d-a6b8f52d3154-166905249035414498-0",
+        "template--14453046149238__e146ce1b-e8b3-43e9-839d-a6b8f52d3154-166905249035414498-1",
+        "2b7b7f6d-748d-43ce-921b-021f948a7006"
+      ],
+      "settings": {
+        "head_not_col_bg": "#f4f6f8",
+        "head_not_col_txt1": "#171717",
+        "head_not_col_txt2": "#4c4c4b",
+        "head_not_mob_show": false,
+        "head_not_mob_text": "Try at Home",
+        "head_not_mob_url": ""
+      }
+    },
+    "d7563810-b52b-4e13-9fb1-849d2c9e6759": {
+      "type": "image-with-text-overlay",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DenverModern_Mosley3854.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/DenverModern_Mosley3854.jpg",
+        "image_position": "center center",
+        "mobile_image_position": "center center",
+        "height": "fixed",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "shopify:\/\/collections\/best-sellers",
+        "subheading": "Customer Favorites",
+        "title": "BEST SELLERS",
+        "title_size": 60,
+        "title_size_mobile": 38,
+        "use_h1": false,
+        "text": "",
+        "enlarge_text": true,
+        "button_label_1": "SHOP BEST SELLERS",
+        "button_url_1": "",
+        "button_label_2": "",
+        "button_url_2": "",
+        "text_alignment": "center center",
+        "full_width": true,
+        "mobile_overlay_under": true,
+        "overlay_style": "shadow"
       }
     },
     "1635927863703110df": {
@@ -94,14 +190,15 @@
         "1635927863703110df-1": {
           "type": "heading",
           "settings": {
-            "title": "Rich text",
+            "title": "Quality furniture built for joy, living and comfort. Make yourself at home with Denver Modern.",
             "use_h1": false
           }
         },
         "1635927863703110df-2": {
           "type": "text",
+          "disabled": true,
           "settings": {
-            "text": "<p>Use this text to share information about your store with your customers. Describe products, share announcements, or welcome customers to your store.<\/p>",
+            "text": "<p>Quality furniture built for joy, living and comfort. Make yourself at home with Denver Modern.<\/p>",
             "enlarge_text": true
           }
         }
@@ -117,336 +214,531 @@
         "use_alt_bg": false
       }
     },
-    "16359278676808bea5": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured collection",
-        "collection": "",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 4,
-        "rows": 1,
-        "use_alt_bg": false,
-        "show_view_all": true,
-        "full_width": true
-      }
-    },
-    "16359278867b92de38": {
-      "type": "image-with-text",
-      "settings": {
-        "image_width": 700,
-        "subheading": "Subheading",
-        "title": "Image with text",
-        "use_h1": false,
-        "text": "<p>Pair text with an image to give customers insight into your brand. Tell a story, explain a product detail, or describe a new promotion.<\/p>",
-        "button_label": "Optional button",
-        "button_link": "",
-        "button_style": "primary",
-        "image_position": "left",
-        "text_alignment": "left",
-        "use_alt_bg": false
-      }
-    },
     "16359279164ff7d3f3": {
       "type": "gallery",
       "blocks": {
         "16359279164ff7d3f3-0": {
           "type": "image",
           "settings": {
-            "alignment": "center center",
-            "enlarge_image": true,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "button_label": "",
-            "link": "",
-            "text_alignment": "bottom left"
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0045.jpg",
+            "alignment": "bottom center",
+            "enlarge_image": false,
+            "subheading": "Excellence Above all",
+            "title": "Vail Stools",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/products\/vail-bar-counter-stool",
+            "text_alignment": "bottom right"
           }
         },
         "16359279164ff7d3f3-1": {
           "type": "image",
           "settings": {
-            "alignment": "center center",
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0013.jpg",
+            "alignment": "bottom center",
             "enlarge_image": false,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "button_label": "",
-            "link": "",
-            "text_alignment": "bottom left"
+            "subheading": "TIMELESS DESIGN",
+            "title": "Vail Lounge Chair",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/products\/vail-lounge-chair",
+            "text_alignment": "bottom right"
           }
         },
         "16359279164ff7d3f3-2": {
           "type": "image",
           "settings": {
-            "alignment": "center center",
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0024.jpg",
+            "alignment": "bottom center",
             "enlarge_image": false,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "button_label": "",
-            "link": "",
-            "text_alignment": "bottom left"
-          }
-        },
-        "474c4491-283d-4680-a37b-7b5a444e7e62": {
-          "type": "image",
-          "settings": {
-            "alignment": "center center",
-            "enlarge_image": true,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "button_label": "",
-            "link": "",
-            "text_alignment": "bottom left"
+            "subheading": "Meticulously sourced materials",
+            "title": "Float Console Table",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/products\/float-console",
+            "text_alignment": "bottom right"
           }
         }
       },
       "block_order": [
         "16359279164ff7d3f3-0",
         "16359279164ff7d3f3-1",
-        "16359279164ff7d3f3-2",
-        "474c4491-283d-4680-a37b-7b5a444e7e62"
+        "16359279164ff7d3f3-2"
       ],
       "settings": {
-        "grid": 2,
+        "grid": 3,
         "height": "fixed",
-        "desktop_image_height": 460,
-        "mobile_image_height": 400,
-        "title_size": 30,
+        "desktop_image_height": 550,
+        "mobile_image_height": 500,
+        "title_size": 22,
         "title_size_mobile": 22,
         "enable_margin": true,
         "enable_row_spacing": true,
-        "full_width": false,
+        "full_width": true,
         "use_alt_bg": false,
         "enable_carousel": true,
         "overlay_style": "full",
-        "button_style": "primary"
+        "button_style": "link"
       }
     },
-    "16359281184fd0d618": {
+    "123a5ff1-badc-497c-a94f-c63bf160b41a": {
       "type": "testimonials",
       "blocks": {
-        "16359281184fd0d618-0": {
+        "template--14453046149238__123a5ff1-badc-497c-a94f-c63bf160b41a-1669852231ddb3207b-0": {
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "testimonial": "Add customer reviews and testimonials to showcase your store’s happy customers.",
-            "author": "Author's name",
+            "testimonial": "Not only does the Vail lounge chair look awesome. It’s one of the most comfortable chairs I’ve ever owned!",
+            "author": "Paul",
+            "image": "shopify:\/\/shop_images\/vail-lounge-chair-UGC44.jpg",
             "image_alignment": "center center",
             "image_caption": "",
-            "link": ""
+            "link": "shopify:\/\/products\/vail-lounge-chair"
           }
         },
-        "16359281184fd0d618-1": {
+        "template--14453046149238__123a5ff1-badc-497c-a94f-c63bf160b41a-1669852231ddb3207b-1": {
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "testimonial": "Add customer reviews and testimonials to showcase your store’s happy customers.",
-            "author": "Author's name",
+            "testimonial": "They look fantastic and match our tables very well. Thank you for the work that went into these. We're looking forward to working with you again soon.",
+            "author": "Katie B.",
+            "image": "shopify:\/\/shop_images\/vail-stools-UGC3.jpg",
             "image_alignment": "center center",
             "image_caption": "",
-            "link": ""
+            "link": "shopify:\/\/products\/vail-bar-counter-stool"
+          }
+        },
+        "75a588f8-cc51-4874-84b6-d8b99d132b5d": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "testimonial": "We are loving lounging in the chairs. They are so plush!",
+            "author": "Sarah L.",
+            "image": "shopify:\/\/shop_images\/2D6B021E-1527-423F-8119-ADB27B7ED31C.png",
+            "image_alignment": "center center",
+            "image_caption": "",
+            "link": "shopify:\/\/products\/vail-bar-counter-stool"
           }
         }
       },
       "block_order": [
-        "16359281184fd0d618-0",
-        "16359281184fd0d618-1"
+        "template--14453046149238__123a5ff1-badc-497c-a94f-c63bf160b41a-1669852231ddb3207b-0",
+        "template--14453046149238__123a5ff1-badc-497c-a94f-c63bf160b41a-1669852231ddb3207b-1",
+        "75a588f8-cc51-4874-84b6-d8b99d132b5d"
       ],
       "settings": {
-        "title": "From the people",
-        "layout": "image-right",
+        "title": "Customer reviews",
+        "layout": "image-left",
         "text_caps": false,
         "quote_text_size": 30,
         "quote_text_size_mobile": 20,
-        "image_shape": "square",
+        "image_shape": "landscape",
         "use_alt_bg": false,
         "autoplay": true,
         "autoplay_speed": 5
       }
     },
-    "16359285201c71bbb1": {
-      "type": "background-video",
-      "settings": {
-        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "subheading": "Tell your story",
-        "title": "Background video",
-        "title_size": 84,
-        "title_size_mobile": 42,
-        "use_h1": false,
-        "text": "<p>Use a video to get a customer's attention<\/p>",
-        "enlarge_text": true,
-        "button_label_1": "",
-        "button_url_1": "",
-        "button_label_2": "",
-        "button_url_2": "",
-        "text_alignment": "center center",
-        "height_desktop": 580,
-        "height_mobile": 480,
-        "full_width": true,
-        "overlay_style": "full image-overlay--bg-shadow"
-      }
-    },
-    "163592857728b8bdc2": {
-      "type": "multi-column",
+    "fe41303f-51e2-4216-9b89-ded2ec544b1c": {
+      "type": "custom-row",
       "blocks": {
-        "163592857728b8bdc2-0": {
-          "type": "text_block",
+        "362c2744-2763-4125-aea3-6ad2dee7aa40": {
+          "type": "image",
           "settings": {
-            "enable_image": true,
-            "image_width": 700,
-            "title": "Add a title or tagline",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
-            "button_label": "Optional button",
-            "link": ""
-          }
-        },
-        "163592857728b8bdc2-1": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image_width": 700,
-            "title": "Add a title or tagline",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
-            "button_label": "Optional button",
-            "link": ""
-          }
-        },
-        "163592857728b8bdc2-2": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image_width": 700,
-            "title": "Add a title or tagline",
-            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
-            "button_label": "Optional button",
-            "link": ""
+            "width": "full",
+            "image": "shopify:\/\/shop_images\/DenverModern_Boulder3033_HDR.jpg",
+            "image_position": "bottom right",
+            "height": "fixed",
+            "height_desktop": 600,
+            "height_mobile": 500,
+            "subheading": "DESIGN YOUR DREAM DINING OR OFFICE TABLE ONLINE IN MINUTES.",
+            "title": "Custom-Made Tables",
+            "text": "<p><a href=\"\/pages\/custom-made-tables\" title=\"Custom Made Tables\">LEARN MORE<\/a><\/p>",
+            "enlarge_text": false,
+            "button_label": "",
+            "image_link": "",
+            "text_alignment": "bottom right",
+            "mobile_overlay_under": true,
+            "overlay_style": "shadow"
           }
         }
       },
       "block_order": [
-        "163592857728b8bdc2-0",
-        "163592857728b8bdc2-1",
-        "163592857728b8bdc2-2"
+        "362c2744-2763-4125-aea3-6ad2dee7aa40"
       ],
       "settings": {
-        "title": "Multi-column",
+        "alignment": "middle"
+      }
+    },
+    "fe10c5d1-7664-4272-8d84-62fc3b82ffdb": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Featured Collections",
+            "use_h1": false
+          }
+        },
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Shop Denver Modern's curated collections to help design your home inside and out.<\/p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-0",
+        "template--14453046149238__fe10c5d1-7664-4272-8d84-62fc3b82ffdb-166905246797a26d35-1"
+      ],
+      "settings": {
+        "height": "medium",
         "text_alignment": "center",
-        "button_style": "primary",
+        "full_width": false,
         "use_alt_bg": false
       }
     },
-    "1635928580d75f81bf": {
-      "type": "featured-product",
+    "cbfbd3b9-cf91-4388-adda-1ba894043d48": {
+      "type": "gallery",
       "blocks": {
-        "1635928580d75f81bf-0": {
-          "type": "title",
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-0": {
+          "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/custom_resized_cb026c4f-11d4-440b-ab8c-d5377d4bfc7c.jpg",
+            "alignment": "bottom center",
+            "enlarge_image": false,
+            "subheading": "HANDWOVEN ARTISTRY",
+            "title": "Rugs",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/indoor-rugs-by-armadillo-co",
+            "text_alignment": "bottom right"
           }
         },
-        "1635928580d75f81bf-1": {
-          "type": "price",
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-1": {
+          "type": "image",
           "settings": {
-            "show_tax_and_shipping": false,
-            "enable_product_reviews_by_price": true
+            "image": "shopify:\/\/shop_images\/233172-001_ESS_1.jpg",
+            "alignment": "bottom center",
+            "enlarge_image": false,
+            "subheading": "CURATED ART COLLECTION",
+            "title": "Art Studio",
+            "button_label": "Shop Now",
+            "link": "shopify:\/\/collections\/art-accessories",
+            "text_alignment": "bottom right"
           }
         },
-        "1635928580d75f81bf-2": {
-          "type": "vendor",
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-2": {
+          "type": "image",
           "settings": {
-          }
-        },
-        "1635928580d75f81bf-3": {
-          "type": "divider",
-          "settings": {
-          }
-        },
-        "1635928580d75f81bf-4": {
-          "type": "variant_picker",
-          "settings": {
-            "show_single": false,
-            "select_first_variant": true,
-            "variant_style": "listed",
-            "disable_unavailable_variants": true,
-            "show_size_chart": false,
-            "size_chart_variant": "Size",
-            "size_chart_page": ""
-          }
-        },
-        "1635928580d75f81bf-5": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "enable_payment_button": true,
-            "show_backorder_text": true
-          }
-        },
-        "1635928580d75f81bf-6": {
-          "type": "description",
-          "settings": {
-            "show_in_tab": false,
-            "open_tab": false,
-            "icon": ""
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0025.jpg",
+            "alignment": "bottom center",
+            "enlarge_image": false,
+            "subheading": "ENHANCE YOUR LIVING SPACE",
+            "title": "Home & Room Decor",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/accessories",
+            "text_alignment": "bottom right"
           }
         }
       },
       "block_order": [
-        "1635928580d75f81bf-0",
-        "1635928580d75f81bf-1",
-        "1635928580d75f81bf-2",
-        "1635928580d75f81bf-3",
-        "1635928580d75f81bf-4",
-        "1635928580d75f81bf-5",
-        "1635928580d75f81bf-6"
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-0",
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-1",
+        "template--14453046149238__cbfbd3b9-cf91-4388-adda-1ba894043d48-1669052467573aa9a6-2"
       ],
       "settings": {
-        "product": "",
-        "inventory_transfers_enable": true,
-        "gallery_size": "medium",
-        "gallery_layout": "carousel-under",
-        "enable_zoom": true,
-        "enable_video_looping": false,
-        "enable_var_img_grouping": false,
-        "var_img_grouping_option": "Color,Colour,Couleur,Farbe"
+        "grid": 3,
+        "height": "fixed",
+        "desktop_image_height": 500,
+        "mobile_image_height": 400,
+        "title_size": 22,
+        "title_size_mobile": 22,
+        "enable_margin": true,
+        "enable_row_spacing": true,
+        "full_width": true,
+        "use_alt_bg": false,
+        "enable_carousel": true,
+        "overlay_style": "full",
+        "button_style": "link"
+      }
+    },
+    "0238f065-4d06-464a-b2e3-b4caf1b2012a": {
+      "type": "newsletter",
+      "settings": {
+        "title": "ENJOY 10% OFF TODAY.",
+        "subheading": "<p>Plus, be the first to find out about new styles and exclusive offers. <\/p>",
+        "color_bg": "#908e81"
+      }
+    },
+    "16359278867b92de38": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DenverModern_Mosley3941-_1.jpg",
+        "image_2": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0020.jpg",
+        "image_width": 700,
+        "subheading": "BUY NOW, PAY OVER TIME.",
+        "title": "Interest Free Monthly Payments",
+        "use_h1": false,
+        "text": "<p>With Affirm, you can choose a payment plan that's right for you with rates as low as 0%.<\/p>",
+        "button_label": "LEARN MORE",
+        "button_link": "shopify:\/\/pages\/affirm-payments",
+        "button_style": "link",
+        "image_position": "left",
+        "text_alignment": "left",
+        "use_alt_bg": true
+      }
+    },
+    "89c7cc87-c72e-48bf-86f9-eb45ff26df87": {
+      "type": "image-with-text-overlay",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DenverModern_Boulder3033_HDR.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/DenverModern_Boulder3033_HDR.jpg",
+        "image_position": "center center",
+        "mobile_image_position": "center center",
+        "height": "fixed",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "shopify:\/\/collections\/custom-made-tables",
+        "subheading": "DESIGN YOUR DREAM DINING OR OFFICE TABLE ONLINE IN MINUTES",
+        "title": "Custom-Made Tables",
+        "title_size": 60,
+        "title_size_mobile": 38,
+        "use_h1": false,
+        "text": "",
+        "enlarge_text": false,
+        "button_label_1": "SHOP CUSTOM-MADE TABLES",
+        "button_url_1": "shopify:\/\/collections\/custom-made-tables",
+        "button_label_2": "",
+        "button_url_2": "",
+        "text_alignment": "center center",
+        "full_width": true,
+        "mobile_overlay_under": true,
+        "overlay_style": "full image-overlay--bg-shadow"
+      }
+    },
+    "65bfc44a-5734-4201-9a85-7548625f5814": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DenverModern_Boulder3037.jpg",
+        "image_2": "shopify:\/\/shop_images\/51544_51491_Oak_black_Bok_extendable_dining_table_chair_53040_Osso_stool_WEB.jpg",
+        "image_width": 520,
+        "subheading": "TRY AT HOME",
+        "title": "30-Day No Hassle Returns",
+        "use_h1": false,
+        "text": "<p>Fall in love with us and we’ll take care of your purchase. We offer a 30-day moneyback guarantee on all our products, so buy now or never worry about losing out!<\/p>",
+        "button_label": "LEARN MORE",
+        "button_link": "shopify:\/\/pages\/return-policy",
+        "button_style": "link",
+        "image_position": "right",
+        "text_alignment": "left",
+        "use_alt_bg": true
+      }
+    },
+    "f66ee119-adfa-47a2-9039-56c539cb4754": {
+      "type": "gallery",
+      "disabled": true,
+      "blocks": {
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0032.jpg",
+            "alignment": "top center",
+            "enlarge_image": false,
+            "subheading": "",
+            "title": "Kitchen & Dining Room",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/dining-kitchen",
+            "text_alignment": "center center"
+          }
+        },
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0065.jpg",
+            "alignment": "center center",
+            "enlarge_image": false,
+            "subheading": "",
+            "title": "Living Room",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/living-room-collection",
+            "text_alignment": "center center"
+          }
+        },
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/10064_Teak_Graphic_TV_cupboard_WEB_2.jpg",
+            "alignment": "center center",
+            "enlarge_image": false,
+            "subheading": "",
+            "title": "Storage",
+            "button_label": "SHOP NOW",
+            "link": "shopify:\/\/collections\/storage",
+            "text_alignment": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-0",
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-1",
+        "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-2"
+      ],
+      "settings": {
+        "grid": 3,
+        "height": "fixed",
+        "desktop_image_height": 550,
+        "mobile_image_height": 400,
+        "title_size": 30,
+        "title_size_mobile": 22,
+        "enable_margin": true,
+        "enable_row_spacing": true,
+        "full_width": true,
+        "use_alt_bg": false,
+        "enable_carousel": true,
+        "overlay_style": "full image-overlay--bg-shadow",
+        "button_style": "link"
+      }
+    },
+    "31453940-80a1-4286-9dbb-718639fb54ef": {
+      "type": "image-with-text-overlay",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DM_home_studio3610-1-1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/DM_home_studio3610-1-1.jpg",
+        "image_position": "bottom left",
+        "mobile_image_position": "center center",
+        "height": "fixed",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "shopify:\/\/pages\/residential-and-commercial-trade",
+        "subheading": "TRADE PROFESSIONALS",
+        "title": "Let's Talk Shop.",
+        "title_size": 60,
+        "title_size_mobile": 46,
+        "use_h1": false,
+        "text": "<p>Through our Trade Partnership Program, we offer designers, architects and other industry professionals access to special pricing, swatches, and support from a Denver Modern specialist.<\/p>",
+        "enlarge_text": false,
+        "button_label_1": "LEARN MORE",
+        "button_url_1": "shopify:\/\/pages\/residential-and-commercial-trade",
+        "button_label_2": "",
+        "button_url_2": "",
+        "text_alignment": "center center",
+        "full_width": true,
+        "mobile_overlay_under": false,
+        "overlay_style": "box"
       }
     },
     "1635928697c562053a": {
       "type": "map",
+      "disabled": true,
       "settings": {
         "color_bg": "#f4f4f4",
         "full_width": true,
-        "heading": "Our store",
-        "address": "<p>123 Fake St.<br\/>Toronto, Canada<\/p><p>Mon - Fri, 10am - 9pm<br\/>Saturday, 11am - 9pm<br\/>Sunday, 11am - 5pm<\/p>",
+        "heading": "Denver Modern Showroom",
+        "address": "<p>3857 Steele St #1287<br\/>Denver, Colorado 80205<\/p><p>By Appointment Only. <br\/><a href=\"\/pages\/book-an-appointment\" target=\"_blank\" title=\"Book an Appointment\">Book a Showroom Appointment here<\/a><\/p>",
         "button": "Directions",
-        "show_pin": true,
-        "show_feature_image": true,
-        "map_address": "80 Spadina Ave, Toronto",
+        "show_pin": false,
+        "show_feature_image": false,
+        "feature_image": "shopify:\/\/shop_images\/Screenshot_2022-11-29_at_2.19.17_PM.png",
+        "map_address": "3857 Steele St #1287, Denver, CO 80205",
         "api_key": "",
-        "map_style": "silver"
+        "map_style": "silver",
+        "background_image": "shopify:\/\/shop_images\/Screenshot_2022-11-29_at_2.19.17_PM.png"
       }
     },
-    "163592870141219e2f": {
-      "type": "featured-blog",
+    "c14aa1f6-4243-4634-b26f-4a034c61bc42": {
+      "type": "image-with-text-overlay",
       "settings": {
-        "title": "Blog posts",
-        "blog": "",
-        "post_limit": 3,
-        "show_author": true,
-        "show_date": true,
-        "show_excerpts": true,
-        "crop_ratio": "1.78"
+        "image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0009.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_LivingRoom_0009.jpg",
+        "image_position": "center center",
+        "mobile_image_position": "center center",
+        "height": "fixed",
+        "height_desktop": 700,
+        "height_mobile": 500,
+        "image_link": "",
+        "subheading": "DENVER MODERN",
+        "title": "Casual Comfort, Wild at Heart.",
+        "title_size": 64,
+        "title_size_mobile": 36,
+        "use_h1": false,
+        "text": "<p>Designs inspired by the West, a city we love, and our quest for comfort. <\/p>",
+        "enlarge_text": true,
+        "button_label_1": "OUR STORY",
+        "button_url_1": "shopify:\/\/pages\/about-us",
+        "button_label_2": "",
+        "button_url_2": "",
+        "text_alignment": "top center",
+        "full_width": true,
+        "mobile_overlay_under": true,
+        "overlay_style": "shadow"
+      }
+    },
+    "04ffece1-fff9-4da8-b901-c96523286276": {
+      "type": "rich-text",
+      "blocks": {
+        "94432841-23b2-4367-b493-674321bc8327": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Trade Partnerships"
+          }
+        },
+        "template--14453046149238__04ffece1-fff9-4da8-b901-c96523286276-166985222537b41a5c-0": {
+          "type": "heading",
+          "settings": {
+            "title": "LET'S TALK SHOP",
+            "use_h1": false
+          }
+        },
+        "template--14453046149238__04ffece1-fff9-4da8-b901-c96523286276-166985222537b41a5c-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Through our Trade Partnership Program, we offer designers, architects and other industry professionals access to special pricing, swatches, and support from a Denver Modern specialist.<\/p>",
+            "enlarge_text": false
+          }
+        },
+        "371fe590-8008-495b-a0c9-9f94c625e986": {
+          "type": "button",
+          "settings": {
+            "button_label": "LEARN MORE",
+            "button_link": "shopify:\/\/pages\/residential-and-commercial-trade",
+            "button_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "94432841-23b2-4367-b493-674321bc8327",
+        "template--14453046149238__04ffece1-fff9-4da8-b901-c96523286276-166985222537b41a5c-0",
+        "template--14453046149238__04ffece1-fff9-4da8-b901-c96523286276-166985222537b41a5c-1",
+        "371fe590-8008-495b-a0c9-9f94c625e986"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "use_alt_bg": false
       }
     }
   },
   "order": [
+    "08ea0976-eeef-406f-b176-880399dd5901",
     "16359276425da8ce46",
+    "e146ce1b-e8b3-43e9-839d-a6b8f52d3154",
+    "d7563810-b52b-4e13-9fb1-849d2c9e6759",
     "1635927863703110df",
-    "16359278676808bea5",
-    "16359278867b92de38",
     "16359279164ff7d3f3",
-    "16359281184fd0d618",
-    "16359285201c71bbb1",
-    "163592857728b8bdc2",
-    "1635928580d75f81bf",
+    "123a5ff1-badc-497c-a94f-c63bf160b41a",
+    "fe41303f-51e2-4216-9b89-ded2ec544b1c",
+    "fe10c5d1-7664-4272-8d84-62fc3b82ffdb",
+    "cbfbd3b9-cf91-4388-adda-1ba894043d48",
+    "0238f065-4d06-464a-b2e3-b4caf1b2012a",
+    "16359278867b92de38",
+    "89c7cc87-c72e-48bf-86f9-eb45ff26df87",
+    "65bfc44a-5734-4201-9a85-7548625f5814",
+    "f66ee119-adfa-47a2-9039-56c539cb4754",
+    "31453940-80a1-4286-9dbb-718639fb54ef",
     "1635928697c562053a",
-    "163592870141219e2f"
+    "c14aa1f6-4243-4634-b26f-4a034c61bc42",
+    "04ffece1-fff9-4da8-b901-c96523286276"
   ]
 }

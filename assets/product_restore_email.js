@@ -1,5 +1,7 @@
 
-(function() {
+
+
+(async function () {
   /**
    * 1.0 与 2.0脚本的主要区别如下
    * @param {shopId} - 获取都在init()中，但是操作略有不同
@@ -9,9 +11,9 @@
    */
   // warning ： .shopify-payment-button 字符串被用于替换做兼容
   // 防抖
-  function debounce(delay = 500, callback) {
+  function debounce(delay = 500, callback,) {
     let timer;
-    return function() {
+    return function () {
       clearTimeout(timer);
       timer = null;
       timer = setTimeout(() => {
@@ -19,7 +21,76 @@
       }, delay);
     };
   };
-  const initRes = init();
+
+  // Mark 变量声明
+  let isProPage = false
+  let isCollPage = false
+  let productId = 0
+  let insertEls = []
+  let collVariants = []
+  let observer = null
+  let oldCollElsCount = 0
+  let proPosition = []
+  let locale
+  let customStyle = ''
+
+  if (typeof ShopifyAnalytics === 'undefined') {
+    await new Promise((res, rej) => {
+      setTimeout(() => { res() }, 1500)
+    })
+  }
+
+  if (ShopifyAnalytics.meta.product) {
+    productId = ShopifyAnalytics.meta.product.id;
+  }
+  let shopId = 0
+  if (qa('#shopify-features')) {
+    shopId = JSON.parse(qa('#shopify-features')[0].outerText).shopId
+  } else if (window.ShopifyAnalytics && ShopifyAnalytics.lib && ShopifyAnalytics.lib.config) {
+    shopId = ShopifyAnalytics.lib.config.Trekkie.defaultAttributes.shopId
+  }
+
+  userNeed()
+
+  locale = Shopify.locale;
+
+  // Mark 相关请求
+  let requests = {
+    getProsVariantsData(p) {
+      const url = baseUrl + 'api/v1/customer/getVariantBtStatus'
+      let params = {
+        shopId
+      }
+      Object.assign(params, p)
+      return request(url, params)
+    },
+    getCollBtnStyle() {
+      const url = baseUrl + 'api/v1/getCollectionButtonStyle'
+      let params = {
+        shopId,
+        shop_language: locale
+      }
+      return request(url, params)
+    }
+  }
+
+  // 店铺域名
+  const domain = Shopify.shop;
+  /*
+  * dev下debug为true, baseUrl为测试服。
+  * prod下debug为false, baseUrl为正式服
+  */
+  const debug = isDebug;
+  const baseUrl = apiBaseUrl;
+  // 登录用户的信息
+  let customerInfo = {};
+  // 能够展示按钮的变体数组
+  let showVariants = [];
+  // 获取登录用户的信息
+  getCustomerInfo();
+
+  const initRes = await init();
+
   if (typeof initRes === 'string') {
     console.log('Init info: ', initRes);
     return; // 如果获得的返回值不是对象而是string，说明在中间的某一个if判断出问题了，应当直接return
@@ -27,13 +98,14 @@
     importStyles(); // 引入邮件的css
     console.log('App is on!');
   }
-  const { debug, shopId, baseUrl, MAX_SEARCH_TIMES } = initRes;
+  const { MAX_SEARCH_TIMES } = initRes;
   let { times } = initRes;
 
   // 按钮以及弹窗的参数
   const btnAndPopupData = initBtnAndPopupData();
   const {
     buttonStyleUrl,
+    collButtonStyleUrl,
     popupStyleUrl,
     integrationUrl,
     floatBtnPosition,
@@ -76,6 +148,8 @@
     exactForm } = elements;
   const { trueForms } = elements;
 
+
+
   const productInfo = initProductInfo();
   let {
     currentVariant,
@@ -87,36 +161,18 @@
     initUrl,
     listenVariantFlag
   } = productInfo;
-  const { variantData, unVariantOptions } = productInfo;
+  let { variantData, unVariantOptions } = productInfo;
 
   const payment_button_class = '.shopify-payment-button';
-  debug && console.log('Init data finished')
-  searchParentEl().then(res => {
-  debug && console.log('SearchParentEl finished')
-  const { code } = res;
-    if (code === 501) { // 没有找到元素，打印出来，方便人员调试
-      console.log('Search Node Failed');
-      handleSearchNodeFailed().then(searchRes => {
-        if (searchRes.code === 200) {
-          handleBasicData();
-          getAllStyle();
-        }
-      })
-      return;
-    }
-    if (code === 200) { // 找到了插入的元素，继续往下执行
-      debug && console.log('SearchParentEl success')
-      handleBasicData();
-      getAllStyle();
-    }
-  })
-;
+  debug && console.log('Init data finished');
 
+  execute();
+  getUserConfig();
   // =====================================逻辑就到这里结束====================================
   // =====================================逻辑就到这里结束====================================
   // =====================================逻辑就到这里结束====================================
-
-  function init() {
+  // Mark 初始化
+  async function init() {
     /*
       * 初始化一些店铺的信息，判断是否要继续往下执行脚本
       * shopId - 店铺id，长的那个，不是user表里短的那个
@@ -124,47 +180,102 @@
       *       prod下debug为false, baseUrl为正式服
       */
 
-    const ENV = 'prod';
-    const baseUrl = ENV.indexOf('dev') === -1
-      ? 'https://emailnoticeapi.sealapps.com/'
-      : 'https://emailnoticeapitest.sealapps.com/';
-    const debug = ENV.indexOf('dev') !== -1;
+    // const ENV = 'prod';
+    // const baseUrl = ENV.indexOf('dev') === -1
+    //     ? 'https://emailnoticeapi.sealapps.com/'
+    //     : 'https://emailnoticeapitest.sealapps.com/';
+    // const debug = ENV.indexOf('dev') !== -1;
 
     // 从浏览器的window对象中获取ShopifyAnalytics对象
     const { ShopifyAnalytics } = window;
-    if (ShopifyAnalytics && ShopifyAnalytics.meta && ShopifyAnalytics.meta.page && ShopifyAnalytics.meta.page.pageType !== 'product') {
-      return 'Not in product page';
-    } else if (location.href.indexOf('product') === -1) {
-      return 'Not in product page';
+    const pageType = ShopifyAnalytics && ShopifyAnalytics.meta && ShopifyAnalytics.meta.page && ShopifyAnalytics.meta.page.pageType
+    let proParams = {}
+    let prosEle = []
+    if (pageType === 'product') {
+      isProPage = true
+      if (productId) {
+        proParams.productIds = [productId]
+        proParams.type = 2
+      }
+    } else if (pageType === 'collection') {
+      isCollPage = true
+      prosEle = getProsEle()
+      debug && console.log(prosEle);
+      if (prosEle !== null) {
+        oldCollElsCount = prosEle.length
+        const lists = getProductsANodes(prosEle)
+        prosEle = lists.prosEle
+        proParams.handles = getProsHandles(lists.aNodeList)
+        proParams.type = 1
+      }
     }
+    if (!isCollPage && !isProPage) {
+      return 'not collectionPage or productPage'
+    }
+    // if (ShopifyAnalytics && ShopifyAnalytics.meta && ShopifyAnalytics.meta.page && ShopifyAnalytics.meta.page.pageType !== 'product') {
+    //   return 'Not in product page';
+    // } else if (location.href.indexOf('product') === -1) {
+    //   return 'Not in product page';
+    // }
     // 获取shopId
 
-    const shopId = JSON.parse(qa('#shopify-features')[0].outerText).shopId
+
     // const shopId = ShopifyAnalytics.lib
     //   ? JSON.parse(qa('#shopify-features')[0].outerText).shopId
     //   : ShopifyAnalytics.lib.config.Trekkie.defaultAttributes.shopId;
-    changeStatus({ shopId, baseUrl });
-    // 这里似乎是判断用户是否卸载的，但是偶尔会影响到正常用户，故注释
-    // const timeStamp = +new Date() / 1000;
-    // if (timeStamp - 7200 > shopMeta) {
-    //   return 'Time stamp';
-    // }
+    changeStatus({ baseUrl });
 
-    const shopMeta = JSON.parse(q('#em_product_metafields').textContent);
-    if (!shopMeta) {
-      return 'no shopMeta';
+    // 获取需要显示按钮的产品数据
+    // await getProductStatus();
+    if (Object.keys(proParams).length !== 0) {
+
+      const res = await requests.getProsVariantsData(proParams)
+      debug && console.log('res', res);
+      // .then(res => {
+      if (res.btStatus !== 1) {
+        return 'collectionPage btn disable'
+      }
+      const { apiCode, products } = res;
+      if (isProPage) {
+        if (apiCode === 200 && products) {
+          //由于是产品页，所以产品肯定只有一个
+          showVariants = products[0].variants.map(variant => {
+            return variant.variantRid
+          })
+        }
+      } else if (isCollPage) {
+        products.forEach((i, inx) => {
+          if (i.productStatus === 1) {
+            insertEls.push(prosEle[inx])
+            proPosition.push(inx)
+            collVariants.push({ proId: i.productId, productName: i.productName, variants: i.variants })
+          }
+        })
+      }
+      debug && console.log('Get Product Status Success')
+      // })
+
+
+
     }
 
-    const variantData = JSON.parse(q('#em_product_variants').textContent);
-    const hasUnavailableV = variantData.some(v => v.available === false);
-    if (!hasUnavailableV) {
-      return 'All variants are in stock.'
+
+    // const variantData = JSON.parse(q('#em_product_variants').textContent);
+    // const hasUnavailableV = variantData.some(v => v.available === false);
+    const hasUnavailableV = showVariants.length || collVariants.length;
+
+    if (hasUnavailableV == 0) {
+      if (isCollPage) {
+        // 这页产品列表没有，其他排序可能有，要设立监听
+        checkVariantChange()
+      }
+      return 'All btn of variants are hidden.'
     }
 
     if (
       q('#product-restore-email-flag') ||
       q('#product-restore-email-float') ||
-      q('#product-restore-email')) {
+      q('.product-restore-email')) {
       return 'Already enabled';
     } else {
       const div = `
@@ -174,14 +285,181 @@
     }
     return {
       debug,
-      shopMeta,
-      shopId,
       baseUrl,
       MAX_SEARCH_TIMES: 50,
       times: 0
     };
   }
 
+  // Mark 执行
+  async function execute() {
+    if (isProPage) {
+      // // 获取需要显示按钮的产品数据
+      // await getProductStatus(baseUrl);
+
+      searchParentEl().then(res => {
+        debug && console.log('SearchParentEl finished')
+        const { code } = res;
+        if (code === 501) { // 没有找到元素，打印出来，方便人员调试
+          console.log('Search Node Failed');
+          handleSearchNodeFailed().then(searchRes => {
+            if (searchRes.code === 200) {
+              handleBasicData();
+              getAllStyle();
+            }
+          })
+          return;
+        }
+        if (code === 200) { // 找到了插入的元素，继续往下执行
+          debug && console.log('SearchParentEl success')
+          handleBasicData();
+          getAllStyle();
+        }
+      })
+    } else if (isCollPage) {
+      getAllStyle();
+    }
+  }
+
+  // 获取集合页产品列表的嵌入元素（价格）
+  function getProsEle() {
+    const themeStoreId = Shopify.theme.theme_store_id
+    let selector = ''
+    switch (themeStoreId) {
+      /*
+        Dawn-887 Refresh-1567 Sense-1356 Crave-1363
+        Craft-1368 Studio-1431 Taste-1434 Ride-1500
+        Colorblock-1499
+      */
+      case 887: case 1567: case 1356: case 1363:
+      case 1368: case 1431: case 1434: case 1500:
+      case 1499: {
+        selector = '.card-information .price';
+        // selector = '.grid__item .card';
+        // const el = qa(selector);
+        // el.forEach(eachEl => {
+        //   eachEl.style.height = 'unset';
+        //   eachEl.style.position = 'relative';
+        // });
+        break
+      }
+      case 829: { // Narrative
+        selector = '.card__info>.card__price'; break
+      }
+      case 775: { // Venture
+        selector = '.product-card__info>.product-card__price'; break
+      }
+      case 796: { // Debut
+        selector = '.product-card>.price'; break
+      }
+      case 730: { // Brooklyn
+        selector = '.grid__item .grid-product__price-wrap'; break
+      }
+      case 679: { // Supply
+        selector = '.grid-item .product-item--price'; break
+      }
+      case 380: { // Minimal
+        selector = '.grid__item .grid-link__meta'; break
+      }
+      case 578: { //Simple
+        selector = '.grid__item .product__prices'; break
+      }
+      case 857: {
+        selector = '.grid__item .grid-product__price'; break
+      }
+      case 765: {
+        selector = '.product--details'; break
+      }
+      default: {
+        // Warehouse主题
+        if (q('body.warehouse--v1')) {
+          selector = '.product-item .product-item__price-list'
+        }
+      }
+    }
+    if (selector) {
+      const nodes = Array.from(qa(selector))
+      return nodes.filter(i => i.offsetParent !== null)
+    } else {
+      return null
+    }
+  }
+  // 获取集合页产品列表的handle
+  function getProsHandles(nodes) {
+    let productHandleStrings = "";
+    let handleArr = []
+    if (nodes.length) {
+      let tarEle = 'A'
+      for (let i = 0; i < nodes.length; i++) {
+        if (nodes[i] && nodes[i].tagName === tarEle && nodes[i].getAttribute("href")) {
+          let href = nodes[i].getAttribute("href");
+          let start = href.lastIndexOf("/products/") + 10;
+          let end = href.indexOf("?")
+          let handle = ''
+          if (end != -1) {
+            handle = href.substring(start, end)
+          } else {
+            handle = href.substring(start)
+          }
+          if (handle.indexOf('.jpg') === -1) {
+            handleArr.push(handle)
+          }
+        } else {
+          handleArr.push('undefined')
+        }
+      }
+      // productHandleStrings = handleArr.join(',')
+
+    }
+    // productHandleStrings = productHandleStrings.replace(/[#]/g, '')
+    return handleArr
+  }
+
+  // Mark 获取集合页产品A元素
+  function getProductsANodes(nodes) {
+
+    let lists = {
+      aNodeList: [],
+      prosEle: []
+    }
+    let aNodeList = []
+    let index = 0
+
+    // collTarget = Array.from(collTarget)
+    let hs = 'a[href*="/products/"]'
+    let tarEle = 'A'
+
+    let curNode = nodes[0]
+    let aNode
+
+    for (let i = 0; i < nodes.length; i++) {
+      curNode = nodes[i]
+      aNode = null
+      for (let j = 0; j < 5; j++) {
+        curNode = curNode.parentNode
+        if (curNode.tagName === tarEle && curNode.href && curNode.href.indexOf('/products/') !== -1) {
+          aNode = curNode
+          break
+        }
+        let childA = q(hs, curNode)
+        if (childA) {
+          aNode = childA
+          break
+        }
+      }
+      if (aNode) {
+        index++
+        lists.prosEle.push(nodes[i])
+        lists.aNodeList.push(aNode)
+      } else {
+        nodes[i] = null
+      }
+    }
+    return lists
+
+  }
+
+  // Mark 初始化产品信息
   function initProductInfo() {
     /*
       * 初始化一些店铺的信息，比如
@@ -194,26 +472,32 @@
       * currentVariantOption - 当前选中的变体
       * addOptionsStatus - 似乎是用于记录是否选择了变体的状态
       */
-    const variantData = JSON.parse(q('#em_product_variants').textContent);
-    const hasAvailableV = variantData.some(v => v.available === false);
-    const currentVariant = JSON.parse(
-      q('#em_product_selected_or_first_available_variant').textContent
-    );
-    return {
-      variantData,
-      currentVariant,
-      available: currentVariant.available,
-      selectVariantId: currentVariant.id,
-      hasAvailableV,
-      productTitle: '',
+    let info = {
+      selectVariantId: '',
       unVariantOptions: [],
       currentVariantOption: null,
       addOptionsStatus: 0,
+      productTitle: '',
       initUrl: document.URL,
-      listenVariantFlag: true
-    };
+    }
+    if (isProPage) {
+      const variantData = JSON.parse(q('#em_product_variants').textContent);
+      const hasAvailableV = variantData.some(v => v.available === false);
+      const currentVariant = JSON.parse(
+        q('#em_product_selected_or_first_available_variant').textContent
+      );
+      Object.assign(info, {
+        variantData,
+        currentVariant,
+        available: currentVariant.available,
+        selectVariantId: currentVariant.id,
+        hasAvailableV,
+        listenVariantFlag: true
+      })
+    }
+    return info
   }
-
+  // Mark 初始化按钮和弹窗
   function initBtnAndPopupData() {
     // 初始化按钮以及弹窗的相关数据
     return {
@@ -224,6 +508,7 @@
       btnFontWeight: 'initial',
       popupStyleUrl: 'getPopupStyle',
       buttonStyleUrl: 'getButtonStyle',
+      collButtonStyleUrl: 'getCollectionButtonStyle',
       integrationUrl: 'integrate/getIntegration',
       floatBtnPosition: 'float-btn-right',
       buttonData: {
@@ -231,6 +516,9 @@
         btn_color: '',
         font_color: '',
         btn_margin_top: '',
+        btn_margin_bottom: '',
+        collection_btn_value: '',
+        collection_is_show: 0,
         inline_status: 0,
         float_btn_value: '',
         float_btn_color: '',
@@ -251,13 +539,15 @@
         btn_hover_color: '#333333',
         btn_hover_font_color: '#ffffff',
         btn_margin_top: '0',
+        btn_margin_bottom: '0',
         btn_border_radius: '0',
-        btn_border_color: 'transparent'
+        btn_border_color: 'transparent',
+        btn_customize_css: ''
       },
       popupData: null,
       frameBtnColor: '#333333',
       frameBtnFontColor: '#ffffff',
-      insertType: '',
+      insertType: 'afterend',
       insertEl: null,
       selectedType: {},
       iti: null, // intl-phone-input插件
@@ -291,7 +581,7 @@
     };
   }
 
-  // 获取按钮样式
+  //Mark 获取按钮样式
   function getBtnStyle(btn) {
     if (btn.tagName == 'DIV') {
       btn = btn.querySelector('button');
@@ -360,11 +650,10 @@
   // 找shopify_payment_button以及parent
   function searchParentEl() {
     return new Promise(resolve => {
-    // 首先获取所有的form，并进行遍历
+      // 首先获取所有的form，并进行遍历
       const forms = qa('form');
       for (let i = 0; i < forms.length; i++) {
-      // 如果当前表单的action与预测的formAction相同，则推入trueForms数组
-        // if (forms[i].action == formAction) {
+        // 如果当前表单的action与预测的formAction相同，则推入trueForms数组
         if (forms[i].action.indexOf('/cart/add') !== -1) {
           trueForms.push(forms[i]);
         }
@@ -377,7 +666,7 @@
         exactForm = trueForms[0];
         getSoldOutBtn(trueForms[0]);
       } else {
-      // 对遍历得出的action符合预期的form数组再次进行循环
+        // 对遍历得出的action符合预期的form数组再次进行循环
         for (let i = 0; i < trueForms.length; i++) {
           if (soldOutBtn) {
             break;
@@ -385,12 +674,12 @@
           const formStyle = window.getComputedStyle(trueForms[i], null);
           // 如果form不显示的话，直接中断本次循环，继续遍历之后的form表单
           if (formStyle.visibility != 'visible' ||
-          formStyle.display == 'none' ||
-          formStyle.height == '0px' ||
-          formStyle.height == '0' ||
-          formStyle.width == '0px' ||
-          formStyle.width == '0' ||
-          formStyle.height == 'auto') {
+            formStyle.display == 'none' ||
+            formStyle.height == '0px' ||
+            formStyle.height == '0' ||
+            formStyle.width == '0px' ||
+            formStyle.width == '0' ||
+            formStyle.height == 'auto') {
             continue;
           }
           exactForm = trueForms[i];
@@ -401,9 +690,9 @@
             const parentStyle = window.getComputedStyle(parent, null);
             // 如果父级正常的话就结束trueForms循环
             if (parentStyle.visibility == 'visible' &&
-            parentStyle.display != 'none' &&
-            parentStyle.height != 0 &&
-            parentStyle.width != 0) {
+              parentStyle.display != 'none' &&
+              parentStyle.height != 0 &&
+              parentStyle.width != 0) {
               break;
             }
           }
@@ -422,7 +711,7 @@
             const btnArr = trueForms[i].querySelectorAll('button');
             for (let j = 0; j < btnArr.length; j++) {
               if (btnArr[j].type == 'submit') {
-              // 如果有类型为submit的按钮，直接将该按钮赋给soldOutBtn，并结束循环
+                // 如果有类型为submit的按钮，直接将该按钮赋给soldOutBtn，并结束循环
                 soldOutBtn = btnArr[j];
                 // 注意，这里的break只是中断了当前的循环，外层循环还会继续。
                 break;
@@ -430,7 +719,7 @@
             }
           }
         }
-      // 循环结束
+        // 循环结束
       }
       if (soldOutBtn || exactForm) {
         const params = { code: 200, msg: 'success' };
@@ -471,12 +760,12 @@
       for (let i = 0; i < parents.length; i++) {
         const style = window.getComputedStyle(parents[i], null);
         if (style.visibility != 'visible' ||
-        style.display == 'none' ||
-        style.height == '0px' ||
-        style.height == '0' ||
-        style.width == '0px' ||
-        style.width == '0' ||
-        style.height == 'auto') {
+          style.display == 'none' ||
+          style.height == '0px' ||
+          style.height == '0' ||
+          style.width == '0px' ||
+          style.width == '0' ||
+          style.height == 'auto') {
           continue;
         }
         return { type: 'beforeend', ele: parents[i] };
@@ -494,46 +783,67 @@
 
   function handleSearchNodeFailed() {
     return new Promise(resolve => {
-    getButtonStyle(shopId, buttonStyleUrl)
-      .then(() => {
-        if (!buttonData.btn_insert_el) {
-          const newParentData = getParentWithoutForm();
-          if (!newParentData.type) {
-            resolve({ code: 404 });
+      getButtonStyle(shopId, buttonStyleUrl)
+        .then(() => {
+          if (!buttonData.btn_insert_el) {
+            const newParentData = getParentWithoutForm();
+            if (!newParentData.type) {
+              resolve({ code: 404 });
+            } else {
+              resolve({ code: 200 });
+            }
           } else {
             resolve({ code: 200 });
           }
-        } else {
-          resolve({ code: 200 });
-        }
-      })
+        })
     })
   }
 
+  // Mark 按钮自定义位置
   function changeButtonPos() {
     /**
      * 用于更改按钮的位置/searchParentEl失败时指定parent
      */
     debug && console.log('changeButtonPos')
     const { btn_insert_customized, btn_insert_el, btn_insert_type } = buttonData;
-    if (btn_insert_customized) {
-      insertEl = q(btn_insert_el) || soldOutBtn;
+    if (btn_insert_customized && btn_insert_el) {
+      if (isProPage) {
+        insertEl = q(btn_insert_el) || soldOutBtn;
+      } else if (isCollPage) {
+        insertEls = qa(btn_insert_el);
+        insertEls = Array.from(insertEls);
+        let insertElsCopy = insertEls;
+        insertEls = [];
+        for (let inx = 0; inx < insertElsCopy.length; inx++) {
+          if (proPosition.includes(inx)) {
+            insertEls.push(insertElsCopy[inx]);
+          }
+        }
+      }
       insertType = btn_insert_type || 'afterend';
+    }
+
+    if (isProPage) {
+      const isBlcok = q("#sealapps-bis-widget");
+      if (isBlcok) {
+        insertEl = isBlcok;
+        insertType = 'beforeend'
+      }
     }
   }
 
   function handleBasicData() {
-      debug && console.log('Handle Basic Data')
-      if (soldOutBtn) {
+    debug && console.log('Handle Basic Data')
+    if (soldOutBtn) {
       const parentStyle = window.getComputedStyle(soldOutBtn.parentElement, null);
       if (parentStyle.display == 'flex' &&
-      parentStyle.flexDirection == 'row' &&
-      parentStyle.flexWrap == 'nowrap') {
+        parentStyle.flexDirection == 'row' &&
+        parentStyle.flexWrap == 'nowrap') {
         soldOutBtn.parentElement.style.flexWrap = 'wrap';
       }
     }
-      const v1 = variantData[0];
-      try {
+    const v1 = variantData[0];
+    try {
       productTitle = v1.name.split(' - ')[0].trim();
     } catch (error) {
       if (!v1.public_title) {
@@ -547,10 +857,18 @@
       }
     }
   }
-
   function getAllStyle() {
     debug && console.log('Get All Style')
-    const btnPromise = getButtonStyle(shopId, buttonStyleUrl);
+    let btnPromise, styUrl = ''
+    if (isProPage) {
+      styUrl = buttonStyleUrl
+    } else if (isCollPage) {
+      styUrl = collButtonStyleUrl
+    }
+    debug && console.log('isProPage', isProPage);
+    debug && console.log('collButtonStyleUrl', collButtonStyleUrl);
+    btnPromise = getButtonStyle(shopId, styUrl);
+    debug && console.log('btnPromise', btnPromise);
     const popupPromise = getPopupStyle(shopId, popupStyleUrl);
     const intePromise = getIntegration(shopId, integrationUrl);
     Promise.all([btnPromise, popupPromise, intePromise]).then(() => {
@@ -558,7 +876,7 @@
     });
   }
 
-  // 请求后端按钮样式接口
+  //Mark 请求后端按钮样式接口
   function getButtonStyle(shopId, btnurl) {
     if (btnStyleSwitch) {
       return new Promise(resolve => {
@@ -568,9 +886,9 @@
     debug && console.log('Get Button Style')
     // API路由
     const url = baseUrl + 'api/v1/' + btnurl;
-    return request(url, { shopId }).then(res => {
-    debug && console.log('Get Button Style Success')
-    const { code, data } = res;
+    return request(url, { shopId, shop_language: locale }).then(res => {
+      debug && console.log('Get Button Style Success')
+      const { code, data } = res;
       if (code === 200 && data) {
         btnStyleSwitch = 1;
         // inline设置
@@ -580,19 +898,23 @@
         Object.keys(generalData).forEach(key => {
           generalData[key] = data[key];
         });
+        if (isCollPage) {
+          generalData.btn_font_family =
+            generalData.btn_font_weight = 'inherit'
+        }
         renderSettingStyles();
         changeButtonPos();
       }
     });
   }
-  // 请求后端弹窗样式接口
+  //Mark 请求后端弹窗样式接口
   function getPopupStyle(shopId, popupUrl) {
     debug && console.log('Get Popup Style')
     // API路由
     const url = baseUrl + 'api/v1/' + popupUrl;
-    return request(url, { shopId }).then(res => {
-    debug && console.log('Get Popup Style Success')
-    const { code, data } = res;
+    return request(url, { shopId, shop_language: locale }).then(res => {
+      debug && console.log('Get Popup Style Success')
+      const { code, data } = res;
       if (code === 200 && data) {
         popupStyleSwitch = 1;
         popupData = JSON.parse(JSON.stringify(data));
@@ -610,7 +932,7 @@
       }
     });
   }
-  // 请求后端集成情况接口
+  //Mark 请求后端集成情况接口
   function getIntegration(shopId, inteUrl) {
     debug && console.log('Get Integration')
     // API路由
@@ -635,8 +957,11 @@
       btn_font_weight,
       btn_font_family,
       btn_margin_top,
+      btn_margin_bottom,
       btn_hover_font_color,
-      btn_hover_color } = generalData;
+      btn_hover_color,
+      btn_customize_css
+    } = generalData;
     let generalStyles = `
       .email-me-button {
         font-size: ${btn_font_size}px !important;
@@ -649,11 +974,13 @@
       }
       .email-me-inlineButton {
         margin-top: ${btn_margin_top}px !important;
+        margin-bottom: ${btn_margin_bottom}px !important;
       }
       .email-me-button:hover {
         color: ${btn_hover_font_color} !important;            
         background-color: ${btn_hover_color} !important;        
       }
+      ${btn_customize_css}
     `;
     if (btn_hover_animation) {
       generalStyles += `
@@ -701,6 +1028,7 @@
     document.head.insertAdjacentHTML('beforeend', styles);
   }
 
+  // Mark 渲染弹窗
   function renderBtnAndPopup() {
     debug && console.log('renderBtnAndPopup')
     // 预先创建没有库存的variantOptions
@@ -767,43 +1095,63 @@
     document.body.insertAdjacentHTML('beforeend', mountWindowElement);
 
     renderButton().then(res => {
-    debug && console.log('renderButton success')
-    if (res.code === 200) {
+      debug && console.log('renderButton success')
+      if (res.code === 200) {
         // 渲染按钮成功，进行下一步的操作
-      changeButtonPos();
-      createEmailButton(); // 查询店铺是否开启按钮
-      listenVariantChange(); // 开始监听变体的变化
-      getBISEle(); // 获取所有需要进行操作的DOM元素
-      if (popupData.popup_option !== 1) {
-        initSms(); // 初始化短信相关的操作
+        // changeButtonPos();
+        createEmailButton(); // 查询店铺是否开启按钮
+        listenVariantChange(); // 开始监听变体的变化
+        getBISEle(); // 获取所有需要进行操作的DOM元素
+        if (popupData.popup_option !== 1) {
+          initSms(); // 初始化短信相关的操作
+        }
+      } else {
+        debug && console.log('Insert failed');
       }
-    } else {
-      debug && console.log('Insert failed');
-    }
     });
   }
 
+  // Mark 渲染按钮
   function renderButton() {
     // 根据开启类型渲染按钮
     return new Promise(resolve => {
       const { inline_status, float_status } = buttonData;
       let flag = 0;
-      if (inline_status) { // 如果开启了inline，挂载inline
-        const { font_color, btn_color, btn_value, btn_margin_top } = buttonData;
+      if (inline_status || isCollPage) { // 如果开启了inline，挂载inline
+        const { font_color, btn_color, btn_value, collection_btn_value, btn_margin_top, btn_margin_bottom } = buttonData;
+        let btnText = ''
+        if (isProPage) {
+          btnText = btn_value
+        } else if (isCollPage) {
+          btnText = collection_btn_value
+        }
         const mountInlineBtn = ` 
-          <div id="product-restore-email" style="margin-top: ${btn_margin_top}px; max-width: ${inlineBtnWidth || 'initial'}">
+          <div class="product-restore-email" style="margin-top: ${btn_margin_top}px; margin-bottom: ${btn_margin_bottom}px; max-width: ${inlineBtnWidth || 'initial'}">
             <div class="email-me-button email-me-inlineButton" style="text-align:center; margin-top:0; color: ${font_color} ; background-color: ${btn_color} ; height:${inlineBtnHeight} ; border-radius: ${btnRadius || '2px'} ; font-size: ${btnFontSize || '14px'} ; font-weight: ${btnFontWeight || 'inherit'};">
-              ${btn_value}
+              ${btnText}
             </div>
           </div>`;
-        try {
-          debug && console.log('insert', insertEl, insertType);
-          insertEl.insertAdjacentHTML(insertType, mountInlineBtn);
-          flag++;
-        } catch (err) {
-          setInlineBtnWhenErr(mountInlineBtn);
+        if (isProPage) {
+          try {
+            debug && console.log('insert', insertEl, insertType);
+            insertEl.insertAdjacentHTML(insertType, mountInlineBtn);
+            flag++;
+          } catch (err) {
+            setInlineBtnWhenErr(mountInlineBtn);
+            flag++;
+          }
+        } else if (isCollPage) {
+          insertEls.forEach((i, inx) => {
+            const wrapper = document.createElement('div')
+            wrapper.setAttribute('proId', collVariants[inx].proId)
+            wrapper.innerHTML = mountInlineBtn
+            wrapper.style.position = 'relative';
+            wrapper.style.zIndex = '1';
+            i.after(wrapper)
+          })
           flag++;
         }
+
       }
 
       if (float_status) {
@@ -827,6 +1175,7 @@
   }
 
   function renderSpecificPopup(type) {
+    inlineBtnElement
     /*
     * 根据用户开启的弹窗类型进行部分渲染
     * 1 - 只开了邮件，渲染邮件输入框
@@ -864,10 +1213,10 @@
       toggler = `
         <div class="notify-type-toggler">
           <div class="email-type">
-              Email
+              ${popupData.popup_tab_email}
           </div>
           <div class="sms-type">
-              SMS
+              ${popupData.popup_tab_sms}
           </div>
         </div>
       `;
@@ -914,7 +1263,7 @@
         break;
     }
   }
-  // 获取Back in stock相关的元素
+  //Mark 获取Back in stock相关的元素
   function getBISEle() {
     switch (popupData.popup_option) {
       case 1:
@@ -936,9 +1285,9 @@
     submitBtn = q('.frame-submit .email-me-button');
     variantSelector = q('.selected-unavailable-variant');
 
-    inlineEmailDiv = q('#product-restore-email');
+    inlineEmailDiv = qa('.product-restore-email');
     floatEmailDiv = q('#product-restore-email-float');
-    inlineBtnElement = q('.email-me-inlineButton');
+    inlineBtnElement = qa('.email-me-inlineButton');
     floatBtnElement = q('.email-me-floatButton');
 
     mailingCheckbox = q('#join-mailing-list') || {};
@@ -946,6 +1295,7 @@
     handleEleEvent();
   }
 
+  // Mark 控件添加事件
   function handleEleEvent() {
     // 对各个元素进行事件处理与绑定
     switch (popupData.popup_option) {
@@ -960,40 +1310,87 @@
     }
     submitBtn.addEventListener('click', subEmail);
     // submitBtn.addEventListener('click', debounce(500, subEmail));
-    closeBox.addEventListener('click', function() {
+    closeBox.addEventListener('click', function () {
       emailFrameElement.style.display = 'none';
       if (variantSelector.style.display !== 'none') {
         currentVariantOption && currentVariantOption.removeAttribute('selected');
       }
     });
-    successFrame.addEventListener('click', function() {
+    successFrame.addEventListener('click', function () {
       successFrame.classList.remove('successSub_active');
     });
-    mountedUnVariantOptions();
+    if (isProPage) {
+      mountedUnVariantOptions();
+    }
     initInlineAndFloatBtn();
   }
 
+  // Mark 添加按钮事件
   function initInlineAndFloatBtn() {
-    if (inlineBtnElement) {
-      inlineBtnElement.addEventListener('click', function() {
-        emailFrameElement.style.display = 'block';
-        // 挂载没有库存的variant option
-        const selected_unavailable_variant = emailFrameElement.querySelector('.selected-unavailable-variant');
-        for (let i = 0; i < unVariantOptions.length; i++) {
-          if (addOptionsStatus === 0) {
-            selected_unavailable_variant.add(unVariantOptions[i]);
+    if (inlineBtnElement.length) {
+      inlineBtnElement.forEach((i, inx) => {
+        i.addEventListener('click', function (e) {
+          e.preventDefault();
+          autoInput();
+          let curProId = 0
+          emailFrameElement.style.display = 'block';
+          const selected_unavailable_variant = emailFrameElement.querySelector('.selected-unavailable-variant');
+          if (isCollPage) {
+
+            curProId = this.parentNode.parentNode.getAttribute('proId')
+            let oldProId = selected_unavailable_variant.getAttribute('proId')
+            if (oldProId) {
+              if (oldProId !== curProId) {
+                addOptionsStatus = 0
+                variantData = collVariants.find(i => i.proId == curProId).variants
+                unVariantOptions = []
+                mountedUnVariantOptions()
+                selected_unavailable_variant.innerHTML = ''
+                selected_unavailable_variant.setAttribute('proId', curProId)
+              }
+            } else {
+              unVariantOptions = []
+              variantData = collVariants.find(i => i.proId == curProId).variants
+              mountedUnVariantOptions()
+              selected_unavailable_variant.setAttribute('proId', curProId)
+            }
           }
-          if (unVariantOptions[i].getAttribute('value') === selectVariantId.toString()) {
-            currentVariantOption = selected_unavailable_variant.querySelectorAll('option')[i];
-            currentVariantOption.setAttribute('selected', 'selected');
+          // 挂载没有库存的variant option
+          for (let i = 0; i < unVariantOptions.length; i++) {
+            if (addOptionsStatus === 0) {
+              selected_unavailable_variant.add(unVariantOptions[i]);
+            }
+            if (unVariantOptions[i].getAttribute('value') === selectVariantId.toString()) {
+              currentVariantOption = selected_unavailable_variant.querySelectorAll('option')[i];
+              currentVariantOption.setAttribute('selected', 'selected');
+            }
           }
-        }
-        addOptionsStatus = 1;
-      });
+          addOptionsStatus = 1;
+
+
+        });
+      })
+      // inlineBtnElement.addEventListener('click', function () {
+      //   autoInput();
+      //   emailFrameElement.style.display = 'block';
+      //   // 挂载没有库存的variant option
+      //   const selected_unavailable_variant = emailFrameElement.querySelector('.selected-unavailable-variant');
+      //   for (let i = 0; i < unVariantOptions.length; i++) {
+      //     if (addOptionsStatus === 0) {
+      //       selected_unavailable_variant.add(unVariantOptions[i]);
+      //     }
+      //     if (unVariantOptions[i].getAttribute('value') === selectVariantId.toString()) {
+      //       currentVariantOption = selected_unavailable_variant.querySelectorAll('option')[i];
+      //       currentVariantOption.setAttribute('selected', 'selected');
+      //     }
+      //   }
+      //   addOptionsStatus = 1;
+      // });
     }
 
     if (floatBtnElement) {
-      floatBtnElement.addEventListener('click', function() {
+      floatBtnElement.addEventListener('click', function () {
+        autoInput();
         emailFrameElement.style.display = 'block';
         // 挂载没有库存的variant option
         // const selected_unavailable_variant = emailFrameElement.querySelector('.selected-unavailable-variant');
@@ -1010,22 +1407,64 @@
       });
     }
   }
+  // 自动填入登录用户的信息
+  function autoInput() {
+    if (JSON.stringify(customerInfo) != "{}") {
+      nameInput.value = customerInfo.name;
+      if (emailInput) {
+        emailInput.value = customerInfo.email;
+      }
+      if (smsInput) {
+        smsInput.value = customerInfo.phone.replace(/[^0-9]/g, '');
+      }
+    }
+  }
 
+  // Mark 生成弹窗变体下拉框选项
   function mountedUnVariantOptions() {
     let optionIndex = 0;
+    let title, id = 'id'
+    if (isProPage) {
+      title = 'title'
+    } else if (isCollPage) {
+      title = 'variantTitle'
+      id = 'variantRid'
+    }
     for (let i = 0; i < variantData.length; i++) {
-      if (!variantData[i].available) {
-        if (variantData[i]['title'] === 'Default Title') {
+
+      // 如果variantData存在此变体id则该变体需要展示按钮
+      if ((showVariants.includes(String(variantData[i].id)) && isProPage) || isCollPage) {
+        if (isCollPage) {
+          collRednerProName(variantData[i].productRid);
+        }
+        if (variantData[i][title] === 'Default Title') {
           variantSelector.style.display = 'none';
         }
         unVariantOptions[optionIndex] = create({
           tag: 'option',
-          attributes: { 'value': variantData[i]['id'], 'textContent': variantData[i]['title'] }
+          attributes: { 'value': variantData[i][id], 'textContent': variantData[i][title] }
         });
         optionIndex++;
       }
     }
   }
+
+  //Mark 防抖监听集合页元素变动
+  const observeDebounce = debounce(600, async () => {
+    observer.disconnect();
+    const curEls = getProsEle()
+    const bns = qa('.product-restore-email').length
+    if ((curEls.length !== oldCollElsCount) || !bns) {
+      debug && console.log('监听成功，开始运行');
+      collVariants = []
+      insertEls = []
+      selBtnStatus = 0
+      await init();
+      execute()
+    } else {
+      checkVariantChange()
+    }
+  })
 
   function listenVariantChange() {
     /**
@@ -1033,19 +1472,65 @@
      * 1. 当url中包含variant=的时候，采用listen url的方法
      * 2. 当url中不包含的时候，采用定时器的方法
      */
-    const url = document.URL;
-    listenUrlStatus();
-    if (url.indexOf('variant=') === -1) {
+    if (isProPage) {
+      const url = document.URL;
+      listenUrlStatus();
+      if (url.indexOf('variant=') === -1 || shopId == 1742274613) {
+        checkVariantChange();
+      }
+    } else if (isCollPage) {
       checkVariantChange();
-    } 
+    }
+
   }
-  
+
   function checkVariantChange() {
-    debug && console.log('定时器开启，检查variant变化');
-    const curVariantId = window.ShopifyAnalytics ? 
-    window.ShopifyAnalytics.meta.selectedVariantId : selectVariantId;
-    handleVariantChange(curVariantId);
-    listenVariantFlag && setTimeout(checkVariantChange, 100)
+    // 选择要观察变动的节点
+    let targetNode
+    if (isProPage) {
+      if (shopId == 55013703857) {
+        targetNode = q('.select-selected, select[name=id]');
+      }else if(shopId == 1742274613) {
+        targetNode = q('.option-1');
+      }else {
+        targetNode = q('input[name=id], select[name=id]');
+      }
+    } else if (isCollPage) {
+      targetNode = q('main');
+    }
+    if (targetNode) {
+      // 观察器的配置
+      const config = { attributes: true, childList: true, subtree: true };
+      // 创建一个观察器实例并传入回调函数
+      observer = new MutationObserver(observerCallback);
+      // 以上述配置开始观察目标节点
+      observer.observe(targetNode, config);
+      debug && console.log('监听器启动中');
+    }
+
+  }
+
+  //Mark 当观察到变动时执行的回调函数
+  function observerCallback() {
+    if (isProPage) {
+      debug && console.log('监听到元素变化，检查variant变化');
+      let curVariantId;
+      if (shopId == 55013703857) {
+        const selectedTitle = q('.select-selected').innerText;
+        curVariantId = variantData.find(o => o.title == selectedTitle).id;
+      }else if(shopId == 1742274613){
+        const option1Node = q('.option-0');
+        const option2Node = q('.option-1');
+        const option1Title = option1Node.querySelector('.selected_val').innerText;
+        const option2Title = option2Node.querySelector('.selected_val').innerText;
+        curVariantId = variantData.find(o => o.option1 == option1Title && o.option2 == option2Title).id;
+      } else {
+        curVariantId = q('input[name=id], select[name=id]').value;
+      }
+      handleVariantChange(curVariantId);
+    } else if (isCollPage) {
+      observeDebounce()
+    }
   }
 
   function listenUrlStatus() {
@@ -1060,7 +1545,7 @@
         const url = new URL(currentUrl);
         const vid = url.searchParams.get('variant');
         debug && console.log('vid', vid);
-        initUrl = currentUrl;   
+        initUrl = currentUrl;
         vid && handleVariantChange(vid);
         listenVariantFlag = false;
         debug && console.log('清除定时器');
@@ -1078,10 +1563,10 @@
       selectVariantId = vid;
       currentVariant = variantData.find(o => o.id == vid);
       available = currentVariant.available;
-      if (!available && !btnStyleSwitch || !popupStyleSwitch) {
+      if ((showVariants.includes(String(selectVariantId))) && !btnStyleSwitch || !popupStyleSwitch) {
         getAllStyle();
       }
-      if (!available && !selBtnStatus) {
+      if ((showVariants.includes(String(selectVariantId))) && !selBtnStatus) {
         createEmailButton();
       }
       if (selBtnStatus === 1) {
@@ -1092,7 +1577,7 @@
     }
   }
 
-  // 查询店铺订阅按钮的状态
+  //Mark 查询店铺订阅按钮的状态
   function createEmailButton() {
     debug && console.log('createEmailButton')
     if (selBtnStatus === 0) { // 还未成功请求服务器
@@ -1101,7 +1586,7 @@
       request(url, { shopId }).then(res => {
         const { code, data } = res;
         if (code === 200) {
-          if (data.status == 1 || data.status == 2 || data.status == 0 ||data.snsStatus) {
+          if (data.status == 1 || data.status == 2 || data.status == 0 || data.snsStatus) {
             selBtnStatus = 1;
             initEmailToMeElement();
           } else {
@@ -1112,23 +1597,14 @@
     }
   }
 
-  // 初始化按钮
+  //Mark 初始化按钮
   function initEmailToMeElement() {
-    if (generalData.btn_display_all) {
+    // 移除了displayforall的判断，统一由后端判断该变体需不需要展示
+    if (selBtnStatus === 1 && (((showVariants.includes(String(selectVariantId))) && isProPage) ||
+      isCollPage)) {
       if (inlineBtnElement) {
-        inlineBtnElement.style.display = 'flex';
-        inlineEmailDiv.style.display = 'flex';
-      }
-      if (floatBtnElement) {
-        floatBtnElement.style.display = 'flex';
-        floatEmailDiv.style.display = 'flex';
-      }
-      return;
-    }
-    if (selBtnStatus === 1 && !available) {
-      if (inlineBtnElement) {
-        inlineBtnElement.style.display = 'flex';
-        inlineEmailDiv.style.display = 'flex';
+        inlineBtnElement.forEach(i => i.style.display = 'flex');
+        inlineEmailDiv.forEach(i => i.style.display = 'flex');
       }
       if (floatBtnElement) {
         floatBtnElement.style.display = 'flex';
@@ -1137,7 +1613,7 @@
     } else {
       if (inlineBtnElement) {
         // inlineBtnElement.style.display = "none";
-        inlineEmailDiv.style.display = 'none';
+        inlineEmailDiv.forEach(i => i.style.display = 'none');
       }
       if (floatBtnElement) {
         // floatBtnElement.style.display = 'none';
@@ -1146,11 +1622,11 @@
     }
   }
 
-  // 校验邮件格式
+  //Mark 校验邮件格式
   function verifyEmail() {
     const email = emailInput.value;
     const reg = new RegExp(
-      /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/
+      /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,}$/
     );
     if (!reg.test(email)) {
       toggleInvalidTip(true, { type: 'email', info: popupData.popup_validation_text });
@@ -1158,7 +1634,7 @@
       invalidTip.style.visibility = 'hidden';
     }
   }
-  // 创建element
+  //Mark 创建element
   function create({
     tag,
     appendTo,
@@ -1183,7 +1659,7 @@
     return element;
   }
 
-  // 提交订阅 selectVariantId
+  //Mark 提交订阅 selectVariantId
   function subEmail() {
     const { popup_validation_text } = popupData;
     let buyerName;
@@ -1211,7 +1687,7 @@
         } else {
           // 判断邮件的格式是否正确
           const reg = new RegExp(
-            /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/
+            /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,}$/
           );
           if (reg.test(email)) {
             toggleInvalidTip(false);
@@ -1235,7 +1711,7 @@
      */
     const style = getComputedStyle(invalidTip);
     const { type, info } = data ||
-    { type: selectedType.type, info: popupData.popup_validation_text };
+      { type: selectedType.type, info: popupData.popup_validation_text };
     switch (type) {
       case 'sms':
         if (style.visibility === 'hidden') {
@@ -1265,6 +1741,8 @@
     }
   }
 
+
+  // Mark 发送短信
   function subscribeSms(data) {
     // 传递的参数
     const params = {
@@ -1274,16 +1752,17 @@
       region: iti.getSelectedCountryData().iso2.toUpperCase(),
       is_integration: Number(mailingCheckbox.checked || false),
       receiver_name: data.buyerName || 'customer',
-      customer_rid: 0
+      customer_rid: 0,
+      shop_language: locale
     };
     const url = baseUrl + 'api/v1/sns/insCustomerSnsInfo';
     submitBtn.parentElement.className = 'frame-submit loading';
     request(url, params).then(res => {
-      const { code } = res;
+      const { code, message } = res;
       if (code === 200) {
         emailFrameElement.style.display = 'none';
         successFrame.classList.add('successSub_active');
-        setTimeout(function() {
+        setTimeout(function () {
           successFrame.classList.remove('successSub_active');
         }, 4000);
       } else if (code === 108 || code === 107) {
@@ -1293,14 +1772,15 @@
       } else if (code === 109) {
         invalidTip.style.visibility = 'visible';
         invalidTip.innerHTML = popupData.popup_validation_text;
-      } else if (code === 102) {
-        // 查询状态失败
+      } else {
+        invalidTip.style.visibility = 'visible';
+        invalidTip.innerHTML = message;
       }
     }).finally(() => {
       submitBtn.parentElement.className = 'frame-submit';
     });
   }
-
+  // Mark 发送邮件
   function subscribeEmail(data) {
     // url后缀
     // 传递的参数
@@ -1310,16 +1790,17 @@
       receiver_email: document.getElementsByClassName('buyer-email')[0].value,
       receiver_name: data.buyerName || 'customer',
       is_integration: Number(mailingCheckbox.checked || false),
-      customer_rid: 0
+      customer_rid: 0,
+      shop_language: locale
     };
     const url = baseUrl + 'api/v1/email/insCustomerEmailInfo';
     submitBtn.parentElement.className = 'frame-submit loading';
     request(url, params).then(res => {
-      const { code } = res;
+      const { code, message } = res;
       if (code === 200) {
         emailFrameElement.style.display = 'none';
         successFrame.classList.add('successSub_active');
-        setTimeout(function() {
+        setTimeout(function () {
           successFrame.classList.remove('successSub_active');
         }, 4000);
       } else if (code === 108 || code === 107) {
@@ -1329,8 +1810,9 @@
       } else if (code === 109) {
         invalidTip.style.visibility = 'visible';
         invalidTip.innerHTML = popupData.popup_validation_text;
-      } else if (code === 102) {
-        // 查询状态失败
+      } else {
+        invalidTip.style.visibility = 'visible';
+        invalidTip.innerHTML = message;
       }
     }).finally(() => {
       submitBtn.parentElement.className = 'frame-submit';
@@ -1339,6 +1821,8 @@
 
   function formatPhoneNumber(num) {
     const code = iti.getSelectedCountryData().dialCode;
+    //把开头为0的过滤
+    num = num.replace(/\b(0+)/gi, "");
     if (!num.startsWith(code)) {
       // 如果电话不是以区号开头的，直接拼接区号并返回
       return (code + num);
@@ -1356,25 +1840,28 @@
     // const countryList = q('.country-selector-list');
     const emailTypeBtn = q('.email-type');
     const smsTypeBtn = q('.sms-type');
-    initPhoneInput().then(res => {
-      if (res.code === 200 && popupData.popup_option === 3) {
-        selectedType = new Proxy({ type: 'email' }, {
-          set(target, key, newVal) {
-            debug && console.log(target, key, newVal);
-            target[key] = newVal;
-            toggleInput(newVal);
-            return true;
-          }
-        });
-        toggleInput(selectedType.type);
-        emailTypeBtn.addEventListener('click', () => {
-          selectedType.type = 'email';
-        });
-        smsTypeBtn.addEventListener('click', () => {
-          selectedType.type = 'sms';
-        });
-      }
-    });
+    const regionFlag = q('.iti--allow-dropdown');
+    if (!regionFlag) {
+      initPhoneInput().then(res => {
+        if (res.code === 200 && popupData.popup_option === 3) {
+          selectedType = new Proxy({ type: 'email' }, {
+            set(target, key, newVal) {
+              debug && console.log(target, key, newVal);
+              target[key] = newVal;
+              toggleInput(newVal);
+              return true;
+            }
+          });
+          toggleInput(selectedType.type);
+          emailTypeBtn.addEventListener('click', () => {
+            selectedType.type = 'email';
+          });
+          smsTypeBtn.addEventListener('click', () => {
+            selectedType.type = 'sms';
+          });
+        }
+      });
+    }
 
     function initPhoneInput() {
       /*
@@ -1404,6 +1891,9 @@
               .iti__country {
                 color: #777777;
               }
+              .iti--container {
+                z-index: 999999999 !important;
+              }
               </style>
             `;
             document.head.insertAdjacentHTML('beforeend', resetFlag);
@@ -1411,10 +1901,11 @@
             // 确保插件的css引入了之后再进行js的引入
             addScript('https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.16/js/intlTelInput.min.js', true).then(script => {
               // 获得创建的script元素，再将script元素引入之前先对其进行
-              script.onload = function() {
+              script.onload = function () {
                 iti = window.intlTelInput(phoneInput, {
                   utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.16/js/utils.min.js',
-                  autoPlaceholder: 'aggressive'
+                  autoPlaceholder: 'aggressive',
+                  initialCountry: popupData.sms_default_region || ''
                 });
                 debug && console.log('Script Loaded');
                 debug && console.log(phoneInput);
@@ -1424,7 +1915,6 @@
                   iti.isValidNumber() ? toggleInvalidTip(false) : toggleInvalidTip(true);
                 });
                 phoneInput.addEventListener('blur', e => {
-                  debug && console.log('wuhu');
                   debug && console.log('isValidNumber', iti.isValidNumber());
                   iti.isValidNumber() ? toggleInvalidTip(false) : toggleInvalidTip(true);
                 });
@@ -1491,6 +1981,23 @@
     });
   }
 
+  /**
+   * @function createRequestId 创建RequestId用于链路追踪
+   * @param {integer} length 希望生成的字符串长度
+   * @returns {string} 指定长度的字符串
+   */
+  function createRequestId(length) {
+    // length边界处理
+    length = (length && length < 64) ? length : 63;
+    let result = '';
+    const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_';
+    for (let i = 0; i < length; ++i) {
+      result += chars[Math.floor(Math.random() * chars.length)];
+    }
+    const timestamp = +new Date();
+    return result + timestamp;
+  };
+
   function request(url, params, callback, method = 'POST') {
     /**
      * 封装请求函数
@@ -1515,10 +2022,15 @@
         xmlHttp.open(method, url, true);
         // 添加http头，发送信息至服务器时的内容编码类型
         xmlHttp.setRequestHeader('Content-Type', 'application/json');
+        xmlHttp.setRequestHeader('authorization', domain);
+        // 头部新增 request id 链路追踪
+        xmlHttp.setRequestHeader('Org-Request-ID', createRequestId(37));
+        // 头部新增 请求页面
+        xmlHttp.setRequestHeader('Org-Request-URL', window.location.href);
         // 发送数据，请求体数据
         xmlHttp.send(JSON.stringify(finalParams));
         // 发送数据
-        xmlHttp.onreadystatechange = function() {
+        xmlHttp.onreadystatechange = function () {
           // 请求完成
           if (xmlHttp.readyState == 4 && xmlHttp.status == 200 || xmlHttp.status == 304) {
             // 从服务器上获取数据
@@ -1540,6 +2052,65 @@
     });
   }
 
+  function getUserConfig() {
+    const params = {
+      type: 'user_config'
+    }
+    const url = baseUrl + 'api/v1/collect/config';
+    request(url, params);
+  }
+
+  // Mark获取需要展示按钮的商品
+  async function getProductStatus(baseApiUrl) {
+    debug && console.log('getProductStatus');
+    let productIds = [];
+    if (ShopifyAnalytics.meta.product) {
+      const productId = ShopifyAnalytics.meta.product.id;
+      productIds.push(productId);
+    } else {
+      return
+    }
+    const params = {
+      shopId,
+      productIds: productIds,
+      type: 2
+    }
+    const url = baseApiUrl + 'api/v1/customer/getVariantBtStatus';
+    await request(url, params).then(res => {
+      debug && console.log('Get Prodcut Status Success')
+      const { apiCode, products } = res;
+      if (apiCode === 200 && products) {
+        //由于是产品页，所以产品肯定只有一个
+        showVariants = products[0].variants.map(variant => {
+          return variant.variantRid
+        })
+      }
+    });;
+
+  }
+
+  //获取登录用户信息
+  function getCustomerInfo() {
+    let id = ''
+    if (ShopifyAnalytics.meta.page.customerId) {
+      id = ShopifyAnalytics.meta.page.customerId;
+    } else {
+      return
+    }
+    const params = {
+      shopId,
+      customerId: id
+    }
+    const url = baseUrl + 'api/v1/customer/getCustomerInfo';
+    request(url, params).then(res => {
+      const { apiCode, customer } = res;
+      if (apiCode === 200 && customer) {
+        debug && console.log('Get Customer Info Success')
+        customerInfo = JSON.parse(JSON.stringify(customer));
+      }
+    });
+  }
+
   // inject css 样式
   function importStyles() {
     const styles = `<style>
@@ -1554,6 +2125,7 @@
       --sa-btn-hover-bgc: #f6f6f7;
       --sa-input-padding: 8px;
     }
+    ${customStyle}
     #email-me-frame * {
         box-sizing: border-box;
     }
@@ -1954,7 +2526,7 @@
     opacity: 1;
     z-index: 999999999;
 }
-#product-restore-email img {
+.product-restore-email img {
     width: 44px;
     margin: 0;
 }
@@ -2009,12 +2581,12 @@
     font-weight: 500;
     line-height: 1.5;
 }
-  #product-restore-email{
+  .product-restore-email{
       justify-content: flex-start;
       width: 100%;
       flex:1;
   }
-  #product-restore-email input {
+  .product-restore-email input {
     background: #ffffff;
   }
   #product-restore-email-float{
@@ -2106,7 +2678,7 @@
     if (!variantId) {
       return;
     }
-    const { baseUrl, shopId } = data;
+    const { baseUrl } = data;
     // 传递的参数
     const params = {
       id: emailCustomerId,
@@ -2140,11 +2712,45 @@
     });
   }
 
-  function q(c) {
-    return document.querySelector(c);
+  function q(selector, context) {
+    let node
+    if (context) {
+      node = context.querySelector(selector)
+    } else {
+      node = document.querySelector(selector)
+    }
+    return node
+  }
+  function qa(selector, context) {
+    let nodes
+    if (context) {
+      nodes = context.querySelectorAll(selector)
+    } else {
+      nodes = document.querySelectorAll(selector)
+    }
+    return nodes
   }
 
-  function qa(c) {
-    return document.querySelectorAll(c);
+  function shopLanguageCallback() {
+    const languageSelector = q('.notranslate');
+    const languageEl = languageSelector.querySelector('.selected img[alt]');
+    locale = languageEl.alt;
+  }
+
+  function collRednerProName(curProId) {
+    productTitle = collVariants.find(i => i.proId == curProId).productName;
+    const productTitleEl = q('.frame-body-content');
+    productTitleEl.innerText = productTitle;
+  }
+
+  // Mark 用户需求
+  function userNeed() {
+    switch (shopId) {
+      case 55605198922: {
+        customStyle += `#email-me-frame .frame-title, #email-me-frame input {
+        font-family: 'Sabon Next';
+        }`; break
+      }
+    }
   }
 })();
