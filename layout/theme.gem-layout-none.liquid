@@ -1,3 +1,10 @@
+{% comment %}
+	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
+
+	You SHOULD NOT modify source code in this page because
+	It is automatically generated from GEMPAGE BUILDER
+	Try to edit page with the live editor.
+{% endcomment %}
 <!DOCTYPE html>
 {%- liquid
   assign rtl_langs = 'ar,arc,dv,fa,ha,he,khw,ks,ku,ps,ur,yi' | split: ','
@@ -125,44 +132,10 @@
 <!--End_Gem_Page_Header_Script-->
 </head>
 
-<body class="template-{{ template | split: '.' | first | handle }}
-    {%- if template.suffix %} template-suffix-{{ template.suffix }}{% endif -%}
-    {%- if settings.swatch_enabled %} swatch-method-{{ settings.swatch_method }} swatch-style-{{ settings.swatch_style }}{% endif -%}
-    " data-cc-animate-timeout="0">
-
-  {%- if settings.animations_enabled_desktop -%}
-    <script>
-      if ('IntersectionObserver' in window) {
-        document.body.classList.add("cc-animate-enabled");
-      }
-    </script>
-  {%- endif -%}
-
-  <a class="skip-link visually-hidden" href="#content">{{ 'general.accessibility_labels.skip_to_content' | t }}</a>
-
-  {% section 'announcement-bar' %}
-  {% section 'header' %}
-  {% section 'store-messages' %}
-
-  <main id="content" role="main">
-    <div class="container cf">
-
-      {{ content_for_layout }}
-
-    </div><!-- /.container -->
-  </main><!-- /#content -->
-
-  {% if request.path != '/challenge' %}
-    <div id="pagefooter">
-      {% section 'cross-page-promos' %}
-      {% section 'footer' %}
-    </div>
-
-    {% section 'popup' %}
-  {% endif %}
-
-  {{ 'vendor.min.js'  | asset_url | script_tag }}
-  {{ 'theme.js'  | asset_url | script_tag }}
+<body>
+<div class="gem-container">
+	{{ content_for_layout }}
+</div><!-- end .gem-container -->
 <!--Gem_Page_Footer_Script-->
 {% render 'gem-app-footer-scripts', GEM_FOOTER_SCRIPT: GEM_FOOTER_SCRIPT %}
 <!--End_Gem_Page_Footer_Script-->
