@@ -100,6 +100,17 @@
             "open": false,
             "show_in_quickbuy": false
           }
+        },
+        "b1ab7ab6-0474-46cf-8bba-7cdef89e48de": {
+          "type": "accordion",
+          "settings": {
+            "title": "Returns & Shipping Policy",
+            "icon": "",
+            "content": "<p><strong>RETURN POLICY<\/strong><br\/><br\/>We hope you are thrilled with your purchase! In the case you are<br\/>not completely satisfied with your purchase, however, <a href=\"mailto:info@denvermodern.com?subject=Product%20Return&body=Hello%20Denver%20Modern,%20I%20would%20like%20to%20start%20the%20process%20of%20returning%20my%20[Enter%20Product%20purchased%20here].%20Please%20let%20me%20know%20what%20are%20the%20next%20steps.%20My%20order%20number%20is%20[Your%20order%20number%20here]%20Sincerely,%20[Your%20Name]\">please contact info@denvermodern.com to return or exchange your item(s)<\/a> within <strong>30 days of the delivery date<\/strong>.<br\/><br\/><strong>We do not refund original shipping charges.<\/strong> The cost of your return shipping will be deducted from your<br\/>return. All returns & exchanges must be postmarked within 30-days of<br\/>the initial delivery date. <\/p><p><a href=\"\/policies\/refund-policy\" title=\"Refund Policy\">Read full return policy for more i nformation about cancellations, exchanges, special orders, and damaged, defective or lost shipments here. <\/a><\/p>",
+            "page": "",
+            "open": false,
+            "show_in_quickbuy": false
+          }
         }
       },
       "block_order": [
@@ -114,7 +125,8 @@
         "af972090-2871-4f31-8bc0-1ba311b6b209",
         "buy_buttons",
         "7f1c4f79-1dac-47b9-ad47-9ffb9509d2a1",
-        "a5a63178-24f6-41a8-a248-71892f33edb4"
+        "a5a63178-24f6-41a8-a248-71892f33edb4",
+        "b1ab7ab6-0474-46cf-8bba-7cdef89e48de"
       ],
       "settings": {
         "show_breadcrumbs": true,
