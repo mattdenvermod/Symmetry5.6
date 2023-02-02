@@ -54,6 +54,17 @@
             "size_chart_page": ""
           }
         },
+        "367450e0-12b6-4e52-8687-da616248cb3d": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>What is FIQA?<\/strong> <a href=\"https:\/\/denvermodern.com\/blogs\/news\/the-fiqa-story-how-its-changing-the-vail-lounge-chair\" target=\"_blank\" title=\"https:\/\/denvermodern.com\/blogs\/news\/the-fiqa-story-how-its-changing-the-vail-lounge-chair\">Learn more here!<\/a><\/p>",
+            "icon": "question_mark",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
         "1c2ef144-a2d9-4dbc-9332-908fa706bd73": {
           "type": "disclaimer",
           "settings": {
@@ -110,6 +121,7 @@
         "e052d205-30a2-4491-9afe-71610aceea77",
         "divider",
         "variant_picker",
+        "367450e0-12b6-4e52-8687-da616248cb3d",
         "1c2ef144-a2d9-4dbc-9332-908fa706bd73",
         "af972090-2871-4f31-8bc0-1ba311b6b209",
         "buy_buttons",
