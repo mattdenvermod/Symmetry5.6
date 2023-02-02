@@ -372,6 +372,7 @@
     },
     "ef268693-acb3-491a-a808-78764b35de42": {
       "type": "product-template-product-list",
+      "disabled": true,
       "settings": {
         "title": "Perfect Pairings",
         "product_list": [
