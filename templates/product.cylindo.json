@@ -119,7 +119,7 @@
       "settings": {
         "show_breadcrumbs": true,
         "show_location_underneath": false,
-        "inventory_transfers_enable": true,
+        "inventory_transfers_enable": false,
         "enable_sticky_columns": true,
         "gallery_size": "medium",
         "gallery_layout": "carousel-under",
