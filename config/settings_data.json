@@ -1511,14 +1511,6 @@
 
     ],
     "blocks": {
-      "10830403595879607806": {
-        "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-core\/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": false,
-        "settings": {
-          "url_key": "REVIEWS.io",
-          "lang": "auto"
-        }
-      },
       "855628211100114053": {
         "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
@@ -1552,6 +1544,14 @@
         "type": "shopify:\/\/apps\/gempages-powerful-page-builder\/blocks\/embed-gp-script-body\/20b379d4-1b20-474c-a6ca-665c331919f3",
         "disabled": true,
         "settings": {
+        }
+      },
+      "10830403595879607806": {
+        "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-core\/92a082e5-b297-4e88-b428-ac96cbc505f9",
+        "disabled": false,
+        "settings": {
+          "url_key": "121989922934",
+          "lang": "auto"
         }
       }
     }
