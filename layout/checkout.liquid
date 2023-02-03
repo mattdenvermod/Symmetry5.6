@@ -35,14 +35,7 @@
             {{ content_for_logo }}
             {{ breadcrumb }}
             {{ alternative_payment_methods }}
-          </header>
-
-          <!--Route Code Edited 2/3/2023-->
-          {% if content_for_layout contains 'data-step="contact_information"' or content_for_layout contains 'data-step="shipping_method"' %}
-             <div class="route-div" desktop-align="center"></div>
-          {% endif %}
-          <!--End Route Code--> 
-          
+          </header>          
           <main class="main__content" role="main">
             {{ content_for_layout }}
           </main>
