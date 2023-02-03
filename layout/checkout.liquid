@@ -12,6 +12,11 @@
 
     {{ checkout_stylesheets }}
     {{ checkout_scripts }}
+
+    <!--Route Code Edited 2/3/2023-->
+    <script type="text/javascript" src="https://cdn.routeapp.io/route-widget-shopify/v2/route-widget-shopify-stable-v2.min.js"></script>
+    <!--End Route Code-->
+    
   </head>
   <body>
     {{ skip_to_content_link }}
@@ -31,6 +36,13 @@
             {{ breadcrumb }}
             {{ alternative_payment_methods }}
           </header>
+
+          <!--Route Code Edited 2/3/2023-->
+          {% if content_for_layout contains 'data-step="contact_information"' or content_for_layout contains 'data-step="shipping_method"' %}
+             <div class="route-div" desktop-align="center"></div>
+          {% endif %}
+          <!--End Route Code--> 
+          
           <main class="main__content" role="main">
             {{ content_for_layout }}
           </main>
