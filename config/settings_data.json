@@ -1094,7 +1094,7 @@
             "type": "menu-promotion-small",
             "settings": {
               "dropdown_link_title": "Living Room",
-              "image": "shopify:\/\/shop_images\/20229-20230-20231-N701-beigesq.jpg",
+              "image": "shopify:\/\/shop_images\/PolarisSofa-Graphite.jpg",
               "title": "Polaris Sofa",
               "link_url": "shopify:\/\/products\/polaris-sofa"
             }
@@ -1139,25 +1139,25 @@
             "type": "menu-promotion-small",
             "settings": {
               "dropdown_link_title": "Bedroom",
-              "image": "shopify:\/\/shop_images\/51212-Oak-Air-bed-_-51210-Oak-Air-bedside-table-_-textiles_4f0bdcfb-56f2-455d-8cdf-1fef0e614a95.jpg",
-              "title": "Air Bed",
-              "link_url": "shopify:\/\/products\/air-bed"
+              "image": "shopify:\/\/shop_images\/ArborBed-Whiteoak.jpg",
+              "title": "Arbor Bed",
+              "link_url": "shopify:\/\/products\/arbor-bed"
             }
           },
           "bfd74d23-1ae9-4028-a78f-f39dd5f124ed": {
             "type": "menu-promotion-small",
             "settings": {
               "dropdown_link_title": "Bedroom",
-              "image": "shopify:\/\/shop_images\/10063-Teak-Graphic-COD.jpg",
-              "title": "Raven Chest of Drawers",
-              "link_url": "shopify:\/\/products\/raven-chest-of-drawers"
+              "image": "shopify:\/\/shop_images\/Noel-Sideboard.jpg",
+              "title": "Noel Sideboard",
+              "link_url": "shopify:\/\/products\/noel-sideboard"
             }
           },
           "ac9060b5-e58a-4d1b-a3cf-e102b7fd02ee": {
             "type": "menu-promotion-small",
             "settings": {
               "dropdown_link_title": "Bedroom",
-              "image": "shopify:\/\/shop_images\/51224_Oak_NordicII_bedside_table_hanging_3_WEB.jpg",
+              "image": "shopify:\/\/shop_images\/Noel-Hanging-Nightstand.jpg",
               "title": "Noel Hanging Bedside Table",
               "link_url": "shopify:\/\/products\/noel-bedside-table"
             }
