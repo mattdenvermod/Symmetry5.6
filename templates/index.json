@@ -1,7 +1,36 @@
 {
   "sections": {
+    "a91961e9-65dc-49df-93ba-5c3bcbfa76d6": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/VailLoungeChair-FIQA-fabrics.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/VailLoungeChair-FIQA-fabrics-sq.jpg",
+        "image_position": "center center",
+        "mobile_image_position": "center center",
+        "height": "fixed",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "shopify:\/\/products\/vail-lounge-chair",
+        "subheading": "NEW RELEASE",
+        "title": "The FIQA Vail Lounge Chair",
+        "title_size": 60,
+        "title_size_mobile": 40,
+        "use_h1": false,
+        "text": "<p>A revolutionary approach to the Vail Lounge that is sustainable, machine washable. ultra resistant and durable with the ultimate softness. <\/p>",
+        "enlarge_text": false,
+        "button_label_1": "Shop FIQA Vail Lounge",
+        "button_url_1": "shopify:\/\/products\/vail-lounge-chair",
+        "button_label_2": "",
+        "button_url_2": "",
+        "text_alignment": "top left",
+        "full_width": true,
+        "mobile_overlay_under": true,
+        "overlay_style": "shadow"
+      }
+    },
     "08ea0976-eeef-406f-b176-880399dd5901": {
       "type": "background-video",
+      "disabled": true,
       "settings": {
         "video": "https:\/\/www.youtube.com\/watch?v=y9WqGmWCxgg",
         "placeholder_image": "shopify:\/\/shop_images\/20221026_DM_Holiday22_HookerSt_Kitchen_0011_3a3cafc3-5a25-404a-819a-3a3ad7f4e50a.jpg",
@@ -721,6 +750,7 @@
     }
   },
   "order": [
+    "a91961e9-65dc-49df-93ba-5c3bcbfa76d6",
     "08ea0976-eeef-406f-b176-880399dd5901",
     "16359276425da8ce46",
     "e146ce1b-e8b3-43e9-839d-a6b8f52d3154",
