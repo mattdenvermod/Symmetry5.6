@@ -6922,20 +6922,45 @@
         var $thumbnails = $gallery.find('.thumbnails');
         $slideshow = $gallery.find('.slideshow');
 
+        //********** WE"RE WORKING HERE NOW ****************
+        // ******** TRUDY MAC ******************
+
         // slideshow - filter
         if ($slideshow.hasClass('slick-slider')) {
           // is variant image visible?
           var currentIsVisible = !!$slideshow.find(".slide[data-media-id=\"".concat(data.featured_media.id, "\"]")).length;
-          // filter (By option name: standard. By media id: when multiple variants have same media)
-          $slideshow.slick('slickUnfilter').slick('slickFilter', ".slide[data-media-id=\"".concat(data.featured_media.id, "\"], [data-variant-image-group=\"").concat(selectedGroupOption.replace('"', '&quot;').replace(/<>/g, ''), "\"]"));
+
+          console.log('DATA MULTIPLE ✌️', $slideshow.data('options'))
+
+
+          // if data-options="multiple" filter based on alt tag (which needs to be set to variant title)
+          if ($slideshow.data('options') === 'multiple') {
+            console.log("this is multiple 💅💅💅💅💅")
+            $slideshow.slick('slickUnfilter')
+            .slick('slickFilter', `.slide[data-media-variant-name='${data.title}']`)
+          } else {
+            console.log("this is original 🌍🌍🌍🌍🌍🌍🌍")
+            // filter (By option name: standard. By media id: when multiple variants have same media) --> original filter
+            $slideshow.slick('slickUnfilter')
+              .slick('slickFilter', ".slide[data-media-id=\""
+              .concat(data.featured_media.id, "\"], [data-variant-image-group=\"")
+              .concat(selectedGroupOption.replace('"', '&quot;')
+              .replace(/<>/g, ''), "\"]"));
+          }
+
+                   
           // weird hack required for Slick
           $slideshow.find('.slide').css({ position: '', left: '', top: '', zIndex: '', opacity: '' });
+
+
           // jump to correct slide immediately after filtering
           if (!currentIsVisible) {
             $slideshow.slick('slickGoTo', 0, true); // reset - hack for a bug
             $slideshow.slick('slickGoTo', $slideshow.find(".slide[data-media-id=\"".concat(data.featured_media.id, "\"]")).data('slick-index'), true);
           }
         }
+
+      
 
         // carousel - add/remove as required
         if ($thumbnails.hasClass('owl-carousel')) {
@@ -6944,31 +6969,58 @@
             $hiddenThumbnails = $('<div class="hidden-thumbnails hidden">').insertAfter($thumbnails);
           }
 
+
+         
+          console.log('DATA MULTIPLE THUMBNAILS', $thumbnails.data('options'))
           // move to hidden thumbnails container (and show() in case hide() called prior)
           $thumbnails.find('.thumbnail').show().each(function () {
-            if ($(this).attr('data-variant-image-group') != selectedGroupOption && $(this).attr('data-media-id') != data.featured_media.id) {
-              var index = $(this).parent().index();
-              $(this).appendTo($hiddenThumbnails);
-              $thumbnails.trigger('remove.owl.carousel', [index]);
+            if ($thumbnails.data('options') === 'multiple') {
+              console.log('WERE IN MULTIPLES 🍎🍎🍎🍎🍎🍎')
+              if ((data.title !== $(this).data('mediaVariantName'))) {
+                console.log("WEVE HIT GOLD TWICE 👑👑👑👑")
+                var index = $(this).parent().index();
+                $(this).appendTo($hiddenThumbnails);
+                $thumbnails.trigger('remove.owl.carousel', [index]);
+              }
+            } else {
+              console.log('WERE IN SINGLES 🍀🍀🍀🍀🍀🍀🍀🍀')
+              if ($(this).attr('data-variant-image-group') != selectedGroupOption && $(this).attr('data-media-id') != data.featured_media.id) {
+                var index = $(this).parent().index();
+                $(this).appendTo($hiddenThumbnails);
+                $thumbnails.trigger('remove.owl.carousel', [index]);
+              }
             }
           });
 
           // add from hidden thumbnails container
           $hiddenThumbnails.find('.thumbnail').each(function () {
-            if ($(this).attr('data-variant-image-group') == selectedGroupOption || $(this).attr('data-media-id') == data.featured_media.id) {
+            // console.log("THUMB 👍", $(this).data('mediaVariantName'))
+            // console.log("DATA 📀", data)
+            // console.log("EQUALS", $(this).data('mediaVariantName'), data.title)
+            if ((data.title === $(this).data('mediaVariantName'))){
+              console.log("WEVE HIT GOLD👑👑👑👑")
               $(this).show();
               $thumbnails.trigger('add.owl.carousel', [this]);
             }
+            // if ($(this).attr('data-variant-image-group') == selectedGroupOption || $(this).attr('data-media-id') == data.featured_media.id) {
+            //   $(this).show();
+            //   $thumbnails.trigger('add.owl.carousel', [this]);
+            // }
           });
           $thumbnails.trigger('refresh.owl.carousel');
         } else {
           // show/hide elements
           $thumbnails.find('.thumbnail').each(function () {
-            if ($(this).attr('data-variant-image-group') == selectedGroupOption || $(this).attr('data-media-id') == data.featured_media.id) {
-              $(this).show();
+            if (data.title === $(this).data('mediaVariantName')) {
+              $(this).show()
             } else {
-              $(this).hide();
+              $(this).hide()
             }
+            // if ($(this).attr('data-variant-image-group') == selectedGroupOption || $(this).attr('data-media-id') == data.featured_media.id) {
+            //   $(this).show();
+            // } else {
+            //   $(this).hide();
+            // }
           });
         }
 
