@@ -61,8 +61,14 @@
             endfor
           -%}
 
-          <div class="slideshow product-slideshow slideshow--custom-initial" data-options="multiple" data-slick='{"adaptiveHeight":true,"initialSlide":{{initial_slide}}}'>
+					{% comment %} UAF - Added data-options multiple for JS to know to use variants instead of options for filtering images in the slider {% endcomment %}
+          <div class="slideshow product-slideshow slideshow--custom-initial" 
+						data-options="multiple" 
+						data-slick='{"adaptiveHeight":true,"initialSlide":{{initial_slide}}}'
+					>
             {%- for media in product.media -%}
+
+							{% comment %} UAF - Added data-media-variant-name for JS to filter images {% endcomment %}
               <div 
 								class="slide{% if forloop.index0 == initial_slide %} slide--custom-initial{% endif %}" 
 								data-media-id="{{ media.id }}"
@@ -99,10 +105,16 @@
         </div>
 
         {% if product.media.size > 1 %}
+
+					{% comment %} UAF - Added data-options multiple for JS to know to use variants instead of options for filtering images in the thumbnails {% endcomment %}
           <div class="thumbnails{% unless section.settings.gallery_layout contains 'carousel' %} mobile-only{% endunless %}" data-options="multiple" >
             {% for media in product.media %}
 
-              <a class="thumbnail thumbnail--media-{{ media.media_type }}" href="{% if section.settings.enable_zoom %}{{ media.preview_image | img_url: zoom_size }}{% else %}#{% endif %}" data-media-id="{{ media.id }}" data-media-variant-name="{{ media.alt | escape | strip }}">
+							{% comment %} UAF - Added data-media-variant-name for JS to filter images {% endcomment %}
+              <a class="thumbnail thumbnail--media-{{ media.media_type }}" href="{% if section.settings.enable_zoom %}{{ media.preview_image | img_url: zoom_size }}{% else %}#{% endif %}" 
+								data-media-id="{{ media.id }}" 
+								data-media-variant-name="{{ media.alt | escape | strip }}"
+							>
                 {% render 'responsive-image', image: media.preview_image, min_aspect_ratio: min_aspect_ratio %}
 
                 {%- if media.media_type == 'video' or media.media_type =='external_video' -%}

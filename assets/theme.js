@@ -6914,7 +6914,7 @@
       var $galleryCollageContainer = $gallery.filter('.gallery--layout-columns-1, .gallery--layout-columns-2, .gallery--layout-collage-1, .gallery--layout-collage-2').find('.product-slideshow:not(.slick-slider)');
       var collageGroupedImagesChanged = false;
       var $slideshow = null;
-
+      console.log('this is where trudy starts 🎒', $gallery.attr('data-variant-image-grouping-option-index'))
       if ($gallery.attr('data-variant-image-grouping-option-index') !== '') {
         // when images are grouped, we use options instead of variants
         var pivotOptionIndex = $gallery.attr('data-variant-image-grouping-option-index');
@@ -6924,7 +6924,7 @@
 
         //********** WE"RE WORKING HERE NOW ****************
         // ******** TRUDY MAC ******************
-
+        
         // slideshow - filter
         if ($slideshow.hasClass('slick-slider')) {
           // is variant image visible?
