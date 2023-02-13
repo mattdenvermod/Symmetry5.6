@@ -23,7 +23,7 @@
         "5152b92b-d103-4ae5-8106-2136491e10fc": {
           "type": "richtext",
           "settings": {
-            "richtext": "<p>{{ product.metafields.custom.sale_message | metafield_tag }}<\/p>",
+            "richtext": "<p>{{ product.metafields.custom.sale_message | metafield_tag }}<a href=\"https:\/\/denvermodern.com\/collections\/presidents-day-sale?__hstc=135743086.7ca938390405fbe7a339a41ad1405aa4.1666209112614.1675877482280.1676308816513.93&__hssc=135743086.6.1676308816513&__hsfp=2805712923\" title=\"https:\/\/denvermodern.com\/collections\/presidents-day-sale\"><strong>PRESIDENT'S DAY SALE - <\/strong>Get <strong>20% off select collections<\/strong>! <\/a>Use code <strong>PRESIDENT20 <\/strong>at checkout!<\/p>",
             "icon": "price_tag",
             "icon_size": "small",
             "enable_box": true,
