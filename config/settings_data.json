@@ -1243,17 +1243,18 @@
               "link_url": "shopify:\/\/products\/aspen-rug"
             }
           },
-          "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12": {
+          "9e21fc5e-d90d-40cc-9ed3-4588ea0fff1a": {
             "type": "menu-promotion-small",
             "settings": {
               "dropdown_link_title": "Accessories",
-              "image": "shopify:\/\/shop_images\/mira-linen-throw-2_1260x_17ffb6de-f9df-44af-abf4-5822e8ac798d.jpg",
-              "title": "Mira Linen Striped Throw",
-              "link_url": "shopify:\/\/products\/mira-linen-throw"
+              "image": "shopify:\/\/shop_images\/21037_NeroChevron_cushion50X50_21044_SilverNomad_cushion60X40_20083_sofa_n701_2seater_nut.jpg",
+              "title": "Nomad Pillows",
+              "link_url": "shopify:\/\/products\/nomad-pillows"
             }
           },
           "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79": {
             "type": "menu-promotion-small",
+            "disabled": true,
             "settings": {
               "dropdown_link_title": "Accessories",
               "image": "shopify:\/\/shop_images\/canton-table-lamp-18_800x_d9c30122-a7b5-46e2-a2ea-1897eb5244b3.jpg",
@@ -1324,13 +1325,23 @@
               "link_url": "shopify:\/\/products\/v-leg-custom-tables"
             }
           },
-          "9e21fc5e-d90d-40cc-9ed3-4588ea0fff1a": {
+          "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12": {
+            "type": "menu-promotion-small",
+            "disabled": true,
+            "settings": {
+              "dropdown_link_title": "Accessories",
+              "image": "shopify:\/\/shop_images\/mira-linen-throw-2_1260x_17ffb6de-f9df-44af-abf4-5822e8ac798d.jpg",
+              "title": "Mira Linen Striped Throw",
+              "link_url": "shopify:\/\/products\/mira-linen-throw"
+            }
+          },
+          "79220af4-dfb0-4b84-8e5f-4eb26864c23e": {
             "type": "menu-promotion-small",
             "settings": {
               "dropdown_link_title": "Accessories",
-              "image": "shopify:\/\/shop_images\/21037_NeroChevron_cushion50X50_21044_SilverNomad_cushion60X40_20083_sofa_n701_2seater_nut.jpg",
-              "title": "Nomad Pillows",
-              "link_url": "shopify:\/\/products\/nomad-pillows"
+              "image": "shopify:\/\/shop_images\/55101_Oak_black_Utilitile_hooked_WEB-1.jpg",
+              "title": "Utilitile Wall Hanger",
+              "link_url": "shopify:\/\/products\/utilitile-wall-hanger"
             }
           }
         },
@@ -1353,7 +1364,7 @@
           "59564973-d663-4d37-a590-1684783d55ab",
           "2a460346-6e43-4250-ba76-d40800936eae",
           "13013608-9041-49aa-bde9-0795757c660b",
-          "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12",
+          "9e21fc5e-d90d-40cc-9ed3-4588ea0fff1a",
           "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79",
           "e19dabb9-0bcb-4d09-8c99-9f6e0310fa39",
           "cf7047df-8716-4b41-8eb4-b6fb71ce707e",
@@ -1362,7 +1373,8 @@
           "f9fd38a6-0b6b-4ac8-86cb-f240debf4849",
           "7922b431-6b0f-4f7a-88bb-d07d9cd2addb",
           "62ef13e7-5715-4ed4-af4c-e40e0d2f4751",
-          "9e21fc5e-d90d-40cc-9ed3-4588ea0fff1a"
+          "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12",
+          "79220af4-dfb0-4b84-8e5f-4eb26864c23e"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
