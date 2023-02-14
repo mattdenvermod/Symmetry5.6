@@ -1323,6 +1323,15 @@
               "title": "V Leg Custom Table",
               "link_url": "shopify:\/\/products\/v-leg-custom-tables"
             }
+          },
+          "9e21fc5e-d90d-40cc-9ed3-4588ea0fff1a": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Accessories",
+              "image": "shopify:\/\/shop_images\/21037_NeroChevron_cushion50X50_21044_SilverNomad_cushion60X40_20083_sofa_n701_2seater_nut.jpg",
+              "title": "Nomad Pillows",
+              "link_url": "shopify:\/\/products\/nomad-pillows"
+            }
           }
         },
         "block_order": [
@@ -1352,7 +1361,8 @@
           "f8b04f7d-b609-4d24-a389-ced904e962fb",
           "f9fd38a6-0b6b-4ac8-86cb-f240debf4849",
           "7922b431-6b0f-4f7a-88bb-d07d9cd2addb",
-          "62ef13e7-5715-4ed4-af4c-e40e0d2f4751"
+          "62ef13e7-5715-4ed4-af4c-e40e0d2f4751",
+          "9e21fc5e-d90d-40cc-9ed3-4588ea0fff1a"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
