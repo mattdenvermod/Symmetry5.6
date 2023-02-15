@@ -3806,7 +3806,7 @@ window['nf-forms']['15534'] = {
     'modalButtonModeMobile': 'hide',
     'modalButtonBorderRadius': '0',
     'titlePosition': 'center',
-    'description': '\u003Cp\u003E\u003Cspan\u0020style\u003D\u0022font\u002Dsize\u003A\u002014px\u003B\u0020color\u003A\u0020\u0023000000\u003B\u0022\u003EIn\u0020stock\u0020swatches\u0020are\u0020mailed\u0020within\u00205\u002D7\u0020business\u0020days,\u0020via\u0020USPS\u0020\u0028United\u0020States\u0020Postal\u0020Service\u0029.\u0020If\u0020you\u0020do\u0020not\u0020receive\u0020a\u0020swatch\u0020you\u0020requested,\u0020it\u0026rsquo\u003Bs\u0020out\u0020of\u0020stock\u0020and\u0020you\u0020will\u0020be\u0020added\u0020to\u0020the\u0020backorder\u0020list.\u0026nbsp\u003B\u003C\/span\u003E\u003C\/p\u003E',
+    'description': '\u003Cp\u003E\u003Cspan\u0020style\u003D\u0022font\u002Dsize\u003A\u002014px\u003B\u0022\u003EIn\u0020stock\u0020swatches\u0020are\u0020mailed\u0020within\u00205\u002D7\u0020business\u0020days,\u0020via\u0020FedEx\u0020\u0028Federal\u0020Express\u0029.\u0020If\u0020you\u0020do\u0020not\u0020receive\u0020a\u0020swatch\u0020you\u0020requested,\u0020it\u0026rsquo\u003Bs\u0020out\u0020of\u0020stock\u0020and\u0020you\u0020will\u0020be\u0020added\u0020to\u0020the\u0020backorder\u0020list.\u0026nbsp\u003B\u003C\/span\u003E\u003C\/p\u003E',
     'padding': '25',
     'paddingMobile': '25',
     'formBorderRadius': 0,
