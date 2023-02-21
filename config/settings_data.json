@@ -1069,7 +1069,7 @@
           "f7165312-9e25-4ba6-8ad0-cd1418e44369"
         ],
         "settings": {
-          "announcement_bar_col": "#565747",
+          "announcement_bar_col": "#fafafa",
           "announcement_text_col": "#fafafa",
           "message_font_size": 14,
           "show_social_icons": false,
