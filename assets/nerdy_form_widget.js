@@ -2045,7 +2045,7 @@ window['nf-forms']['15479'] = {
             'icon': '',
             'type': 'radio',
             'step': 1,
-            'choices': '\u005B\u0022Saddle\u0020Leather\u0022,\u0022Black\u0020Leather\u0022,\u0022Boucle\u0022,\u0022Vintage\u0020Oak\u0020Leather\u0022,\u0022Charcoal\u0020Boucle\u0022\u005D',
+            'choices': '\u005B\u0022Saddle\u0020Leather\u0022,\u0022Boucle\u0022,\u0022Vintage\u0020Oak\u0020Leather\u0022,\u0022Charcoal\u0020Boucle\u0022\u005D',
             'placeholder': 'Radios\/checkboxes\u0020placeholder',
             'width': 'col\u002Dmd\u002D12',
             'isMultipleChoice': 1,
