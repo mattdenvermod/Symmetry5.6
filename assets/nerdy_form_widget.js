@@ -2308,7 +2308,7 @@ window['nf-forms']['15480'] = {
             'icon': '',
             'type': 'radio',
             'step': 1,
-            'choices': '\u005B\u0022Cream\u0020Linen\u0022,\u0022Charcoal\u0020Linen\u0022,\u0022Boucle\u0022,\u0022Charcoal\u0020Boucle\u0022,\u0022Black\u0020Leather\u0022,\u0022Saddle\u0020Leather\u0022,\u0022FIQA\u0020Ivory\u0020Woven\u0022,\u0022FIQA\u0020Dove\u0020Boucle\u0022,\u0022FIQA\u0020Slate\u0020Boucle\u0022\u005D',
+            'choices': '\u005B\u0022Cream\u0020Linen\u0022,\u0022Charcoal\u0020Linen\u0022,\u0022Boucle\u0022,\u0022Charcoal\u0020Boucle\u0022,\u0022Saddle\u0020Leather\u0022,\u0022FIQA\u0020Ivory\u0020Woven\u0022,\u0022FIQA\u0020Dove\u0020Boucle\u0022,\u0022FIQA\u0020Slate\u0020Boucle\u0022\u005D',
             'placeholder': 'Radios\/checkboxes\u0020placeholder',
             'width': 'col\u002Dmd\u002D12',
             'isMultipleChoice': 1,
