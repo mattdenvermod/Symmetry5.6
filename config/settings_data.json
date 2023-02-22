@@ -1256,10 +1256,10 @@
             "type": "menu-promotion-small",
             "disabled": true,
             "settings": {
-              "dropdown_link_title": "Accessories",
-              "image": "shopify:\/\/shop_images\/canton-table-lamp-18_800x_d9c30122-a7b5-46e2-a2ea-1897eb5244b3.jpg",
-              "title": "Canton Table Lamp",
-              "link_url": "shopify:\/\/products\/canton-table-lamp"
+              "dropdown_link_title": "Rugs",
+              "image": "shopify:\/\/shop_images\/Armadillo_Rugs_ClassicCollection_Braid_Blush_InSitu_1.webp",
+              "title": "Braid Rug",
+              "link_url": "shopify:\/\/products\/braid-rug"
             }
           },
           "79220af4-dfb0-4b84-8e5f-4eb26864c23e": {
