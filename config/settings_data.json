@@ -1262,6 +1262,15 @@
               "link_url": "shopify:\/\/products\/canton-table-lamp"
             }
           },
+          "79220af4-dfb0-4b84-8e5f-4eb26864c23e": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Accessories",
+              "image": "shopify:\/\/shop_images\/55101_Oak_black_Utilitile_hooked_WEB-1.jpg",
+              "title": "Utilitile Wall Hanger",
+              "link_url": "shopify:\/\/products\/utilitile-wall-hanger"
+            }
+          },
           "e19dabb9-0bcb-4d09-8c99-9f6e0310fa39": {
             "type": "menu-promotion-small",
             "settings": {
@@ -1334,15 +1343,6 @@
               "title": "Mira Linen Striped Throw",
               "link_url": "shopify:\/\/products\/mira-linen-throw"
             }
-          },
-          "79220af4-dfb0-4b84-8e5f-4eb26864c23e": {
-            "type": "menu-promotion-small",
-            "settings": {
-              "dropdown_link_title": "Accessories",
-              "image": "shopify:\/\/shop_images\/55101_Oak_black_Utilitile_hooked_WEB-1.jpg",
-              "title": "Utilitile Wall Hanger",
-              "link_url": "shopify:\/\/products\/utilitile-wall-hanger"
-            }
           }
         },
         "block_order": [
@@ -1366,6 +1366,7 @@
           "13013608-9041-49aa-bde9-0795757c660b",
           "9e21fc5e-d90d-40cc-9ed3-4588ea0fff1a",
           "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79",
+          "79220af4-dfb0-4b84-8e5f-4eb26864c23e",
           "e19dabb9-0bcb-4d09-8c99-9f6e0310fa39",
           "cf7047df-8716-4b41-8eb4-b6fb71ce707e",
           "3befb197-25c8-409a-af16-9a1ac368fda8",
@@ -1373,8 +1374,7 @@
           "f9fd38a6-0b6b-4ac8-86cb-f240debf4849",
           "7922b431-6b0f-4f7a-88bb-d07d9cd2addb",
           "62ef13e7-5715-4ed4-af4c-e40e0d2f4751",
-          "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12",
-          "79220af4-dfb0-4b84-8e5f-4eb26864c23e"
+          "ad46ff5f-8b49-4f8a-a1d1-6cc765367e12"
         ],
         "settings": {
           "logo": "{{ shop.brand.logo }}",
