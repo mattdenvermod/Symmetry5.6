@@ -1218,11 +1218,21 @@
           },
           "59564973-d663-4d37-a590-1684783d55ab": {
             "type": "menu-promotion-small",
+            "disabled": true,
             "settings": {
               "dropdown_link_title": "Rugs",
               "image": "shopify:\/\/shop_images\/Armadillo_Rugs_Nook_Lucine_Natural_15m.jpg",
               "title": "Nook Lucine Rugs",
               "link_url": "shopify:\/\/products\/nook-lucine-rug"
+            }
+          },
+          "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79": {
+            "type": "menu-promotion-small",
+            "settings": {
+              "dropdown_link_title": "Rugs",
+              "image": "shopify:\/\/shop_images\/Armadillo_Rugs_ClassicCollection_Braid_Blush_InSitu_1.webp",
+              "title": "Braid Rug",
+              "link_url": "shopify:\/\/products\/braid-rug"
             }
           },
           "2a460346-6e43-4250-ba76-d40800936eae": {
@@ -1250,16 +1260,6 @@
               "image": "shopify:\/\/shop_images\/21037_NeroChevron_cushion50X50_21044_SilverNomad_cushion60X40_20083_sofa_n701_2seater_nut.jpg",
               "title": "Nomad Pillows",
               "link_url": "shopify:\/\/products\/nomad-pillows"
-            }
-          },
-          "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79": {
-            "type": "menu-promotion-small",
-            "disabled": true,
-            "settings": {
-              "dropdown_link_title": "Rugs",
-              "image": "shopify:\/\/shop_images\/Armadillo_Rugs_ClassicCollection_Braid_Blush_InSitu_1.webp",
-              "title": "Braid Rug",
-              "link_url": "shopify:\/\/products\/braid-rug"
             }
           },
           "79220af4-dfb0-4b84-8e5f-4eb26864c23e": {
@@ -1362,10 +1362,10 @@
           "6421713e-4afd-471e-b4e1-580f3524c610",
           "0309073c-d72f-4916-9e31-97dd437c1b7b",
           "59564973-d663-4d37-a590-1684783d55ab",
+          "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79",
           "2a460346-6e43-4250-ba76-d40800936eae",
           "13013608-9041-49aa-bde9-0795757c660b",
           "9e21fc5e-d90d-40cc-9ed3-4588ea0fff1a",
-          "148f42d7-9e1b-4ba5-85ad-a1eafbcabd79",
           "79220af4-dfb0-4b84-8e5f-4eb26864c23e",
           "e19dabb9-0bcb-4d09-8c99-9f6e0310fa39",
           "cf7047df-8716-4b41-8eb4-b6fb71ce707e",
