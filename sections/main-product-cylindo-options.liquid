@@ -105,7 +105,7 @@
         </div>
 
         {% if product.media.size > 1 %}
-
+          
 					{% comment %} UAF - Added data-options multiple for JS to know to use variants instead of options for filtering images in the thumbnails {% endcomment %}
           <div class="thumbnails{% unless section.settings.gallery_layout contains 'carousel' %} mobile-only{% endunless %}" data-options="multiple" >
             {% for media in product.media %}

@@ -4,9 +4,6 @@
   var cc = {
     sections: [] };
 
-  console.log("START 💡👀")
-
-
   theme.cartNoteMonitor = {
     load: function load($notes) {
       $notes.on('change.themeCartNoteMonitor paste.themeCartNoteMonitor keyup.themeCartNoteMonitor', function () {
@@ -6922,6 +6919,7 @@
         var $thumbnails = $gallery.find('.thumbnails');
         $slideshow = $gallery.find('.slideshow');
 
+
         //********** WE"RE WORKING HERE NOW ****************
         // ******** TRUDY MAC ******************
         
@@ -6960,8 +6958,10 @@
           }
         }
 
-      
 
+
+      
+        //// START LOOKING HERE _ CUZ PROBABLY B/C of owl-carousel class...but the consoles still go
         // carousel - add/remove as required
         if ($thumbnails.hasClass('owl-carousel')) {
           var $hiddenThumbnails = $gallery.find('.hidden-thumbnails');
@@ -6975,15 +6975,13 @@
           // move to hidden thumbnails container (and show() in case hide() called prior)
           $thumbnails.find('.thumbnail').show().each(function () {
             if ($thumbnails.data('options') === 'multiple') {
-              console.log('WERE IN MULTIPLES 🍎🍎🍎🍎🍎🍎')
               if ((data.title !== $(this).data('mediaVariantName'))) {
-                console.log("WEVE HIT GOLD TWICE 👑👑👑👑")
                 var index = $(this).parent().index();
                 $(this).appendTo($hiddenThumbnails);
+                //maybe this line
                 $thumbnails.trigger('remove.owl.carousel', [index]);
               }
             } else {
-              console.log('WERE IN SINGLES 🍀🍀🍀🍀🍀🍀🍀🍀')
               if ($(this).attr('data-variant-image-group') != selectedGroupOption && $(this).attr('data-media-id') != data.featured_media.id) {
                 var index = $(this).parent().index();
                 $(this).appendTo($hiddenThumbnails);
@@ -6994,11 +6992,7 @@
 
           // add from hidden thumbnails container
           $hiddenThumbnails.find('.thumbnail').each(function () {
-            // console.log("THUMB 👍", $(this).data('mediaVariantName'))
-            // console.log("DATA 📀", data)
-            // console.log("EQUALS", $(this).data('mediaVariantName'), data.title)
             if ((data.title === $(this).data('mediaVariantName'))){
-              console.log("WEVE HIT GOLD👑👑👑👑")
               $(this).show();
               $thumbnails.trigger('add.owl.carousel', [this]);
             }
@@ -7024,22 +7018,48 @@
           });
         }
 
-        // carousel - visibility by class & moving visible to top (for nth-child styling)
-        if ($galleryCollageContainer.length) {
-          $galleryCollageContainer.find('.slide').each(function () {
-            if ($(this).attr('data-variant-image-group') == selectedGroupOption || $(this).attr('data-media-id') == data.featured_media.id) {
-              if ($(this).hasClass('slide--inactive-option')) {
-                collageGroupedImagesChanged = true;
+
+
+        // This code filters the images when they are in Collage style - 1
+        if ($thumbnails.data('options') === 'multiple') {
+          console.log('mulitple')
+          if ($galleryCollageContainer.length) {
+            $galleryCollageContainer.find('.slide').each(function () {
+              if ((data.title === $(this).data('mediaVariantName'))) {
+                if ($(this).hasClass('slide--inactive-option')) {
+                  collageGroupedImagesChanged = true;
+                }
+                $(this).removeClass('slide--inactive-option');
+              } else {
+                if (!$(this).hasClass('slide--inactive-option')) {
+                  collageGroupedImagesChanged = true;
+                }
+                $(this).addClass('slide--inactive-option');
               }
-              $(this).removeClass('slide--inactive-option');
-            } else {
-              if (!$(this).hasClass('slide--inactive-option')) {
-                collageGroupedImagesChanged = true;
+            });
+            $galleryCollageContainer.find('.slide--inactive-option').appendTo($galleryCollageContainer);
+          }
+        } else {
+          console.log('single', $galleryCollageContainer.length)
+          // carousel - visibility by class & moving visible to top (for nth-child styling)
+          if ($galleryCollageContainer.length) {
+            console.log("HELLOOOO@")
+            $galleryCollageContainer.find('.slide').each(function () {
+              if ($(this).attr('data-variant-image-group') == selectedGroupOption || $(this).attr('data-media-id') == data.featured_media.id) {
+                if ($(this).hasClass('slide--inactive-option')) {
+                  collageGroupedImagesChanged = true;
+                }
+                $(this).removeClass('slide--inactive-option');
+              } else {
+                console.log("HELLOOOO@ 55")
+                if (!$(this).hasClass('slide--inactive-option')) {
+                  collageGroupedImagesChanged = true;
+                }
+                $(this).addClass('slide--inactive-option');
               }
-              $(this).addClass('slide--inactive-option');
-            }
-          });
-          $galleryCollageContainer.find('.slide--inactive-option').appendTo($galleryCollageContainer);
+            });
+            $galleryCollageContainer.find('.slide--inactive-option').appendTo($galleryCollageContainer);
+          }
         }
       }
 
