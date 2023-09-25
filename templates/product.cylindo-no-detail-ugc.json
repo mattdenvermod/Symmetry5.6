@@ -153,7 +153,6 @@
     },
     "26f9cb5d-3fc9-42f9-bd22-de93072a2460": {
       "type": "rich-text",
-      "disabled": true,
       "blocks": {
         "template--14445932970102__26f9cb5d-3fc9-42f9-bd22-de93072a2460-1668034349d1fe78fd-0": {
           "type": "heading",
@@ -174,6 +173,7 @@
         "template--14445932970102__26f9cb5d-3fc9-42f9-bd22-de93072a2460-1668034349d1fe78fd-0",
         "template--14445932970102__26f9cb5d-3fc9-42f9-bd22-de93072a2460-1668034349d1fe78fd-1"
       ],
+      "disabled": true,
       "settings": {
         "height": "medium",
         "text_alignment": "center",
@@ -183,7 +183,6 @@
     },
     "fee41ea9-0d7c-4268-b032-acc62c0dae21": {
       "type": "multi-column",
-      "disabled": true,
       "blocks": {
         "template--14445932970102__fee41ea9-0d7c-4268-b032-acc62c0dae21-1668034349a0117849-0": {
           "type": "text_block",
@@ -227,6 +226,7 @@
         "template--14445932970102__fee41ea9-0d7c-4268-b032-acc62c0dae21-1668034349a0117849-1",
         "template--14445932970102__fee41ea9-0d7c-4268-b032-acc62c0dae21-1668034349a0117849-2"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "text_alignment": "center",
@@ -243,7 +243,6 @@
     },
     "98aa627f-86a2-41a5-98c4-b3f28a2317c1": {
       "type": "rich-text",
-      "disabled": true,
       "blocks": {
         "template--14445932970102__98aa627f-86a2-41a5-98c4-b3f28a2317c1-1668034349d1fe78fd-0": {
           "type": "heading",
@@ -264,6 +263,7 @@
         "template--14445932970102__98aa627f-86a2-41a5-98c4-b3f28a2317c1-1668034349d1fe78fd-0",
         "template--14445932970102__98aa627f-86a2-41a5-98c4-b3f28a2317c1-1668034349d1fe78fd-1"
       ],
+      "disabled": true,
       "settings": {
         "height": "medium",
         "text_alignment": "center",
@@ -273,7 +273,6 @@
     },
     "8a514d41-3199-4817-a8dc-6b79ba83f09b": {
       "type": "multi-column",
-      "disabled": true,
       "blocks": {
         "template--14445932970102__8a514d41-3199-4817-a8dc-6b79ba83f09b-1668034349a0117849-0": {
           "type": "text_block",
@@ -317,6 +316,7 @@
         "template--14445932970102__8a514d41-3199-4817-a8dc-6b79ba83f09b-1668034349a0117849-1",
         "template--14445932970102__8a514d41-3199-4817-a8dc-6b79ba83f09b-1668034349a0117849-2"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "text_alignment": "center",
@@ -397,7 +397,7 @@
           "vail-lounge-cover",
           "strata-side-table",
           "aspen-rug",
-          "chichi-floor-lamp"
+          "colome-floor-lamp"
         ],
         "hide_if_empty": false,
         "show_vendor": false,

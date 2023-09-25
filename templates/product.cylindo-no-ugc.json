@@ -270,7 +270,6 @@
     },
     "8a514d41-3199-4817-a8dc-6b79ba83f09b": {
       "type": "multi-column",
-      "disabled": true,
       "blocks": {
         "template--14445932970102__8a514d41-3199-4817-a8dc-6b79ba83f09b-1668034349a0117849-0": {
           "type": "text_block",
@@ -314,6 +313,7 @@
         "template--14445932970102__8a514d41-3199-4817-a8dc-6b79ba83f09b-1668034349a0117849-1",
         "template--14445932970102__8a514d41-3199-4817-a8dc-6b79ba83f09b-1668034349a0117849-2"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "text_alignment": "center",
@@ -394,7 +394,7 @@
           "vail-lounge-cover",
           "strata-side-table",
           "aspen-rug",
-          "chichi-floor-lamp"
+          "colome-floor-lamp"
         ],
         "hide_if_empty": false,
         "show_vendor": false,
