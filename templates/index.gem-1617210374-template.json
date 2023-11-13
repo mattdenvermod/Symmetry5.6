@@ -25,7 +25,6 @@
     },
     "16359276425da8ce46": {
       "type": "slideshow",
-      "disabled": true,
       "blocks": {
         "16359276425da8ce46-0": {
           "type": "image",
@@ -99,6 +98,7 @@
         "16359276425da8ce46-1",
         "aad243e6-f90a-4165-a481-368eeb92a9d1"
       ],
+      "disabled": true,
       "settings": {
         "height": "fixed",
         "height_desktop": 600,
@@ -114,7 +114,6 @@
     },
     "e146ce1b-e8b3-43e9-839d-a6b8f52d3154": {
       "type": "compact-messages",
-      "disabled": true,
       "blocks": {
         "template--14453046149238__e146ce1b-e8b3-43e9-839d-a6b8f52d3154-166905249035414498-0": {
           "type": "message",
@@ -146,6 +145,7 @@
         "template--14453046149238__e146ce1b-e8b3-43e9-839d-a6b8f52d3154-166905249035414498-1",
         "2b7b7f6d-748d-43ce-921b-021f948a7006"
       ],
+      "disabled": true,
       "settings": {
         "head_not_col_bg": "#f4f6f8",
         "head_not_col_txt1": "#171717",
@@ -252,7 +252,7 @@
             "subheading": "Meticulously sourced materials",
             "title": "Float Console Table",
             "button_label": "SHOP NOW",
-            "link": "shopify:\/\/products\/float-console",
+            "link": "shopify:\/\/products\/monolit-console-table",
             "text_alignment": "bottom right"
           }
         }
@@ -536,7 +536,6 @@
     },
     "f66ee119-adfa-47a2-9039-56c539cb4754": {
       "type": "gallery",
-      "disabled": true,
       "blocks": {
         "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-0": {
           "type": "image",
@@ -583,6 +582,7 @@
         "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-1",
         "template--14453046149238__f66ee119-adfa-47a2-9039-56c539cb4754-1669052467573aa9a6-2"
       ],
+      "disabled": true,
       "settings": {
         "grid": 3,
         "height": "fixed",
