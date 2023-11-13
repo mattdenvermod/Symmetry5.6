@@ -1259,7 +1259,7 @@
               "dropdown_link_title": "Accessories",
               "image": "shopify:\/\/shop_images\/21037_NeroChevron_cushion50X50_21044_SilverNomad_cushion60X40_20083_sofa_n701_2seater_nut.jpg",
               "title": "Nomad Pillows",
-              "link_url": "shopify:\/\/products\/nomad-pillows"
+              "link_url": "shopify:\/\/products\/nomad-outdoor-pillows-1"
             }
           },
           "79220af4-dfb0-4b84-8e5f-4eb26864c23e": {
@@ -1574,13 +1574,6 @@
         "settings": {
           "url_key": "denvermodern.com",
           "lang": "auto"
-        }
-      },
-      "8683486541037420230": {
-        "type": "shopify:\/\/apps\/exit-popups-upsells-by-ampry\/blocks\/app-embed\/fad54489-e562-4bf7-85d7-8aa5290f7162",
-        "disabled": false,
-        "settings": {
-          "ampryPixelCode": "097a7703-3d25-46b5-b8f1-0c9415b16d76"
         }
       }
     }
