@@ -8,7 +8,11 @@
   endif
 -%}
 <html lang="{{ request.locale.iso_code }}" dir="{{ lang_dir }}">
-<head> 
+<head>
+<!-- Start of Shoplift scripts -->
+{% render 'shoplift' %}
+<!-- End of Shoplift scripts -->
+ 
     <script src='{{ 'sealapps_email_config.js' | asset_url }}' defer='defer' ></script> 
     <script src='{{ 'product_restore_email.js' | asset_url }}' defer='defer' ></script> 
     <script id='em_product_variants' type='application/json'>
