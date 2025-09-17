@@ -429,7 +429,7 @@
             "subheading": "CURATED ART COLLECTION",
             "title": "Art Studio",
             "button_label": "Shop Now",
-            "link": "shopify://collections/art-accessories",
+            "link": "shopify://collections/wall-art",
             "text_alignment": "bottom right"
           }
         },
